@@ -1,0 +1,67 @@
+:root { --paper: #fff; --ink: #111; --muted: #626262; --line: #d8d8d4; --wash: #f4f3ef; --blue: #0b5fab; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid #1479d1; outline-offset: 4px; border-radius: 2px; }
+.page-shell, .header-inner { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.publication-header { padding: 28px 0 22px; border-top: 8px solid #111; background: #fff; }
+.masthead { display: inline-block; font: 900 clamp(2.25rem, 5vw, 4.7rem)/.9 Georgia, "Times New Roman", serif; text-decoration: none; letter-spacing: -.055em; }
+.publication-header p { margin: 10px 0 0; color: var(--muted); font: 700 .76rem/1.2 Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.school-nav { background: #111; color: white; border-bottom: 4px solid #111; }
+.nav-inner, .sport-links { display: flex; gap: 28px; overflow-x: auto; }
+.school-nav a, .sport-nav a { padding: 14px 0 12px; font-size: .78rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 4px solid transparent; }
+.school-nav a[aria-current="page"], .school-nav a:hover { border-color: #fff; }
+.home-hero { padding: clamp(58px, 10vw, 120px) 0; background: #ecebe6; border-bottom: 1px solid var(--line); }
+.home-hero h1 { max-width: 900px; margin: 8px 0 20px; font: 900 clamp(3rem, 8vw, 7.4rem)/.86 Georgia, "Times New Roman", serif; letter-spacing: -.06em; }
+.dek { max-width: 660px; font: 400 clamp(1.1rem, 2vw, 1.45rem)/1.5 Georgia, serif; }
+.kicker, .eyebrow { margin: 0 0 8px; font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.school-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding-block: 54px 80px; }
+.school-grid > .section-rule { grid-column: 1 / -1; }
+.section-rule { border-top: 3px solid #111; padding-top: 12px; }
+.section-rule h2, .school-grid h2 { margin: 0 0 18px; font: 900 clamp(1.6rem, 3vw, 2.5rem)/1 Georgia, serif; letter-spacing: -.035em; }
+.school-card { position: relative; min-height: 230px; padding: 28px; background: var(--wash); border: 1px solid var(--line); text-decoration: none; overflow: hidden; }
+.school-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 8px; background: var(--team-primary, #111); }
+.school-card span { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.school-card h3 { max-width: 500px; margin: 38px 0 10px; font: 900 clamp(1.8rem, 4vw, 3.4rem)/.95 Georgia, serif; letter-spacing: -.045em; }
+.school-card strong { display: inline-block; margin-top: 20px; border-bottom: 3px solid var(--team-gold, #111); }
+.school-overview { color: white; background: var(--team-primary); box-shadow: inset 0 -8px var(--team-gold); }
+.school-overview h1 { font-size: clamp(3rem, 7vw, 6rem); }
+.team-hero { color: white; background: var(--team-primary); box-shadow: inset 0 -7px var(--team-gold); }
+.team-identity { display: grid; grid-template-columns: minmax(220px, 420px) 1fr; gap: 50px; align-items: center; min-height: 250px; padding-block: 35px 42px; }
+.team-logo { display: grid; place-items: center; min-height: 150px; padding: 22px; background: white; border-radius: 3px; }
+.team-logo img { width: 100%; height: auto; object-fit: contain; }
+.team-identity h1 { margin: 0; font: 900 clamp(2.7rem, 6vw, 6.2rem)/.88 Georgia, serif; letter-spacing: -.055em; }
+.team-meta { margin: 16px 0 0; font-weight: 800; }
+.sport-nav { border-bottom: 1px solid var(--line); }
+.sport-nav a[aria-current="page"] { border-color: var(--team-primary); color: var(--team-primary); }
+.editorial-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 50px; padding-block: 48px 90px; }
+.section-heading { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+.status-label, .placeholder-badge { display: inline-block; padding: 6px 8px; background: #eee; color: #444; font-size: .66rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.empty-state { padding: 46px; background: var(--wash); border: 1px solid var(--line); }
+.empty-state.compact { padding: 28px; }
+.empty-state h3 { margin: 0 0 8px; font: 800 1.35rem/1.1 Georgia, serif; }
+.empty-state p { color: var(--muted); line-height: 1.55; }
+.news { grid-column: 1 / -1; margin-top: 12px; }
+.story-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.story-card { padding: 26px; border: 1px solid var(--line); }
+.story-card h3 { margin: 18px 0 10px; font: 900 1.8rem/1.05 Georgia, serif; }
+.story-card p, .story-card small { color: var(--muted); line-height: 1.5; }
+.footer { padding: 42px 0 60px; color: white; background: #111; border-top: 7px solid #333; }
+.footer p { color: #aaa; }
+.not-found { min-height: 60vh; padding-block: 100px; }
+.not-found h1 { font: 900 clamp(3rem, 8vw, 6rem)/.9 Georgia, serif; letter-spacing: -.05em; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 760px) {
+  .page-shell, .header-inner { width: min(100% - 28px, 1180px); }
+  .publication-header { padding-top: 22px; }
+  .nav-inner, .sport-links { gap: 22px; }
+  .school-grid, .editorial-grid, .story-grid { grid-template-columns: 1fr; }
+  .team-identity { grid-template-columns: 1fr; gap: 25px; }
+  .team-logo { min-height: 110px; max-width: 420px; }
+  .news { grid-column: 1; }
+  .section-heading { display: block; }
+  .status-label { margin-bottom: 18px; }
+  .empty-state { padding: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
