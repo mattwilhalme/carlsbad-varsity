@@ -5,6 +5,7 @@ import type { Team } from "@/domain/models";
 
 export function TeamPage({ team }: { team: Team }) {
   const school = schools[team.schoolSlug];
+  const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}`;
   const teamGames = games.filter((game) => game.teamId === team.id);
   const teamStories = stories.filter((story) => story.teamIds.includes(team.id));
   const theme = { "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties;
@@ -13,8 +14,8 @@ export function TeamPage({ team }: { team: Team }) {
     <main style={theme}>
       <section className="team-hero">
         <div className="page-shell team-identity">
-          <a className="team-logo" href={school.officialUrl} target="_blank" rel="noreferrer">
-            <Image src={school.logo} alt={`${school.name} athletics logo`} width={430} height={105} priority />
+          <a className={`team-logo ${school.slug === "sage-creek" ? "team-logo-direct" : ""}`} href={school.officialUrl} target="_blank" rel="noreferrer">
+            <Image src={logoSrc} alt={`${school.name} athletics logo`} width={430} height={105} priority />
             <span className="visually-hidden">Visit the official {school.name} website</span>
           </a>
           <div>
@@ -28,7 +29,7 @@ export function TeamPage({ team }: { team: Team }) {
       <nav className="sport-nav" aria-label={`${school.name} sports`}>
         <div className="page-shell sport-links">
           {school.sports.map((slug) => {
-            const item = slug === "football" ? "Football" : slug === "boys-basketball" ? "Boys’ Basketball" : "Girls’ Basketball";
+            const item = slug === "boys-basketball" ? "Boys’ Basketball" : "Girls’ Basketball";
             return <Link key={slug} href={`/schools/${school.slug}/${slug}/`} aria-current={slug === team.sportSlug ? "page" : undefined}>{item}</Link>;
           })}
         </div>

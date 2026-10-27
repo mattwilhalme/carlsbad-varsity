@@ -1,5 +1,5 @@
 export type SchoolSlug = "carlsbad" | "sage-creek";
-export type SportSlug = "football" | "boys-basketball" | "girls-basketball";
+export type SportSlug = "boys-basketball" | "girls-basketball";
 
 export interface School {
   slug: SchoolSlug;

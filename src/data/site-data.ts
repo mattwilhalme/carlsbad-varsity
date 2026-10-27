@@ -19,7 +19,7 @@ export const schools: Record<SchoolSlug, School> = {
     officialUrl: "https://schs.carlsbadusd.net/",
     logo: "/images/sage-creek-bobcats.png",
     colors: { primary: "#004400", gold: "#B9A028", ink: "#07110a" },
-    sports: ["football", "boys-basketball", "girls-basketball"],
+    sports: ["boys-basketball", "girls-basketball"],
   },
 };
 
@@ -35,7 +35,6 @@ const team = (schoolSlug: SchoolSlug, sportSlug: SportSlug, sportName: string, s
 export const teams: Team[] = [
   team("carlsbad", "boys-basketball", "Boys’ Basketball", "2025–26"),
   team("carlsbad", "girls-basketball", "Girls’ Basketball", "2025–26"),
-  team("sage-creek", "football", "Football", "2025"),
   team("sage-creek", "boys-basketball", "Boys’ Basketball", "2025–26"),
   team("sage-creek", "girls-basketball", "Girls’ Basketball", "2025–26"),
 ];
