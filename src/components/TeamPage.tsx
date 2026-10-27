@@ -8,6 +8,7 @@ export function TeamPage({ team }: { team: Team }) {
   const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}`;
   const teamGames = games.filter((game) => game.teamId === team.id);
   const teamStories = stories.filter((story) => story.teamIds.includes(team.id));
+  const scheduleSource = teamGames.find((game) => game.sourceUrl)?.sourceUrl;
   const theme = { "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties;
 
   return (
@@ -38,7 +39,25 @@ export function TeamPage({ team }: { team: Team }) {
       <div className="page-shell editorial-grid">
         <section className="schedule section-rule" aria-labelledby="schedule-heading">
           <div className="section-heading"><div><p className="kicker">{team.season}</p><h2 id="schedule-heading">Schedule &amp; results</h2></div><span className="status-label">Verified data only</span></div>
-          {teamGames.length ? <div /> : <div className="empty-state"><h3>Schedule coming soon</h3><p>Verified dates, opponents, locations and results will be added here. No demonstration games are being presented as fact.</p></div>}
+          {teamGames.length ? (
+            <>
+              <div className="schedule-table-wrap">
+                <table className="schedule-table">
+                  <thead><tr><th>Date</th><th>Opponent</th><th>Site</th><th>Time</th><th>Status</th></tr></thead>
+                  <tbody>{teamGames.map((game) => (
+                    <tr key={game.id}>
+                      <td data-label="Date"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time></td>
+                      <td data-label="Opponent"><strong>{game.opponent}</strong>{game.location && <small>{game.location}</small>}</td>
+                      <td data-label="Site"><span className="site-pill">{game.homeAway}</span></td>
+                      <td data-label="Time">{game.time}</td>
+                      <td data-label="Status"><span className="completed-label">Completed</span><small>Score not provided</small></td>
+                    </tr>
+                  ))}</tbody>
+                </table>
+              </div>
+              {scheduleSource && <p className="source-note">Schedule source: <a href={scheduleSource} target="_blank" rel="noreferrer">Sage Creek Athletics / Home Campus</a>. Individual scores were not included in the source schedule.</p>}
+            </>
+          ) : <div className="empty-state"><h3>Schedule coming soon</h3><p>Verified dates, opponents, locations and results will be added here. No demonstration games are being presented as fact.</p></div>}
         </section>
 
         <aside className="standings section-rule" aria-labelledby="standings-heading">

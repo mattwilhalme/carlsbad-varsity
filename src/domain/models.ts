@@ -33,6 +33,7 @@ export interface Game {
   teamScore?: number;
   opponentScore?: number;
   storyUrl?: string;
+  sourceUrl?: string;
   dataStatus: "placeholder" | "verified";
 }
 
