@@ -21,21 +21,49 @@ export interface Team {
   season: "2025" | "2025–26";
 }
 
+export type GameSite = "Home" | "Away" | "Neutral";
+export type GameStatus = "scheduled" | "final" | "postponed" | "canceled";
+
+export interface PeriodScore {
+  period: string;
+  teamScore: number;
+  opponentScore: number;
+}
+
+export interface RelatedCoverage {
+  id: string;
+  publisher: string;
+  headline: string;
+  publishedAt?: string;
+  url: string;
+  imageUrl?: string;
+  approvalStatus: "draft" | "approved";
+}
+
 export interface Game {
+  /** Immutable editorial ID. Never derive this from fields an editor can change. */
   id: string;
   teamId: string;
   date: string;
   time?: string;
   opponent: string;
-  homeAway: "Home" | "Away";
+  opponentShortName?: string;
+  opponentLogo?: string;
+  homeAway: GameSite;
   location?: string;
-  status: "scheduled" | "final";
+  venueAddress?: string;
+  status: GameStatus;
   teamScore?: number;
   opponentScore?: number;
   result?: "W" | "L" | "T";
+  periodScores?: PeriodScore[];
+  overtimeScores?: PeriodScore[];
+  relatedCoverage?: RelatedCoverage[];
   storyUrl?: string;
   sourceUrl?: string;
   dataStatus: "placeholder" | "verified";
+  deletedAt?: string;
+  updatedAt?: string;
 }
 
 export interface Story {
