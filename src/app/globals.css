@@ -52,7 +52,10 @@ a:focus-visible { outline: 3px solid #1479d1; outline-offset: 4px; border-radius
 .schedule-table tbody tr:nth-child(even) { background: var(--wash); }
 .schedule-table small { display: block; margin-top: 4px; color: var(--muted); line-height: 1.35; }
 .site-pill { display: inline-block; min-width: 48px; padding: 4px 7px; border: 1px solid var(--line); text-align: center; font-size: .7rem; font-weight: 800; text-transform: uppercase; }
-.completed-label { font-weight: 800; }
+.result-badge { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 8px; color: white; background: #555; border-radius: 50%; font-size: .7rem; font-weight: 900; }
+.result-w { background: #176b36; }
+.result-l { background: #9d2f2f; }
+.score-line { font-variant-numeric: tabular-nums; }
 .source-note { color: var(--muted); font-size: .78rem; line-height: 1.5; }
 .source-note a { font-weight: 800; text-underline-offset: 3px; }
 .news { grid-column: 1 / -1; margin-top: 12px; }

@@ -32,6 +32,7 @@ export interface Game {
   status: "scheduled" | "final";
   teamScore?: number;
   opponentScore?: number;
+  result?: "W" | "L" | "T";
   storyUrl?: string;
   sourceUrl?: string;
   dataStatus: "placeholder" | "verified";

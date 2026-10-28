@@ -43,19 +43,19 @@ export function TeamPage({ team }: { team: Team }) {
             <>
               <div className="schedule-table-wrap">
                 <table className="schedule-table">
-                  <thead><tr><th>Date</th><th>Opponent</th><th>Site</th><th>Time</th><th>Status</th></tr></thead>
+                  <thead><tr><th>Date</th><th>Opponent</th><th>Site</th><th>Time</th><th>Result</th></tr></thead>
                   <tbody>{teamGames.map((game) => (
                     <tr key={game.id}>
                       <td data-label="Date"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time></td>
                       <td data-label="Opponent"><strong>{game.opponent}</strong>{game.location && <small>{game.location}</small>}</td>
                       <td data-label="Site"><span className="site-pill">{game.homeAway}</span></td>
                       <td data-label="Time">{game.time}</td>
-                      <td data-label="Status"><span className="completed-label">Completed</span><small>Score not provided</small></td>
+                      <td data-label="Result"><span className={`result-badge result-${game.result?.toLowerCase()}`}>{game.result}</span><strong className="score-line">{game.teamScore}–{game.opponentScore}</strong></td>
                     </tr>
                   ))}</tbody>
                 </table>
               </div>
-              {scheduleSource && <p className="source-note">Schedule source: <a href={scheduleSource} target="_blank" rel="noreferrer">Sage Creek Athletics / Home Campus</a>. Individual scores were not included in the source schedule.</p>}
+              {scheduleSource && <p className="source-note">Schedule and results source: <a href={scheduleSource} target="_blank" rel="noreferrer">Sage Creek Athletics / Home Campus</a>.</p>}
             </>
           ) : <div className="empty-state"><h3>Schedule coming soon</h3><p>Verified dates, opponents, locations and results will be added here. No demonstration games are being presented as fact.</p></div>}
         </section>
