@@ -11,6 +11,7 @@ export function SchoolNav({ active }: { active?: SchoolSlug }) {
             {school.shortName}
           </Link>
         ))}
+        <Link href="/about/">About Us</Link>
       </div>
     </nav>
   );
