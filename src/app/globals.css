@@ -27,6 +27,9 @@ a:focus-visible { outline: 3px solid #1479d1; outline-offset: 4px; border-radius
 .school-card strong { display: inline-block; margin-top: 20px; border-bottom: 3px solid var(--team-gold, #111); }
 .school-overview { color: white; background: var(--team-primary); box-shadow: inset 0 -8px var(--team-gold); }
 .school-overview h1 { font-size: clamp(3rem, 7vw, 6rem); }
+.school-wordmark { display: block; width: min(100%, 760px); margin: 24px 0 28px; }
+.school-wordmark:focus-visible { outline-color: white; }
+.school-wordmark img { display: block; width: 100%; height: auto; object-fit: contain; }
 .team-hero { color: white; background: var(--team-primary); box-shadow: inset 0 -7px var(--team-gold); }
 .team-identity { display: grid; grid-template-columns: minmax(220px, 420px) 1fr; gap: 50px; align-items: center; min-height: 250px; padding-block: 35px 42px; }
 .team-logo { display: grid; place-items: center; min-height: 150px; padding: 22px; background: white; border-radius: 3px; }
@@ -64,7 +67,26 @@ a:focus-visible { outline: 3px solid #1479d1; outline-offset: 4px; border-radius
 .story-card h3 { margin: 18px 0 10px; font: 900 1.8rem/1.05 Georgia, serif; }
 .story-card p, .story-card small { color: var(--muted); line-height: 1.5; }
 .footer { padding: 42px 0 60px; color: white; background: #111; border-top: 7px solid #333; }
+.footer-inner { display: flex; justify-content: space-between; gap: 40px; }
 .footer p { color: #aaa; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; align-content: start; }
+.footer a { font-size: .78rem; font-weight: 800; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
+.footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.about-hero { color: white; background: #111; border-bottom: 8px solid var(--blue); }
+.about-hero-inner { padding-block: clamp(62px, 10vw, 118px); }
+.about-hero h1 { max-width: 920px; margin: 12px 0 28px; font: 900 clamp(3.3rem, 8vw, 7.5rem)/.86 Georgia, "Times New Roman", serif; letter-spacing: -.06em; }
+.about-hero .dek { color: #d1d1d1; }
+.about-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(270px, .9fr); gap: clamp(45px, 7vw, 90px); padding-block: clamp(58px, 8vw, 100px); }
+.about-copy section { padding: 0 0 54px; margin: 0 0 54px; border-bottom: 1px solid var(--line); }
+.about-copy section:last-child { margin-bottom: 0; border-bottom: 0; }
+.about-copy h2, .about-contact h2 { margin: 0 0 22px; font: 900 clamp(2rem, 4vw, 3.35rem)/.98 Georgia, serif; letter-spacing: -.04em; }
+.about-copy p, .about-contact p { font: 1.05rem/1.72 Georgia, serif; }
+.about-contact { position: sticky; top: 28px; align-self: start; padding: 30px; background: var(--wash); border-top: 5px solid #111; }
+.about-actions { display: flex; flex-direction: column; gap: 10px; margin: 26px 0; }
+.about-actions a { display: block; padding: 13px 15px; border: 2px solid #111; font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-align: center; text-decoration: none; text-transform: uppercase; }
+.about-actions a:hover { color: white; background: #111; }
+.about-actions .primary-action { color: white; background: #111; }
+.about-actions .primary-action:hover { color: #111; background: transparent; }
 .not-found { min-height: 60vh; padding-block: 100px; }
 .not-found h1 { font: 900 clamp(3rem, 8vw, 6rem)/.9 Georgia, serif; letter-spacing: -.05em; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
@@ -76,6 +98,10 @@ a:focus-visible { outline: 3px solid #1479d1; outline-offset: 4px; border-radius
   .team-identity { grid-template-columns: 1fr; gap: 25px; }
   .team-logo { min-height: 110px; max-width: 420px; }
   .team-logo-direct { min-height: 80px; }
+  .school-wordmark { margin-block: 20px 24px; }
+  .footer-inner, .about-layout { display: grid; grid-template-columns: 1fr; }
+  .footer nav { flex-direction: column; }
+  .about-contact { position: static; }
   .news { grid-column: 1; }
   .section-heading { display: block; }
   .status-label { margin-bottom: 18px; }
