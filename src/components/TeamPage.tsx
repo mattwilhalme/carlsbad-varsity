@@ -1,7 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { games, schools, stories } from "@/data/site-data";
-import type { Team } from "@/domain/models";
+import type { Game, GameSite, Team } from "@/domain/models";
+
+const siteCode: Record<GameSite, string> = { Home: "H", Away: "A", Neutral: "N" };
+
+function opponentInitials(name: string) {
+  return name.split(/[\s/-]+/).filter(Boolean).slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+}
+
+function gameOutcome(game: Game) {
+  if (game.status === "final" && game.result && game.teamScore !== undefined && game.opponentScore !== undefined) {
+    return <><strong className={`outcome outcome-${game.result.toLowerCase()}`}>{game.result} {game.teamScore}–{game.opponentScore}</strong><span>Final</span></>;
+  }
+  if (game.status === "postponed") return <><strong>Postponed</strong><span>New date TBD</span></>;
+  if (game.status === "canceled") return <><strong>Canceled</strong><span>Not being played</span></>;
+  return <><strong>{game.time || "TBD"}</strong><span>Scheduled</span></>;
+}
 
 export function TeamPage({ team }: { team: Team }) {
   const school = schools[team.schoolSlug];
@@ -41,19 +56,21 @@ export function TeamPage({ team }: { team: Team }) {
           <div className="section-heading"><div><p className="kicker">{team.season}</p><h2 id="schedule-heading">Schedule &amp; results</h2></div><span className="status-label">Verified data only</span></div>
           {teamGames.length ? (
             <>
-              <div className="schedule-table-wrap">
-                <table className="schedule-table">
-                  <thead><tr><th>Date</th><th>Opponent</th><th>Site</th><th>Time</th><th>Result</th></tr></thead>
-                  <tbody>{teamGames.map((game) => (
-                    <tr key={game.id}>
-                      <td data-label="Date"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time></td>
-                      <td data-label="Opponent"><strong>{game.opponent}</strong>{game.location && <small>{game.location}</small>}</td>
-                      <td data-label="Site"><span className="site-pill">{game.homeAway}</span></td>
-                      <td data-label="Time">{game.time}</td>
-                      <td data-label="Result"><span className={`result-badge result-${game.result?.toLowerCase()}`}>{game.result}</span><strong className="score-line">{game.teamScore}–{game.opponentScore}</strong></td>
-                    </tr>
-                  ))}</tbody>
-                </table>
+              <div className="schedule-list" role="table" aria-label={`${school.name} ${team.sportName} schedule and results`}>
+                <div className="schedule-header" role="row">
+                  <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span><span role="columnheader">Details</span>
+                </div>
+                <div role="rowgroup">{teamGames.map((game) => {
+                  const opponentName = game.opponentShortName || game.opponent;
+                  return (
+                    <div className="schedule-row" role="row" key={game.id}>
+                      <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
+                      <div className="game-opponent" role="cell"><abbr className="site-code" title={game.homeAway} aria-label={game.homeAway}>{siteCode[game.homeAway]}</abbr><span className="opponent-mark" aria-hidden="true">{opponentInitials(opponentName)}</span><strong title={game.opponent}>{opponentName}</strong></div>
+                      <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
+                      <div className="game-details" role="cell"><span>{game.location || game.homeAway}</span><small>{game.dataStatus === "verified" ? "Verified" : "Unverified"}</small></div>
+                    </div>
+                  );
+                })}</div>
               </div>
               {scheduleSource && <p className="source-note">Schedule and results source: <a href={scheduleSource} target="_blank" rel="noreferrer">Sage Creek Athletics / Home Campus</a>.</p>}
             </>
