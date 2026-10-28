@@ -22,7 +22,7 @@ export function TeamPage({ team }: { team: Team }) {
   const school = schools[team.schoolSlug];
   const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}`;
   const teamGames = games.filter((game) => game.teamId === team.id);
-  const teamStories = stories.filter((story) => story.teamIds.includes(team.id));
+  const teamStories = stories.filter((story) => story.teamIds.includes(team.id) && story.contentStatus === "published");
   const scheduleSource = teamGames.find((game) => game.sourceUrl)?.sourceUrl;
   const theme = { "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties;
 
@@ -58,7 +58,7 @@ export function TeamPage({ team }: { team: Team }) {
             <>
               <div className="schedule-list" role="table" aria-label={`${school.name} ${team.sportName} schedule and results`}>
                 <div className="schedule-header" role="row">
-                  <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span><span role="columnheader">Details</span>
+                  <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span>
                 </div>
                 <div role="rowgroup">{teamGames.map((game) => {
                   const opponentName = game.opponentShortName || game.opponent;
@@ -67,7 +67,6 @@ export function TeamPage({ team }: { team: Team }) {
                       <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
                       <div className="game-opponent" role="cell"><abbr className="site-code" title={game.homeAway} aria-label={game.homeAway}>{siteCode[game.homeAway]}</abbr><span className="opponent-mark" aria-hidden="true">{opponentInitials(opponentName)}</span><strong title={game.opponent}>{opponentName}</strong></div>
                       <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
-                      <div className="game-details" role="cell"><span>{game.location || game.homeAway}</span><small>{game.dataStatus === "verified" ? "Verified" : "Unverified"}</small></div>
                     </div>
                   );
                 })}</div>
@@ -77,26 +76,19 @@ export function TeamPage({ team }: { team: Team }) {
           ) : <div className="empty-state"><h3>Schedule coming soon</h3><p>Verified dates, opponents, locations and results will be added here. No demonstration games are being presented as fact.</p></div>}
         </section>
 
-        <aside className="standings section-rule" aria-labelledby="standings-heading">
-          <p className="kicker">League table</p>
-          <h2 id="standings-heading">Standings</h2>
-          <div className="empty-state compact"><h3>Standings coming soon</h3><p>League and overall records will appear when a verified source is connected.</p></div>
-        </aside>
-
-        <section className="news section-rule" aria-labelledby="news-heading">
+        {teamStories.length > 0 && <section className="news section-rule" aria-labelledby="news-heading">
           <p className="kicker">Latest coverage</p>
           <h2 id="news-heading">Recent news</h2>
           <div className="story-grid">
             {teamStories.map((story) => (
               <article className="story-card" key={story.id}>
-                <span className="placeholder-badge">Sample layout</span>
                 <h3>{story.headline}</h3>
                 <p>{story.summary}</p>
-                <small>{story.source} · Placeholder, not published reporting</small>
+                <small>{story.source}</small>
               </article>
             ))}
           </div>
-        </section>
+        </section>}
       </div>
     </main>
   );
