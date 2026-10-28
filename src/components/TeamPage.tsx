@@ -18,6 +18,14 @@ function gameOutcome(game: Game) {
   return <><strong>{game.time || "TBD"}</strong><span>Scheduled</span></>;
 }
 
+function gameAriaLabel(game: Game, schoolName: string) {
+  const matchup = `${schoolName} ${game.homeAway === "Away" ? "at" : game.homeAway === "Home" ? "versus" : "against"} ${game.opponent}`;
+  if (game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined) {
+    return `${matchup}, final score ${game.teamScore} to ${game.opponentScore}. Open game details.`;
+  }
+  return `${matchup}, ${game.status}, ${game.time || "time to be determined"}. Open game details.`;
+}
+
 export function TeamPage({ team }: { team: Team }) {
   const school = schools[team.schoolSlug];
   const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}`;
@@ -58,16 +66,17 @@ export function TeamPage({ team }: { team: Team }) {
             <>
               <div className="schedule-list" role="table" aria-label={`${school.name} ${team.sportName} schedule and results`}>
                 <div className="schedule-header" role="row">
-                  <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span>
+                  <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span><span aria-hidden="true" />
                 </div>
                 <div role="rowgroup">{teamGames.map((game) => {
                   const opponentName = game.opponentShortName || game.opponent;
                   return (
-                    <div className="schedule-row" role="row" key={game.id}>
+                    <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>
                       <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
                       <div className="game-opponent" role="cell"><abbr className="site-code" title={game.homeAway} aria-label={game.homeAway}>{siteCode[game.homeAway]}</abbr><span className="opponent-mark" aria-hidden="true">{opponentInitials(opponentName)}</span><strong title={game.opponent}>{opponentName}</strong></div>
                       <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
-                    </div>
+                      <span className="row-chevron" aria-hidden="true">›</span>
+                    </Link>
                   );
                 })}</div>
               </div>
