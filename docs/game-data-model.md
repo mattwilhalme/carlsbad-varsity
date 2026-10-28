@@ -15,6 +15,13 @@ The private editor should eventually store these records in normalized tables:
 
 Game UUIDs must never be derived from the opponent, date or venue. Those fields are editable. The current static IDs should be migrated once and retained as an optional legacy identifier.
 
+## Import identity rules
+
+- Every imported record receives an explicit immutable ID before it enters the public schedule array.
+- Reordering, inserting or correcting records must never regenerate existing IDs.
+- A future Supabase import should create a UUID once, retain any stable source-system identifier separately and reject duplicate IDs before publication.
+- The repository validation tests reject missing, generated or duplicate IDs in the current static schedule.
+
 ## Scoring rules
 
 - Quick entry saves the two final scores directly.
