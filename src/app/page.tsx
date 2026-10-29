@@ -23,8 +23,8 @@ export default function Home() {
         </article>)}</div>
       </section>
       <aside className="homepage-rail" aria-label="Games and results">
-        <section id="upcoming-games" className="rail-section"><p className="rail-kicker">On the calendar</p><h2>Upcoming Games</h2><HomeGameRail games={upcomingGames} /></section>
-        <section id="recent-results" className="rail-section"><p className="rail-kicker">Final scores</p><h2>Recent Results</h2><HomeGameRail games={recentResults} result /></section>
+        <section id="upcoming-games" className="rail-section" aria-labelledby="calendar-heading"><p id="calendar-heading" className="rail-kicker">On the Calendar</p><HomeGameRail games={upcomingGames} /></section>
+        <section id="recent-results" className="rail-section" aria-labelledby="scores-heading"><p id="scores-heading" className="rail-kicker">Final Scores</p><HomeGameRail games={recentResults} result /></section>
       </aside>
     </div>
   </main>;

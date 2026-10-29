@@ -202,7 +202,8 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .editorial-section-title { margin: 0 0 30px; font: 900 clamp(2.1rem, 4vw, 3.2rem)/1 Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
 .lead-story { display: grid; grid-template-columns: minmax(250px, .85fr) minmax(0, 1.65fr); gap: clamp(24px, 3vw, 44px); align-items: start; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
 .lead-story-copy { padding-top: 4px; }
-.story-label, .rail-kicker { margin: 0 0 10px; color: #535353; font-size: .68rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.story-label { margin: 0 0 10px; color: #535353; font-size: .68rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.rail-kicker { margin: 0 0 16px; color: #111; font: 900 clamp(1.2rem, 1.8vw, 1.5rem)/1 Georgia, serif; letter-spacing: -.025em; }
 .lead-story h2 { margin: 0 0 20px; font: 900 clamp(2rem, 3.2vw, 3.65rem)/.99 Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
 .lead-story h2 a, .secondary-story h2 a { text-decoration: none; }
 .lead-story h2 a:hover, .secondary-story h2 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
@@ -222,22 +223,21 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .secondary-story h2 { margin: 0 0 12px; font: 900 clamp(1.55rem, 2.2vw, 2.15rem)/1.05 Georgia, "Times New Roman", serif; letter-spacing: -.035em; }
 .secondary-story .story-dek { font-size: .95rem; }
 .homepage-rail { padding-left: clamp(22px, 3vw, 40px); border-left: 1px solid var(--line); }
-.rail-section { scroll-margin-top: 190px; padding-top: 13px; border-top: 4px solid #111; }
-.rail-section + .rail-section { margin-top: 48px; }
-.rail-section h2 { margin: 0 0 16px; font: 900 clamp(1.6rem, 2.5vw, 2.25rem)/1 Georgia, serif; letter-spacing: -.04em; }
+.rail-section { scroll-margin-top: 190px; padding: 24px; background: #f4f1ed; border: 1px solid #e2dcd5; border-radius: 18px; }
+.rail-section + .rail-section { margin-top: 24px; }
 .rail-game-list { border-top: 1px solid var(--line); }
-.rail-game { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 7px 10px; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
-.rail-game:hover strong, .rail-game:hover .rail-opponent { text-decoration: underline; text-underline-offset: 3px; }
+.rail-game { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 15px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.rail-game:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 .rail-game time { color: var(--muted); font-size: .68rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .rail-game > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.rail-game strong { font: 900 1rem/1 Georgia, serif; }
-.rail-game small { color: var(--muted); font-size: .62rem; }
-.rail-game b { font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.rail-game .rail-opponent { grid-column: 2 / 4; color: #333; font-size: .78rem; }
+.rail-game .rail-matchup { gap: 0; }
+.rail-game strong { font: 900 1.05rem/1.02 Georgia, serif; }
+.rail-game small { margin-top: 5px; color: var(--muted); font-size: .62rem; }
+.rail-game b { padding-top: 1px; font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* Demo article */
 .article-header { max-width: 940px; padding-block: clamp(52px, 8vw, 94px) 42px; }
-.article-header h1 { max-width: 900px; margin: 0 0 24px; font: 900 clamp(3rem, 6vw, 6.25rem)/.92 Georgia, "Times New Roman", serif; letter-spacing: -.055em; }
+.article-header h1 { max-width: 780px; margin: 0 0 24px; font: 900 clamp(2.25rem, 3.6vw, 3.4rem)/.98 Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
 .article-dek { max-width: 800px; margin: 0; color: var(--muted); font: clamp(1.2rem, 2vw, 1.55rem)/1.5 Georgia, serif; }
 .article-byline { display: flex; gap: 14px 24px; margin-top: 32px; font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; }
 .article-byline time { color: var(--muted); }
@@ -246,14 +246,21 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .article-hero figcaption { margin-top: 9px; color: var(--muted); font-size: .68rem; }
 .article-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(230px, .75fr); gap: clamp(50px, 8vw, 100px); align-items: start; padding-bottom: 100px; }
 .article-body { max-width: 720px; }
-.article-body > p { margin: 0 0 1.45em; font: 1.15rem/1.78 Georgia, "Times New Roman", serif; }
-.article-body > p:first-child::first-letter { float: left; margin: .04em .08em 0 0; font: 900 4.2rem/.78 Georgia, serif; }
-.article-box-score { margin-top: 52px; padding-top: 20px; border-top: 4px solid #111; }
-.article-box-score h2, .article-related h2 { margin: 0 0 20px; font: 900 2rem/1 Georgia, serif; }
-.article-related { position: sticky; top: 200px; border-top: 4px solid #111; padding-top: 18px; }
+.article-copy { margin-top: 52px; }
+.article-copy > p { margin: 0 0 1.45em; font: 1.15rem/1.78 Georgia, "Times New Roman", serif; }
+.article-copy > p:first-child::first-letter { float: left; margin: .04em .08em 0 0; font: 900 4.2rem/.78 Georgia, serif; }
+.article-box-score { padding: 22px; background: #f6f3ef; border: 1px solid var(--line); border-radius: 14px; }
+.article-box-score h2, .article-related h2, .league-standings h2 { margin: 0 0 20px; font: 900 2rem/1 Georgia, serif; }
+.article-sidebar { position: sticky; top: 200px; display: grid; gap: 42px; }
+.article-related { border-top: 4px solid #111; padding-top: 18px; }
 .article-related a { display: grid; gap: 7px; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; }
 .article-related span { color: var(--muted); font-size: .65rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .article-related strong { font: 900 1.12rem/1.18 Georgia, serif; }
+.league-standings { border-top: 4px solid #111; padding-top: 18px; }
+.league-standings table { width: 100%; border-collapse: collapse; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.league-standings th, .league-standings td { padding: 9px 5px; border-bottom: 1px solid var(--line); text-align: right; }
+.league-standings th:first-child { text-align: left; }
+.league-standings thead th { color: var(--muted); font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; }
 @media (max-width: 760px) {
   .page-shell, .header-inner { width: min(100% - 28px, 1180px); }
   .publication-header-inner { gap: 10px; min-height: 76px; }
@@ -318,11 +325,11 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
   .lead-story h2 { font-size: clamp(2.2rem, 11vw, 3.4rem); }
   .secondary-story-grid { gap: 42px; }
   .homepage-rail { padding-left: 0; border-left: 0; }
-  .article-header h1 { font-size: clamp(2.7rem, 13vw, 4.4rem); }
+  .article-header h1 { font-size: clamp(2.15rem, 9vw, 3.2rem); }
   .article-byline { flex-direction: column; gap: 7px; }
   .article-hero { width: 100%; }
   .article-hero figcaption { padding-inline: 14px; }
   .article-layout { gap: 54px; }
-  .article-related { position: static; }
+  .article-sidebar { position: static; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

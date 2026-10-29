@@ -8,7 +8,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Carlsbad turns a composed second half into a statement win, offering an early look at how the Lancers hope to play when the season arrives.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-28",
-    image: { src: "/images/editorial/carlsbad-basketball.jpg", alt: "High school basketball players in purple and white contest a rebound in a crowded gym.", credit: "Original AI-generated editorial demo image · North County Varsity" },
+    image: { src: "/images/editorial/carlsbad-basketball.jpg", alt: "A high school basketball game inside the South Tama Roundhouse gym.", credit: "Crazy Head 36 / Wikimedia Commons · CC0 1.0" },
     relatedLinks: [
       { label: "Carlsbad boys’ basketball team page", href: "/carlsbad/carlsbad/boys-basketball/" },
       { label: "Carlsbad girls’ basketball team page", href: "/carlsbad/carlsbad/girls-basketball/" },
@@ -19,6 +19,7 @@ export const editorialStories: EditorialStory[] = [
       "Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. For a program still shaping its identity, the final minutes supplied the most useful lesson: value every trip, defend without fouling and trust the next pass.",
     ],
     boxScore: { periods: ["1", "2", "3", "4"], teams: [{ name: "Carlsbad", scores: [16, 12, 20, 18], total: 66 }, { name: "Oceanside", scores: [13, 18, 12, 15], total: 58 }] },
+    standings: [{ team: "Carlsbad", league: "1–0", overall: "1–0" }, { team: "Oceanside", league: "1–0", overall: "1–0" }, { team: "La Costa Canyon", league: "1–0", overall: "1–0" }, { team: "Vista", league: "1–0", overall: "1–0" }],
   },
   {
     slug: "football-article-test-homepage-build-2026",
@@ -27,7 +28,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Under the lights, Carlsbad’s offense finds its rhythm while a disciplined defense closes the door late.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-27",
-    image: { src: "/images/editorial/carlsbad-football.jpg", alt: "High school football teams in purple and white line up at sunset.", credit: "Original AI-generated editorial demo image · North County Varsity" },
+    image: { src: "/images/editorial/carlsbad-football.jpg", alt: "A high school football team runs onto the field before a game.", credit: "Lborwick / Wikimedia Commons · CC BY-SA 4.0 · Cropped for display" },
     relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "More North County scores", href: "/#recent-results" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Carlsbad’s opening drive established the evening’s tone with patient runs and a timely throw outside the numbers.",
@@ -35,6 +36,7 @@ export const editorialStories: EditorialStory[] = [
       "Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. When the final whistle arrived, the Lancers had produced the kind of balanced performance that travels well.",
     ],
     boxScore: { periods: ["1", "2", "3", "4"], teams: [{ name: "Carlsbad", scores: [7, 10, 7, 7], total: 31 }, { name: "Vista", scores: [3, 7, 0, 7], total: 17 }] },
+    standings: [{ team: "Carlsbad", league: "1–0", overall: "1–0" }, { team: "El Camino", league: "1–0", overall: "1–0" }, { team: "Oceanside", league: "1–0", overall: "1–0" }, { team: "Vista", league: "1–0", overall: "1–0" }],
   },
   {
     slug: "track-field-article-test-homepage-build-2026",
@@ -43,7 +45,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Carlsbad’s sprinters set the early pace in a bright afternoon meet built around depth, clean exchanges and personal bests.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-26",
-    image: { src: "/images/editorial/carlsbad-track-field.jpg", alt: "High school sprinters in purple uniforms race around a sunlit track.", credit: "Original AI-generated editorial demo image · North County Varsity" },
+    image: { src: "/images/editorial/carlsbad-track-field.jpg", alt: "A track athlete sprints during an outdoor meet.", credit: "Tulane Public Relations / Wikimedia Commons · CC BY 2.0 · Cropped for display" },
     relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "Find upcoming Carlsbad games", href: "/#upcoming-games" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. The Lancers opened the meet with sharp starts and carried that confidence through the relay exchanges.",
@@ -51,6 +53,7 @@ export const editorialStories: EditorialStory[] = [
       "Donec sed odio dui. Curabitur blandit tempus porttitor. Personal bests arrived across the sprint group, but the clean baton work provided the detail the athletes were most eager to carry forward.",
     ],
     boxScore: { periods: ["Sprints", "Distance", "Field", "Relays"], teams: [{ name: "Carlsbad", scores: [31, 22, 24, 18], total: 95 }, { name: "San Dieguito", scores: [24, 27, 18, 14], total: 83 }] },
+    standings: [{ team: "Carlsbad", league: "1–0", overall: "1–0" }, { team: "San Dieguito", league: "1–0", overall: "1–0" }, { team: "Torrey Pines", league: "1–0", overall: "1–0" }, { team: "Canyon Crest", league: "1–0", overall: "1–0" }],
   },
 ];
 

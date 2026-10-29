@@ -100,4 +100,5 @@ export interface EditorialStory {
     periods: string[];
     teams: { name: string; scores: number[]; total: number }[];
   };
+  standings: { team: string; league: string; overall: string }[];
 }

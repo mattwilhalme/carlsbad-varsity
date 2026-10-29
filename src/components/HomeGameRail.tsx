@@ -9,10 +9,11 @@ export function HomeGameRail({ games, result = false }: { games: Game[]; result?
     const team = teams.find((item) => item.id === game.teamId)!;
     const school = schools[team.schoolSlug];
     const status = result ? `${game.result} ${game.teamScore}–${game.opponentScore}` : game.time ?? "TBA";
+    const homeTeam = game.homeAway === "Away" ? game.opponent : school.shortName;
+    const awayTeam = game.homeAway === "Away" ? school.shortName : game.opponent;
     return <Link href={`/games/${game.id}/`} className="rail-game" key={game.id}>
       <time dateTime={game.date}>{formatDate(game.date)}</time>
-      <span><strong>{school.shortName}</strong><small>{team.sportName}</small></span>
-      <span className="rail-opponent">{game.homeAway === "Away" ? "at " : "vs. "}{game.opponent}</span>
+      <span className="rail-matchup"><strong>{homeTeam} (1-0) vs.</strong><strong>{awayTeam} (1-0)</strong><small>{team.sportName}</small></span>
       <b className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{status}</b>
     </Link>;
   })}</div>;
