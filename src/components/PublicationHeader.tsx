@@ -8,7 +8,6 @@ export function PublicationHeader() {
           <span>North County</span><i aria-hidden="true" /> Varsity
         </Link>
         <nav className="publication-nav" aria-label="Publication">
-          <Link href="/">Varsity</Link>
           <Link href="/about/">About Us</Link>
         </nav>
       </div>
