@@ -1,25 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { MoreCoverage } from "@/components/MoreCoverage";
 import { schools, teams } from "@/data/site-data";
-import type { Game, School } from "@/domain/models";
+import type { Game } from "@/domain/models";
 
-function initials(name: string) {
-  return name.split(/[\s/-]+/).filter(Boolean).slice(0, 2).map((word) => word[0]).join("").toUpperCase();
-}
-
-function findOpponentSchool(name: string) {
-  const normalized = name.toLowerCase();
-  return Object.values(schools).find((school) => school.name.toLowerCase() === normalized || school.shortName.toLowerCase() === normalized);
-}
-
-function TeamIdentity({ name, school, score, winner }: { name: string; school?: School; score?: number; winner: boolean }) {
-  const logo = school ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}` : undefined;
+function TeamIdentity({ name, score, winner }: { name: string; score?: number; winner: boolean }) {
   return (
     <div className={`game-team${winner ? " game-winner" : ""}`}>
-      <div className="game-team-mark">
-        {logo ? <Image src={logo} alt="" width={260} height={90} /> : <span aria-hidden="true">{initials(name)}</span>}
-      </div>
       <div><strong>{name}</strong>{winner && <span>Winner</span>}</div>
       {score !== undefined && <b>{score}</b>}
     </div>
@@ -30,11 +16,10 @@ export function GameDetail({ game }: { game: Game }) {
   const team = teams.find((item) => item.id === game.teamId);
   if (!team) return null;
   const school = schools[team.schoolSlug];
-  const opponentSchool = findOpponentSchool(game.opponent);
   const schoolWon = game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined && game.teamScore > game.opponentScore;
   const opponentWon = game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined && game.opponentScore > game.teamScore;
-  const schoolEntry = { name: school.shortName, school, score: game.teamScore, winner: schoolWon };
-  const opponentEntry = { name: game.opponent, school: opponentSchool, score: game.opponentScore, winner: opponentWon };
+  const schoolEntry = { name: school.shortName, score: game.teamScore, winner: schoolWon };
+  const opponentEntry = { name: game.opponent, score: game.opponentScore, winner: opponentWon };
   const firstTeam = game.homeAway === "Home" ? opponentEntry : schoolEntry;
   const secondTeam = game.homeAway === "Home" ? schoolEntry : opponentEntry;
   const date = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`));
