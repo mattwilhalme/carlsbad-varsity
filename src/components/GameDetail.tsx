@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MoreCoverage } from "@/components/MoreCoverage";
-import { schools, teams } from "@/data/site-data";
+import { cities, schoolPath, schools, teams } from "@/data/site-data";
 import type { Game } from "@/domain/models";
 
 function TeamIdentity({ name, score, winner }: { name: string; score?: number; winner: boolean }) {
@@ -16,6 +17,7 @@ export function GameDetail({ game }: { game: Game }) {
   const team = teams.find((item) => item.id === game.teamId);
   if (!team) return null;
   const school = schools[team.schoolSlug];
+  const city = cities[school.citySlug];
   const schoolWon = game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined && game.teamScore > game.opponentScore;
   const opponentWon = game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined && game.opponentScore > game.teamScore;
   const schoolEntry = { name: school.shortName, score: game.teamScore, winner: schoolWon };
@@ -31,7 +33,8 @@ export function GameDetail({ game }: { game: Game }) {
     <main style={theme}>
       <header className="game-hero">
         <div className="page-shell game-hero-inner">
-          <Link className="back-link" href={`/schools/${school.slug}/${team.sportSlug}/`}>← Back to {team.sportName}</Link>
+          <Breadcrumbs items={[{ label: "North County Varsity", href: "/" }, { label: city.name, href: `/${city.slug}/` }, { label: school.shortName, href: schoolPath(school.slug) }, { label: team.sportName, href: schoolPath(school.slug, team.sportSlug) }, { label: game.status === "final" ? "Final" : "Game" }]} />
+          <Link className="back-link" href={schoolPath(school.slug, team.sportSlug)}>← Back to {team.sportName}</Link>
           <p className="eyebrow">{school.name} · {team.sportName} · {team.level}</p>
           <h1>{game.status === "final" ? "Final" : game.status === "scheduled" ? "Game Preview" : game.status}</h1>
           <p className="game-date-line"><time dateTime={game.date}>{date}</time> · {game.time || "TBD"}</p>

@@ -1,8 +1,20 @@
-import type { Game, School, SchoolSlug, SportSlug, Story, Team } from "@/domain/models";
+import type { City, CitySlug, Game, School, SchoolSlug, SportSlug, Story, Team } from "@/domain/models";
+
+export const cities: Record<CitySlug, City> = {
+  carlsbad: {
+    slug: "carlsbad",
+    name: "Carlsbad",
+    region: "North County San Diego",
+    schoolSlugs: ["carlsbad", "sage-creek"],
+  },
+};
+
+export const siteUrl = "https://mattwilhalme.github.io/carlsbad-varsity";
 
 export const schools: Record<SchoolSlug, School> = {
   carlsbad: {
     slug: "carlsbad",
+    citySlug: "carlsbad",
     name: "Carlsbad High School",
     shortName: "Carlsbad",
     mascot: "Lancers",
@@ -13,6 +25,7 @@ export const schools: Record<SchoolSlug, School> = {
   },
   "sage-creek": {
     slug: "sage-creek",
+    citySlug: "carlsbad",
     name: "Sage Creek High School",
     shortName: "Sage Creek",
     mascot: "Bobcats",
@@ -134,12 +147,21 @@ export const stories: Story[] = [
     id: "sample-season-preview",
     teamIds: teams.map((item) => item.id),
     headline: "Season coverage will appear here",
-    summary: "This sample card demonstrates how verified Carlsbad Varsity reporting will be presented once publishing begins.",
-    source: "Carlsbad Varsity",
+    summary: "This sample card demonstrates how verified North County Varsity reporting will be presented once publishing begins.",
+    source: "North County Varsity",
     contentStatus: "placeholder",
   },
 ];
 
 export function getTeam(schoolSlug: string, sportSlug: string) {
   return teams.find((item) => item.schoolSlug === schoolSlug && item.sportSlug === sportSlug);
+}
+
+export function schoolPath(schoolSlug: SchoolSlug, sportSlug?: SportSlug) {
+  const school = schools[schoolSlug];
+  return `/${school.citySlug}/${school.slug}/${sportSlug ? `${sportSlug}/` : ""}`;
+}
+
+export function canonicalUrl(path: string) {
+  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }

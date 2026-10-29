@@ -1,8 +1,17 @@
+export type CitySlug = "carlsbad";
 export type SchoolSlug = "carlsbad" | "sage-creek";
 export type SportSlug = "boys-basketball" | "girls-basketball";
 
+export interface City {
+  slug: CitySlug;
+  name: string;
+  region: string;
+  schoolSlugs: SchoolSlug[];
+}
+
 export interface School {
   slug: SchoolSlug;
+  citySlug: CitySlug;
   name: string;
   shortName: string;
   mascot: string;
