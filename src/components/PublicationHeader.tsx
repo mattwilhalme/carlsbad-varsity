@@ -5,7 +5,7 @@ export function PublicationHeader() {
     <header className="publication-header">
       <div className="header-inner publication-header-inner">
         <Link className="masthead" href="/" aria-label="North County Varsity home">
-          <span>NC</span><i aria-hidden="true" /> VARSITY
+          <span>North County</span><i aria-hidden="true" /> Varsity
         </Link>
         <nav className="publication-nav" aria-label="Publication">
           <Link href="/">Varsity</Link>
