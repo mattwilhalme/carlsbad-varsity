@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SchoolNav } from "@/components/SchoolNav";
 
 export function PublicationHeader() {
   return (
@@ -8,7 +7,10 @@ export function PublicationHeader() {
         <Link className="masthead" href="/" aria-label="Carlsbad Varsity home">
           <span>CV</span><i aria-hidden="true" /> VARSITY
         </Link>
-        <SchoolNav />
+        <nav className="publication-nav" aria-label="Publication">
+          <Link href="/">Varsity</Link>
+          <Link href="/about/">About Us</Link>
+        </nav>
       </div>
     </header>
   );
