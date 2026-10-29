@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SchoolNav } from "@/components/SchoolNav";
 import { cities, games, schools, stories, teams } from "@/data/site-data";
 import type { Game } from "@/domain/models";
 
@@ -45,17 +46,18 @@ export default function Home() {
   return (
     <main>
       <section className="home-intro"><div className="page-shell"><h1>Find coverage of your team.</h1></div></section>
+      <SchoolNav placement="home" />
       <section className="page-shell home-dashboard" aria-label="North County Varsity dashboard">
-        <section className="city-directory" aria-labelledby="cities-heading">
-          <div><p className="kicker">North County San Diego</p><h2 id="cities-heading">Cities</h2></div>
-          {Object.values(cities).map((city) => <Link className="city-entry" href={`/${city.slug}/`} key={city.slug}><span><strong>{city.name}</strong><small>{city.schoolSlugs.map((slug) => schools[slug].shortName).join(" · ")}</small></span><b aria-hidden="true">→</b></Link>)}
-        </section>
         <section className="home-section" aria-labelledby="schedule-heading">
           <div className="home-section-heading"><div><p className="kicker">Schedule</p><h2 id="schedule-heading">{featuredGames.length && displayDate === today ? "Today’s games" : featuredGames.length ? "Next game day" : "No upcoming games"}</h2></div>{displayDate && <time dateTime={displayDate}>{new Date(`${displayDate}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</time>}</div>
           {featuredGames.length ? <div className="home-game-list">{featuredGames.map((game) => <GameRow game={game} key={game.id} />)}</div> : <p className="home-empty">No future games are currently published. New schedules will appear here once verified.</p>}
         </section>
         {recentResults.length > 0 && <section className="home-section" aria-labelledby="results-heading"><div className="home-section-heading"><div><p className="kicker">Final scores</p><h2 id="results-heading">Recent results</h2></div></div><div className="home-game-list">{recentResults.map((game) => <GameRow game={game} key={game.id} />)}</div></section>}
         {publishedStories.length > 0 && <section className="home-section" aria-labelledby="coverage-heading"><div className="home-section-heading"><div><p className="kicker">Reporting</p><h2 id="coverage-heading">Latest coverage</h2></div></div><div className="story-grid">{publishedStories.map((story) => <article className="story-card" key={story.id}><p className="eyebrow">{story.source}</p><h3>{story.articleUrl ? <a href={story.articleUrl}>{story.headline}</a> : story.headline}</h3><p>{story.summary}</p></article>)}</div></section>}
+        <section className="city-directory" aria-labelledby="cities-heading">
+          <div><p className="kicker">Explore the region</p><h2 id="cities-heading">Cities</h2></div>
+          {Object.values(cities).map((city) => <Link className="city-entry" href={`/${city.slug}/`} key={city.slug}><span><strong>{city.name}</strong><small>{city.schoolSlugs.map((slug) => schools[slug].shortName).join(" · ")}</small></span><b aria-hidden="true">→</b></Link>)}
+        </section>
       </section>
     </main>
   );
