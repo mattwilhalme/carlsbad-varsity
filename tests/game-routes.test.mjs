@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const page = await readFile(new URL("../src/app/games/[gameId]/page.tsx", import.meta.url), "utf8");
-const schedule = await readFile(new URL("../src/components/TeamPage.tsx", import.meta.url), "utf8");
+const schedule = await readFile(new URL("../src/components/ScheduleList.tsx", import.meta.url), "utf8");
 
 test("game routes statically generate every permanent ID", () => {
   assert.match(page, /games\.map\(\(game\) => \(\{ gameId: game\.id \}\)\)/);
