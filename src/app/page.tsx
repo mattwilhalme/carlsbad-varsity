@@ -31,8 +31,7 @@ function GameRow({ game }: { game: Game }) {
     <Link className="home-game-row" href={`/games/${game.id}/`} aria-label={`${school.shortName} ${team.sportName} ${game.homeAway.toLowerCase()} against ${game.opponent}, ${result}`}>
       <time dateTime={game.date}><strong>{date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</strong><span>{date.toLocaleDateString("en-US", { weekday: "short" })}</span></time>
       <span className="home-game-team"><strong>{school.shortName}</strong><small>{team.sportName}</small></span>
-      <span className="site-code" title={game.homeAway}>{game.homeAway.charAt(0)}</span>
-      <span className="home-game-opponent">{game.opponent}</span>
+      <span className="home-game-opponent">{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{game.opponent}</span>
       <strong className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{result}</strong>
       <span className="row-chevron" aria-hidden="true">›</span>
     </Link>
@@ -50,7 +49,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="home-intro"><div className="page-shell"><p className="kicker">Carlsbad high school sports</p><h1>Scores and schedules.<br />Right when you need them.</h1></div></section>
+      <section className="home-intro"><div className="page-shell"><h1>Find coverage of your team.</h1></div></section>
       <section className="page-shell home-dashboard" aria-label="Carlsbad Varsity dashboard">
         <div className="school-selectors" aria-label="Choose a school or team">
           {Object.values(schools).map((school) => (

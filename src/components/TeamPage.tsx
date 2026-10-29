@@ -1,13 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { games, schools, stories } from "@/data/site-data";
-import type { Game, GameSite, Team } from "@/domain/models";
-
-const siteCode: Record<GameSite, string> = { Home: "H", Away: "A", Neutral: "N" };
-
-function opponentInitials(name: string) {
-  return name.split(/[\s/-]+/).filter(Boolean).slice(0, 2).map((word) => word[0]).join("").toUpperCase();
-}
+import type { Game, Team } from "@/domain/models";
 
 function gameOutcome(game: Game) {
   if (game.status === "final" && game.result && game.teamScore !== undefined && game.opponentScore !== undefined) {
@@ -28,7 +21,6 @@ function gameAriaLabel(game: Game, schoolName: string) {
 
 export function TeamPage({ team }: { team: Team }) {
   const school = schools[team.schoolSlug];
-  const logoSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${school.logo}`;
   const teamGames = games.filter((game) => game.teamId === team.id);
   const teamStories = stories.filter((story) => story.teamIds.includes(team.id) && story.contentStatus === "published");
   const scheduleSource = teamGames.find((game) => game.sourceUrl)?.sourceUrl;
@@ -38,10 +30,6 @@ export function TeamPage({ team }: { team: Team }) {
     <main style={theme}>
       <section className="team-hero">
         <div className="page-shell team-identity">
-          <a className={`team-logo ${school.slug === "sage-creek" ? "team-logo-direct" : ""}`} href={school.officialUrl} target="_blank" rel="noreferrer">
-            <Image src={logoSrc} alt={`${school.name} athletics logo`} width={430} height={105} priority />
-            <span className="visually-hidden">Visit the official {school.name} website</span>
-          </a>
           <div>
             <p className="eyebrow">{school.name} · {school.mascot}</p>
             <h1>{team.sportName}</h1>
@@ -73,7 +61,7 @@ export function TeamPage({ team }: { team: Team }) {
                   return (
                     <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>
                       <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
-                      <div className="game-opponent" role="cell"><abbr className="site-code" title={game.homeAway} aria-label={game.homeAway}>{siteCode[game.homeAway]}</abbr><span className="opponent-mark" aria-hidden="true">{opponentInitials(opponentName)}</span><strong title={game.opponent}>{opponentName}</strong></div>
+                      <div className="game-opponent" role="cell"><strong title={game.opponent}>{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{opponentName}</strong></div>
                       <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
                       <span className="row-chevron" aria-hidden="true">›</span>
                     </Link>
