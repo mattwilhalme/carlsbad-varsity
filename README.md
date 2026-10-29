@@ -1,6 +1,6 @@
-# Carlsbad Varsity
+# North County Varsity
 
-V0 of a local high school sports news product for Carlsbad, California. The site is statically generated from typed local data and is structured for later integration into Carlsbad Independent.
+An independent high school sports news and schedules platform for North County San Diego, beginning with Carlsbad. The site is statically generated from typed local data and uses a city registry so new communities can be added without restructuring routes.
 
 ## Development
 

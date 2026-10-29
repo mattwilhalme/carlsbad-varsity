@@ -1,11 +1,6 @@
 import Link from "next/link";
-import { games, schools, stories, teams } from "@/data/site-data";
-import type { Game, SportSlug } from "@/domain/models";
-
-const sportLabels: Record<SportSlug, string> = {
-  "boys-basketball": "Boys’ Basketball",
-  "girls-basketball": "Girls’ Basketball",
-};
+import { cities, games, schools, stories, teams } from "@/data/site-data";
+import type { Game } from "@/domain/models";
 
 function pacificDateKey() {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -50,15 +45,11 @@ export default function Home() {
   return (
     <main>
       <section className="home-intro"><div className="page-shell"><h1>Find coverage of your team.</h1></div></section>
-      <section className="page-shell home-dashboard" aria-label="Carlsbad Varsity dashboard">
-        <div className="school-selectors" aria-label="Choose a school or team">
-          {Object.values(schools).map((school) => (
-            <div className="school-selector" key={school.slug} style={{ "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties}>
-              <Link href={`/schools/${school.slug}/`}>{school.shortName}</Link>
-              <details><summary aria-label={`Choose a ${school.shortName} sport`}><span aria-hidden="true">⌄</span></summary><div className="school-sport-menu">{school.sports.map((sport) => <Link key={sport} href={`/schools/${school.slug}/${sport}/`}>{sportLabels[sport]}</Link>)}</div></details>
-            </div>
-          ))}
-        </div>
+      <section className="page-shell home-dashboard" aria-label="North County Varsity dashboard">
+        <section className="city-directory" aria-labelledby="cities-heading">
+          <div><p className="kicker">North County San Diego</p><h2 id="cities-heading">Cities</h2></div>
+          {Object.values(cities).map((city) => <Link className="city-entry" href={`/${city.slug}/`} key={city.slug}><span><strong>{city.name}</strong><small>{city.schoolSlugs.map((slug) => schools[slug].shortName).join(" · ")}</small></span><b aria-hidden="true">→</b></Link>)}
+        </section>
         <section className="home-section" aria-labelledby="schedule-heading">
           <div className="home-section-heading"><div><p className="kicker">Schedule</p><h2 id="schedule-heading">{featuredGames.length && displayDate === today ? "Today’s games" : featuredGames.length ? "Next game day" : "No upcoming games"}</h2></div>{displayDate && <time dateTime={displayDate}>{new Date(`${displayDate}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</time>}</div>
           {featuredGames.length ? <div className="home-game-list">{featuredGames.map((game) => <GameRow game={game} key={game.id} />)}</div> : <p className="home-empty">No future games are currently published. New schedules will appear here once verified.</p>}
