@@ -78,6 +78,11 @@ function verifiedGames(teamId: string, sourceUrl: string, rows: ScheduleRow[]): 
 }
 
 export const games: Game[] = [
+  { id: "carlsbad-bbb-2026-001", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-12", time: "7:00 PM", opponent: "Oceanside", homeAway: "Home", location: "Carlsbad High School", status: "scheduled", dataStatus: "placeholder" },
+  { id: "carlsbad-gbb-2026-001", teamId: "carlsbad-girls-basketball-2025–26", date: "2026-11-14", time: "5:30 PM", opponent: "Vista", homeAway: "Away", status: "scheduled", dataStatus: "placeholder" },
+  { id: "carlsbad-bbb-2026-002", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-18", time: "6:30 PM", opponent: "La Costa Canyon", homeAway: "Home", location: "Carlsbad High School", status: "scheduled", dataStatus: "placeholder" },
+  { id: "carlsbad-bbb-2026-final-001", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-10-24", opponent: "Oceanside", homeAway: "Home", status: "final", teamScore: 66, opponentScore: 58, result: "W", dataStatus: "placeholder" },
+  { id: "carlsbad-gbb-2026-final-001", teamId: "carlsbad-girls-basketball-2025–26", date: "2026-10-22", opponent: "San Marcos", homeAway: "Away", status: "final", teamScore: 54, opponentScore: 49, result: "W", dataStatus: "placeholder" },
   ...verifiedGames(BOYS_ID, BOYS_SOURCE, [
     ["sc-bbb-2025-001", "2025-11-17", "7:00 PM", "Home", "La Jolla", 51, 44],
     ["sc-bbb-2025-002", "2025-11-19", "7:00 PM", "Home", "Army-Navy Academy", 71, 61],

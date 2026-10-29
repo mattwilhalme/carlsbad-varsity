@@ -85,3 +85,19 @@ export interface Story {
   articleUrl?: string;
   contentStatus: "placeholder" | "published";
 }
+
+export interface EditorialStory {
+  slug: string;
+  sport: string;
+  headline: string;
+  dek: string;
+  byline: string;
+  publishedAt: string;
+  image: { src: string; alt: string; credit: string };
+  relatedLinks: { label: string; href: string }[];
+  body: string[];
+  boxScore: {
+    periods: string[];
+    teams: { name: string; scores: number[]; total: number }[];
+  };
+}

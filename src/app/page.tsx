@@ -1,64 +1,31 @@
+import Image from "next/image";
 import Link from "next/link";
+import { HomeGameRail } from "@/components/HomeGameRail";
 import { SchoolNav } from "@/components/SchoolNav";
-import { cities, games, schools, stories, teams } from "@/data/site-data";
-import type { Game } from "@/domain/models";
-
-function pacificDateKey() {
-  const parts = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/Los_Angeles",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).formatToParts(new Date());
-  const value = (type: Intl.DateTimeFormatPartTypes) => parts.find((part) => part.type === type)?.value;
-  return `${value("year")}-${value("month")}-${value("day")}`;
-}
-
-function gameContext(game: Game) {
-  const team = teams.find((item) => item.id === game.teamId)!;
-  return { team, school: schools[team.schoolSlug] };
-}
-
-function GameRow({ game }: { game: Game }) {
-  const { team, school } = gameContext(game);
-  const date = new Date(`${game.date}T12:00:00`);
-  const result = game.status === "final" ? `${game.result} ${game.teamScore}–${game.opponentScore}` : game.time ?? "TBA";
-  return (
-    <Link className="home-game-row" href={`/games/${game.id}/`} aria-label={`${school.shortName} ${team.sportName} ${game.homeAway.toLowerCase()} against ${game.opponent}, ${result}`}>
-      <time dateTime={game.date}><strong>{date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</strong><span>{date.toLocaleDateString("en-US", { weekday: "short" })}</span></time>
-      <span className="home-game-team"><strong>{school.shortName}</strong><small>{team.sportName}</small></span>
-      <span className="home-game-opponent">{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{game.opponent}</span>
-      <strong className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{result}</strong>
-      <span className="row-chevron" aria-hidden="true">›</span>
-    </Link>
-  );
-}
+import { articlePath, leadStory, secondaryStories } from "@/data/editorial-data";
+import { games } from "@/data/site-data";
 
 export default function Home() {
-  const today = pacificDateKey();
-  const scheduled = games.filter((game) => game.status === "scheduled" && game.date >= today).sort((a, b) => a.date.localeCompare(b.date));
-  const nextDate = scheduled[0]?.date;
-  const displayDate = scheduled.some((game) => game.date === today) ? today : nextDate;
-  const featuredGames = scheduled.filter((game) => game.date === displayDate);
-  const recentResults = games.filter((game) => game.status === "final" && game.date <= today).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 6);
-  const publishedStories = stories.filter((story) => story.contentStatus === "published");
-
-  return (
-    <main>
-      <section className="home-intro"><div className="page-shell"><h1>Find coverage of your team.</h1></div></section>
-      <SchoolNav placement="home" />
-      <section className="page-shell home-dashboard" aria-label="North County Varsity dashboard">
-        <section className="home-section" aria-labelledby="schedule-heading">
-          <div className="home-section-heading"><div><p className="kicker">Schedule</p><h2 id="schedule-heading">{featuredGames.length && displayDate === today ? "Today’s games" : featuredGames.length ? "Next game day" : "No upcoming games"}</h2></div>{displayDate && <time dateTime={displayDate}>{new Date(`${displayDate}T12:00:00`).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</time>}</div>
-          {featuredGames.length ? <div className="home-game-list">{featuredGames.map((game) => <GameRow game={game} key={game.id} />)}</div> : <p className="home-empty">No future games are currently published. New schedules will appear here once verified.</p>}
-        </section>
-        {recentResults.length > 0 && <section className="home-section" aria-labelledby="results-heading"><div className="home-section-heading"><div><p className="kicker">Final scores</p><h2 id="results-heading">Recent results</h2></div></div><div className="home-game-list">{recentResults.map((game) => <GameRow game={game} key={game.id} />)}</div></section>}
-        {publishedStories.length > 0 && <section className="home-section" aria-labelledby="coverage-heading"><div className="home-section-heading"><div><p className="kicker">Reporting</p><h2 id="coverage-heading">Latest coverage</h2></div></div><div className="story-grid">{publishedStories.map((story) => <article className="story-card" key={story.id}><p className="eyebrow">{story.source}</p><h3>{story.articleUrl ? <a href={story.articleUrl}>{story.headline}</a> : story.headline}</h3><p>{story.summary}</p></article>)}</div></section>}
-        <section className="city-directory" aria-labelledby="cities-heading">
-          <div><p className="kicker">Explore the region</p><h2 id="cities-heading">Cities</h2></div>
-          {Object.values(cities).map((city) => <Link className="city-entry" href={`/${city.slug}/`} key={city.slug}><span><strong>{city.name}</strong><small>{city.schoolSlugs.map((slug) => schools[slug].shortName).join(" · ")}</small></span><b aria-hidden="true">→</b></Link>)}
-        </section>
+  const upcomingGames = games.filter((game) => game.status === "scheduled").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+  const recentResults = games.filter((game) => game.status === "final").sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  return <main className="editorial-home">
+    <SchoolNav placement="home" />
+    <div className="page-shell homepage-rule"><p>Independent coverage of Carlsbad and North County high school sports</p></div>
+    <div className="page-shell homepage-layout">
+      <section className="homepage-news" aria-labelledby="top-stories-heading">
+        <h1 id="top-stories-heading" className="editorial-section-title">Top Stories</h1>
+        <article className="lead-story">
+          <div className="lead-story-copy"><p className="story-label">{leadStory.sport}</p><h2><Link href={articlePath(leadStory)}>{leadStory.headline}</Link></h2><p className="story-dek">{leadStory.dek}</p><div className="read-down" aria-label="Related coverage">{leadStory.relatedLinks.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}</div><Link className="article-link" href={articlePath(leadStory)}>Read the full story <span aria-hidden="true">→</span></Link></div>
+          <Link className="lead-story-image" href={articlePath(leadStory)} aria-label={`Read ${leadStory.headline}`}><Image src={leadStory.image.src} alt={leadStory.image.alt} width={1800} height={1024} priority sizes="(max-width: 800px) 100vw, 54vw" /></Link>
+        </article>
+        <div className="secondary-story-grid">{secondaryStories.map((story) => <article className="secondary-story" key={story.slug}>
+          <Link className="secondary-story-image" href={articlePath(story)}><Image src={story.image.src} alt={story.image.alt} width={1800} height={1024} sizes="(max-width: 800px) 100vw, 32vw" /></Link><p className="story-label">{story.sport}</p><h2><Link href={articlePath(story)}>{story.headline}</Link></h2><p className="story-dek">{story.dek}</p><Link className="article-link" href={articlePath(story)}>Read the story <span aria-hidden="true">→</span></Link>
+        </article>)}</div>
       </section>
-    </main>
-  );
+      <aside className="homepage-rail" aria-label="Games and results">
+        <section id="upcoming-games" className="rail-section"><p className="rail-kicker">On the calendar</p><h2>Upcoming Games</h2><HomeGameRail games={upcomingGames} /></section>
+        <section id="recent-results" className="rail-section"><p className="rail-kicker">Final scores</p><h2>Recent Results</h2><HomeGameRail games={recentResults} result /></section>
+      </aside>
+    </div>
+  </main>;
 }
