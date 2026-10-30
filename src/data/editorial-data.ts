@@ -31,7 +31,7 @@ export const editorialStories: EditorialStory[] = [
     byline: "North County Varsity staff",
     publishedAt: "2026-10-27",
     image: { src: editorialImage, alt: "A sunny North County community ballfield beneath a clear blue sky.", credit: "Photo courtesy of Matt Wilhalme" },
-    relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "More North County scores", href: "/#recent-results" }],
+    relatedLinks: [{ label: "Explore Carlsbad coverage", href: "/carlsbad/carlsbad/" }, { label: "More North County scores", href: "/#recent-results" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Carlsbad’s opening drive established the evening’s tone with patient runs and a timely throw outside the numbers.",
       "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. The defense answered after the break, forcing consecutive short possessions and giving the offense favorable field position.",
@@ -48,7 +48,7 @@ export const editorialStories: EditorialStory[] = [
     byline: "North County Varsity staff",
     publishedAt: "2026-10-26",
     image: { src: editorialImage, alt: "A sunny North County community ballfield beneath a clear blue sky.", credit: "Photo courtesy of Matt Wilhalme" },
-    relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "Find upcoming Carlsbad games", href: "/#upcoming-games" }],
+    relatedLinks: [{ label: "Explore Carlsbad coverage", href: "/carlsbad/carlsbad/" }, { label: "Find upcoming Carlsbad games", href: "/#upcoming-games" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. The Lancers opened the meet with sharp starts and carried that confidence through the relay exchanges.",
       "Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Coaches pointed to the team’s depth as the most encouraging result of the afternoon.",

@@ -15,7 +15,7 @@ export const schools: Record<SchoolSlug, School> = {
   carlsbad: {
     slug: "carlsbad",
     citySlug: "carlsbad",
-    name: "Carlsbad High School",
+    name: "Carlsbad",
     shortName: "Carlsbad",
     mascot: "Lancers",
     officialUrl: "https://chs.carlsbadusd.net/",
@@ -26,7 +26,7 @@ export const schools: Record<SchoolSlug, School> = {
   "sage-creek": {
     slug: "sage-creek",
     citySlug: "carlsbad",
-    name: "Sage Creek High School",
+    name: "Sage Creek",
     shortName: "Sage Creek",
     mascot: "Bobcats",
     officialUrl: "https://schs.carlsbadusd.net/",
@@ -78,9 +78,9 @@ function verifiedGames(teamId: string, sourceUrl: string, rows: ScheduleRow[]): 
 }
 
 export const games: Game[] = [
-  { id: "carlsbad-bbb-2026-001", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-12", time: "7:00 PM", opponent: "Oceanside", homeAway: "Home", location: "Carlsbad High School", status: "scheduled", dataStatus: "placeholder" },
+  { id: "carlsbad-bbb-2026-001", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-12", time: "7:00 PM", opponent: "Oceanside", homeAway: "Home", location: "Carlsbad", status: "scheduled", dataStatus: "placeholder" },
   { id: "carlsbad-gbb-2026-001", teamId: "carlsbad-girls-basketball-2025–26", date: "2026-11-14", time: "5:30 PM", opponent: "Vista", homeAway: "Away", status: "scheduled", dataStatus: "placeholder" },
-  { id: "carlsbad-bbb-2026-002", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-18", time: "6:30 PM", opponent: "La Costa Canyon", homeAway: "Home", location: "Carlsbad High School", status: "scheduled", dataStatus: "placeholder" },
+  { id: "carlsbad-bbb-2026-002", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-11-18", time: "6:30 PM", opponent: "La Costa Canyon", homeAway: "Home", location: "Carlsbad", status: "scheduled", dataStatus: "placeholder" },
   { id: "carlsbad-bbb-2026-final-001", teamId: "carlsbad-boys-basketball-2025–26", date: "2026-10-24", opponent: "Oceanside", homeAway: "Home", status: "final", teamScore: 66, opponentScore: 58, result: "W", dataStatus: "placeholder" },
   { id: "carlsbad-gbb-2026-final-001", teamId: "carlsbad-girls-basketball-2025–26", date: "2026-10-22", opponent: "San Marcos", homeAway: "Away", status: "final", teamScore: 54, opponentScore: 49, result: "W", dataStatus: "placeholder" },
   ...verifiedGames(BOYS_ID, BOYS_SOURCE, [
@@ -124,16 +124,16 @@ export const games: Game[] = [
     ["sc-gbb-2025-007", "2025-12-09", "6:30 PM", "Home", "Del Norte", 44, 37],
     ["sc-gbb-2025-008", "2025-12-12", "7:00 PM", "Away", "Poway", 47, 31],
     ["sc-gbb-2025-009", "2025-12-13", "7:30 PM", "Away", "La Jolla", 64, 30, "Valley Brave Winter Classic"],
-    ["sc-gbb-2025-010", "2025-12-17", "7:30 PM", "Home", "Granite Hills", 55, 27, "Valley Brave Winter Classic · El Cajon Valley High School"],
-    ["sc-gbb-2025-011", "2025-12-19", "6:00 PM", "Home", "El Cajon Valley", 49, 36, "Valley Brave Winter Classic · El Cajon Valley High School"],
-    ["sc-gbb-2025-012", "2025-12-20", "6:00 PM", "Home", "Rancho Bernardo", 26, 46, "Valley Brave Winter Classic · El Cajon Valley High School"],
+    ["sc-gbb-2025-010", "2025-12-17", "7:30 PM", "Home", "Granite Hills", 55, 27, "Valley Brave Winter Classic · El Cajon Valley"],
+    ["sc-gbb-2025-011", "2025-12-19", "6:00 PM", "Home", "El Cajon Valley", 49, 36, "Valley Brave Winter Classic · El Cajon Valley"],
+    ["sc-gbb-2025-012", "2025-12-20", "6:00 PM", "Home", "Rancho Bernardo", 26, 46, "Valley Brave Winter Classic · El Cajon Valley"],
     ["sc-gbb-2025-013", "2025-12-27", "TBA", "Home", "Ontario", 34, 40, "Holiday Classic Tournament"],
     ["sc-gbb-2025-014", "2025-12-29", "TBA", "Home", "Wilson", 56, 72, "Holiday Classic Tournament"],
     ["sc-gbb-2025-015", "2025-12-30", "TBA", "Home", "Brea Olinda", 31, 32, "Holiday Classic Tournament"],
-    ["sc-gbb-2025-016", "2026-01-05", "3:00 PM", "Home", "Canyon Hills", 40, 43, "New Year Classic · Sweetwater High School"],
-    ["sc-gbb-2025-017", "2026-01-06", "3:00 PM", "Home", "Hilltop", 48, 22, "New Year Classic · Sweetwater High School"],
-    ["sc-gbb-2025-018", "2026-01-06", "6:30 PM", "Home", "Southwest EC", 57, 22, "New Year Classic · Sweetwater High School"],
-    ["sc-gbb-2025-019", "2026-01-08", "5:00 PM", "Home", "Santa Fe Christian", 36, 41, "New Year Classic · Sweetwater High School"],
+    ["sc-gbb-2025-016", "2026-01-05", "3:00 PM", "Home", "Canyon Hills", 40, 43, "New Year Classic · Sweetwater"],
+    ["sc-gbb-2025-017", "2026-01-06", "3:00 PM", "Home", "Hilltop", 48, 22, "New Year Classic · Sweetwater"],
+    ["sc-gbb-2025-018", "2026-01-06", "6:30 PM", "Home", "Southwest EC", 57, 22, "New Year Classic · Sweetwater"],
+    ["sc-gbb-2025-019", "2026-01-08", "5:00 PM", "Home", "Santa Fe Christian", 36, 41, "New Year Classic · Sweetwater"],
     ["sc-gbb-2025-020", "2026-01-10", "5:00 PM", "Away", "Fallbrook", 41, 49],
     ["sc-gbb-2025-021", "2026-01-13", "5:30 PM", "Away", "La Costa Canyon", 18, 52],
     ["sc-gbb-2025-022", "2026-01-16", "5:30 PM", "Away", "Rancho Buena Vista", 39, 44],

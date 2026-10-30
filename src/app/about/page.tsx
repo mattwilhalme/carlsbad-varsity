@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about North County Varsity, an independent publication covering high school sports across North County San Diego.",
+  description: "Learn about North County Varsity, an independent publication covering varsity sports across North County San Diego.",
 };
 
 const email = "mwilhalme@gmail.com";
@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="page-shell about-hero-inner">
           <p className="kicker">About North County Varsity</p>
           <h1>Local sports.<br />Local stories.<br />North County.</h1>
-          <p className="dek">Founded in 2026, North County Varsity is an independent sports publication dedicated to covering high school athletics across North County San Diego.</p>
+          <p className="dek">Founded in 2026, North County Varsity is an independent sports publication dedicated to covering varsity athletics across North County San Diego.</p>
         </div>
       </header>
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
           <section aria-labelledby="founder-heading">
             <h2 id="founder-heading">About the Founder</h2>
             <p>Founded in 2026 by journalist and Carlsbad resident Matt Wilhalme, North County Varsity grew out of a personal connection to the local school community and a desire to give student-athletes more opportunities to have their accomplishments recognized.</p>
-            <p>Matt is a journalist and digital media professional with more than 15 years of experience, including roles at the Los Angeles Times, The Arizona Republic and NFL Media. His background includes high school sports coverage, digital storytelling, audience development and building digital products that help readers discover and engage with news.</p>
+            <p>Matt is a journalist and digital media professional with more than 15 years of experience, including roles at the Los Angeles Times, The Arizona Republic and NFL Media. His background includes prep sports coverage, digital storytelling, audience development and building digital products that help readers discover and engage with news.</p>
           </section>
 
           <section aria-labelledby="independence-heading">

@@ -10,7 +10,7 @@ export default function Home() {
   const recentResults = games.filter((game) => game.status === "final").sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   return <main className="editorial-home">
     <SchoolNav placement="home" />
-    <div className="page-shell homepage-rule"><p>Independent coverage of Carlsbad and North County high school sports</p></div>
+    <div className="page-shell homepage-rule"><p>Independent coverage of Carlsbad and North County varsity sports</p></div>
     <div className="page-shell homepage-layout">
       <section className="homepage-news" aria-labelledby="top-stories-heading">
         <h1 id="top-stories-heading" className="visually-hidden">North County Varsity stories</h1>
