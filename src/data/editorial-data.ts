@@ -8,7 +8,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Carlsbad turns a composed second half into a statement win, offering an early look at how the Lancers hope to play when the season arrives.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-28",
-    image: { src: "/images/editorial/carlsbad-basketball.jpg", alt: "A high school basketball game inside the South Tama Roundhouse gym.", credit: "Crazy Head 36 / Wikimedia Commons · CC0 1.0" },
+    image: { src: "/images/editorial/north-county-field.jpg", alt: "A sunny North County community ballfield beneath a clear blue sky.", credit: "Photo courtesy of Matt Wilhalme" },
     relatedLinks: [
       { label: "Carlsbad boys’ basketball team page", href: "/carlsbad/carlsbad/boys-basketball/" },
       { label: "Carlsbad girls’ basketball team page", href: "/carlsbad/carlsbad/girls-basketball/" },
@@ -28,7 +28,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Under the lights, Carlsbad’s offense finds its rhythm while a disciplined defense closes the door late.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-27",
-    image: { src: "/images/editorial/carlsbad-football.jpg", alt: "A high school football team runs onto the field before a game.", credit: "Lborwick / Wikimedia Commons · CC BY-SA 4.0 · Cropped for display" },
+    image: { src: "/images/editorial/north-county-field.jpg", alt: "A sunny North County community ballfield beneath a clear blue sky.", credit: "Photo courtesy of Matt Wilhalme" },
     relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "More North County scores", href: "/#recent-results" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Carlsbad’s opening drive established the evening’s tone with patient runs and a timely throw outside the numbers.",
@@ -45,7 +45,7 @@ export const editorialStories: EditorialStory[] = [
     dek: "Carlsbad’s sprinters set the early pace in a bright afternoon meet built around depth, clean exchanges and personal bests.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-26",
-    image: { src: "/images/editorial/carlsbad-track-field.jpg", alt: "A track athlete sprints during an outdoor meet.", credit: "Tulane Public Relations / Wikimedia Commons · CC BY 2.0 · Cropped for display" },
+    image: { src: "/images/editorial/north-county-field.jpg", alt: "A sunny North County community ballfield beneath a clear blue sky.", credit: "Photo courtesy of Matt Wilhalme" },
     relatedLinks: [{ label: "Explore Carlsbad High School coverage", href: "/carlsbad/carlsbad/" }, { label: "Find upcoming Carlsbad games", href: "/#upcoming-games" }],
     body: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. The Lancers opened the meet with sharp starts and carried that confidence through the relay exchanges.",
