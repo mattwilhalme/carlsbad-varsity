@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Learn about North County Varsity, an independent publication covering varsity sports across North County San Diego.",
 };
 
-const email = "mwilhalme@gmail.com";
+const email = "editor@northcountyvarsity.com";
 
 export default function AboutPage() {
   return (

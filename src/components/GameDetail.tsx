@@ -72,7 +72,7 @@ export function GameDetail({ game }: { game: Game }) {
 
           <section className="game-actions" aria-label="Game source and corrections">
             {game.sourceUrl && <a href={game.sourceUrl} target="_blank" rel="noreferrer">Original schedule and result source ↗</a>}
-            <a href={`mailto:mwilhalme@gmail.com?subject=${correctionSubject}`}>Report a Correction</a>
+            <a href={`mailto:editor@northcountyvarsity.com?subject=${correctionSubject}`}>Report a Correction</a>
           </section>
         </div>
       </div>

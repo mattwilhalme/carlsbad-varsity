@@ -7,9 +7,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .page-shell, .header-inner { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .publication-header { position: sticky; top: 0; z-index: 20; color: #111; background: rgb(255 255 255 / .97); border-top: 4px solid #111; border-bottom: 1px solid var(--line); }
 .publication-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 108px; }
-.masthead { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 13px; font: 900 1.95rem/1 Georgia, "Times New Roman", serif; letter-spacing: -.035em; text-decoration: none; }
-.masthead span { color: #111; }
-.masthead i { width: 1px; height: 25px; background: var(--brand-sand); opacity: .75; }
+.masthead { display: inline-flex; flex: 0 0 auto; align-items: center; font: 900 2.35rem/.95 Georgia, "Times New Roman", serif; letter-spacing: -.055em; text-decoration: none; }
 .publication-nav { display: flex; gap: 24px; }
 .publication-nav a { padding: 42px 0 38px; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; border-bottom: 2px solid transparent; }
 .publication-nav a:hover { border-color: #111; }
@@ -232,9 +230,9 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .rail-game time { color: var(--muted); font-size: .68rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .rail-game > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .rail-game .rail-matchup { gap: 2px; }
-.rail-game strong { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: baseline; font: 900 1rem/1.08 Georgia, serif; }
+.rail-game strong { min-width: 0; font: 900 1rem/1.08 Georgia, serif; }
 .rail-game strong span { min-width: 0; text-wrap: balance; }
-.rail-game strong em { font: 900 .72rem/1 Arial, sans-serif; font-style: normal; white-space: nowrap; }
+.rail-game strong em { display: inline; margin-left: 3px; font: 900 .68rem/1 Arial, sans-serif; font-style: normal; white-space: nowrap; }
 .rail-game small { margin-top: 5px; color: var(--muted); font-size: .62rem; }
 .rail-game b { font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
@@ -245,7 +243,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .article-byline { display: flex; gap: 14px 24px; margin-top: 32px; font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; }
 .article-byline time { color: var(--muted); }
 .article-hero { margin-block: 0 54px; }
-.article-hero img { max-height: 690px; object-fit: cover; }
+.article-hero img { max-height: 690px; margin-inline: auto; object-fit: cover; object-position: center; }
 .article-hero figcaption { margin-top: 9px; color: var(--muted); font-size: .68rem; }
 .article-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(230px, .75fr); gap: clamp(50px, 8vw, 100px); align-items: start; padding-bottom: 100px; }
 .article-body { max-width: 720px; }
@@ -254,22 +252,20 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .article-copy > p:first-child::first-letter { float: left; margin: .04em .08em 0 0; font: 900 4.2rem/.78 Georgia, serif; }
 .article-box-score { padding: 22px; background: #f6f3ef; border: 1px solid var(--line); border-radius: 14px; }
 .article-box-score h2, .article-related h2, .league-standings h2 { margin: 0 0 20px; font: 900 2rem/1 Georgia, serif; }
-.article-sidebar { position: sticky; top: 200px; display: grid; gap: 42px; }
+.article-sidebar { position: sticky; top: 200px; display: grid; min-width: 0; gap: 42px; }
 .article-related { border-top: 4px solid #111; padding-top: 18px; }
 .article-related a { display: grid; gap: 7px; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; }
 .article-related span { color: var(--muted); font-size: .65rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-.article-related strong { font: 900 1.12rem/1.18 Georgia, serif; }
+.article-related strong { min-width: 0; overflow-wrap: anywhere; font: 900 1.12rem/1.18 Georgia, serif; }
 .league-standings { border-top: 4px solid #111; padding-top: 18px; }
-.league-standings table { width: 100%; border-collapse: collapse; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.league-standings table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .74rem; font-variant-numeric: tabular-nums; }
 .league-standings th, .league-standings td { padding: 9px 5px; border-bottom: 1px solid var(--line); text-align: right; }
-.league-standings th:first-child { text-align: left; }
+.league-standings th:first-child { width: 44%; overflow-wrap: anywhere; text-align: left; }
 .league-standings thead th { color: var(--muted); font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; }
 @media (max-width: 760px) {
   .page-shell, .header-inner { width: min(100% - 28px, 1180px); }
   .publication-header-inner { gap: 10px; min-height: 76px; }
-  .masthead { gap: 6px; font-size: 1.12rem; letter-spacing: -.025em; }
-  .masthead span { font-size: 1.12rem; }
-  .masthead i { display: block; height: 16px; }
+  .masthead { max-width: 220px; font-size: clamp(1.3rem, 5.5vw, 1.65rem); letter-spacing: -.045em; }
   .publication-nav { gap: 14px; }
   .publication-nav a { padding-block: 28px 25px; font-size: .59rem; letter-spacing: .02em; }
   .coverage-navigation { top: 80px; }
@@ -336,5 +332,20 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
   .article-hero figcaption { padding-inline: 14px; }
   .article-layout { gap: 54px; }
   .article-sidebar { position: static; }
+  .article-box-score { padding: 16px 12px; border-radius: 10px; }
+  .article-box-score .rail-kicker { margin-bottom: 10px; font-size: 1rem; }
+  .article-box-score h2, .article-related h2, .league-standings h2 { margin-bottom: 14px; font-size: 1.6rem; }
+  .article-box-score .period-table { font-size: .75rem; }
+  .article-box-score .period-table th, .article-box-score .period-table td { padding: 8px 7px; }
+  .article-box-score .period-table thead th { font-size: .57rem; }
+  .league-standings th, .league-standings td { padding: 8px 3px; font-size: .7rem; }
+  .article-related a { padding-block: 14px; }
+  .article-related strong { font-size: 1rem; line-height: 1.24; }
+}
+@media (max-width: 380px) {
+  .article-box-score { margin-inline: -4px; padding-inline: 8px; }
+  .article-box-score .period-table { font-size: .68rem; }
+  .article-box-score .period-table th, .article-box-score .period-table td { padding: 7px 5px; }
+  .league-standings table { font-size: .66rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

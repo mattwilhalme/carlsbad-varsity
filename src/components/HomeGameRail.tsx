@@ -11,9 +11,10 @@ export function HomeGameRail({ games, result = false }: { games: Game[]; result?
     const status = result ? `${game.result} ${game.teamScore}–${game.opponentScore}` : game.time ?? "TBA";
     const homeTeam = game.homeAway === "Away" ? game.opponent : school.name;
     const awayTeam = game.homeAway === "Away" ? school.name : game.opponent;
+    const secondTeamPrefix = game.homeAway === "Neutral" ? "" : "At ";
     return <Link href={`/games/${game.id}/`} className="rail-game" key={game.id}>
       <span className="rail-game-meta"><time dateTime={game.date}>{formatDate(game.date)}</time><b className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{status}</b></span>
-      <span className="rail-matchup"><strong><span>{homeTeam}</span><em>(1-0) vs.</em></strong><strong><span>{awayTeam}</span><em>(1-0)</em></strong><small>{team.sportName}</small></span>
+      <span className="rail-matchup"><strong><span>{awayTeam} <em>(1-0)</em></span></strong><strong><span>{secondTeamPrefix}{homeTeam} <em>(1-0)</em></span></strong><small>{team.sportName}</small></span>
     </Link>;
   })}</div>;
 }
