@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" data-scroll-behavior="smooth"><body><PublicationHeader /><SchoolNav placement="global" />{children}<footer className="footer"><div className="page-shell footer-inner"><div><strong>North County Varsity</strong><p>Independent varsity sports coverage for North County San Diego.</p></div><nav aria-label="Footer"><Link href="/about/">About Us</Link><a href="mailto:editor@northcountyvarsity.com?subject=North%20County%20Varsity%20coverage%20request">Request Coverage</a><a href="mailto:editor@northcountyvarsity.com?subject=Contact%20North%20County%20Varsity">Contact Us</a></nav></div></footer></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body><PublicationHeader /><SchoolNav placement="global" />{children}<footer className="footer"><div className="page-shell footer-inner"><div><strong>North County Varsity</strong><p>Independent varsity sports coverage for North County San Diego.</p></div><nav aria-label="Footer"><Link href="/about/">About Us</Link><Link href="/request-coverage/">Request Coverage</Link><a href="mailto:editor@northcountyvarsity.com?subject=Contact%20North%20County%20Varsity">Contact Us</a></nav></div></footer></body></html>;
 }

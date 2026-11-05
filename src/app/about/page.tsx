@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -47,9 +48,10 @@ export default function AboutPage() {
           <h2 id="contact-heading">Have a story worth sharing?</h2>
           <p>We welcome news tips, coverage requests, corrections and suggestions from athletes, families, coaches and community members.</p>
           <div className="about-actions">
-            <a className="primary-action" href={`mailto:${email}?subject=North%20County%20Varsity%20coverage%20request`}>Request Coverage</a>
+            <Link className="primary-action" href="/request-coverage/">Request Coverage</Link>
             <a href={`mailto:${email}?subject=Contact%20North%20County%20Varsity`}>Contact Us</a>
           </div>
+          <p className="prefer-email">Prefer email? <a href={`mailto:${email}?subject=North%20County%20Varsity%20coverage%20request`}>Send us a message</a>.</p>
         </aside>
       </div>
     </main>

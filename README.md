@@ -13,6 +13,8 @@ npm run dev
 
 Every push to `main` builds and deploys the static export to GitHub Pages. The workflow sets the `/carlsbad-varsity` base path used by the project site URL.
 
+The static Request Coverage page submits to the private North County Press CMS. Set `NEXT_PUBLIC_CMS_URL` at build time to override the default `https://north-county-press.onrender.com` CMS origin.
+
 ## Data policy
 
 No schedules, scores, standings, or reporting are invented. Empty states remain until verified data is supplied. Sample story cards are explicitly labeled as placeholders.

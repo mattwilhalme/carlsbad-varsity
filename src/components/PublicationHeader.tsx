@@ -8,6 +8,7 @@ export function PublicationHeader() {
           North County Varsity
         </Link>
         <nav className="publication-nav" aria-label="Publication">
+          <Link className="coverage-nav-button" href="/request-coverage/">Request Coverage</Link>
           <Link href="/about/">About Us</Link>
         </nav>
       </div>
