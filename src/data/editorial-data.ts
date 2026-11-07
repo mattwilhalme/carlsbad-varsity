@@ -6,7 +6,7 @@ export const editorialStories: EditorialStory[] = [
   {
     slug: "basketball-article-test-homepage-build-2026",
     sport: "Boys’ basketball",
-    headline: "Basketball — Article test for homepage build 2026",
+    headline: "Article test for homepage build 2026",
     dek: "Carlsbad turns a composed second half into a statement win, offering an early look at how the Lancers hope to play when the season arrives.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-28",
@@ -26,7 +26,7 @@ export const editorialStories: EditorialStory[] = [
   {
     slug: "football-article-test-homepage-build-2026",
     sport: "Football",
-    headline: "Football — Article test for homepage build 2026",
+    headline: "Another article test for homepage build",
     dek: "Under the lights, Carlsbad’s offense finds its rhythm while a disciplined defense closes the door late.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-27",
@@ -43,7 +43,7 @@ export const editorialStories: EditorialStory[] = [
   {
     slug: "track-field-article-test-homepage-build-2026",
     sport: "Track and field",
-    headline: "Track and field — Article test for homepage build 2026",
+    headline: "Yet another article test for homepage",
     dek: "Carlsbad’s sprinters set the early pace in a bright afternoon meet built around depth, clean exchanges and personal bests.",
     byline: "North County Varsity staff",
     publishedAt: "2026-10-26",

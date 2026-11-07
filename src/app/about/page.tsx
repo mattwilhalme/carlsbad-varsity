@@ -14,7 +14,6 @@ export default function AboutPage() {
       <header className="about-hero">
         <div className="page-shell about-hero-inner">
           <p className="kicker">About North County Varsity</p>
-          <h1>Local sports.<br />Local stories.<br />North County.</h1>
           <p className="dek">Founded in 2026, North County Varsity is an independent sports publication dedicated to covering varsity athletics across North County San Diego.</p>
         </div>
       </header>
@@ -23,16 +22,16 @@ export default function AboutPage() {
         <article className="about-copy">
           <section aria-labelledby="mission-heading">
             <p className="kicker">Our mission</p>
-            <h2 id="mission-heading">Shining a spotlight on local student-athletes</h2>
-            <p>Our mission is simple: to shine a spotlight on local student-athletes, celebrate their accomplishments, and make it easier for the community to follow the teams and sports that matter to them.</p>
-            <p>North County Varsity brings together schedules, scores, news and original reporting in one convenient place. We also highlight relevant coverage from other publications, connecting readers with more stories about their local teams.</p>
-            <p>We are beginning in Carlsbad and will expand thoughtfully across North County, recognizing the hard work, dedication and achievements of student-athletes in every community we cover.</p>
+            <h2 id="mission-heading">More local coverage</h2>
+            <p>Our goal is to provide professional coverage of high school sports in northern San Diego County.</p>
+            <p>North County Varsity provides schedules, scores and original reporting in one convenient place. We also highlight relevant coverage from other publications covering North County schools and athletes to connect readers with more stories about their local teams.</p>
+            <p>Starting primarily in Carlsbad, we intend to sell advertising sponsorships to underwrite freelance reporters and photographers.</p>
           </section>
 
           <section aria-labelledby="founder-heading">
             <h2 id="founder-heading">About the Founder</h2>
-            <p>Founded in 2026 by journalist and Carlsbad resident Matt Wilhalme, North County Varsity grew out of a personal connection to the local school community and a desire to give student-athletes more opportunities to have their accomplishments recognized.</p>
-            <p>Matt is a journalist and digital media professional with more than 15 years of experience, including roles at the Los Angeles Times, The Arizona Republic and NFL Media. His background includes prep sports coverage, digital storytelling, audience development and building digital products that help readers discover and engage with news.</p>
+            <p>Founded in 2026 by Matt Wilhalme, North County Varsity grew out of a personal connection to the local school community and a desire to give student-athletes more opportunities to have their accomplishments recognized.</p>
+            <p>Matt is a digital media professional with more than 15 years of experience, including roles at the Los Angeles Times, The Arizona Republic and NFL Media. His background includes prep sports coverage, digital storytelling, audience development and building digital products that help readers discover and engage with news.</p>
           </section>
 
           <section aria-labelledby="independence-heading">
