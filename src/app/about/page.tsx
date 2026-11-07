@@ -24,8 +24,9 @@ export default function AboutPage() {
             <p className="kicker">Our mission</p>
             <h2 id="mission-heading">More local coverage</h2>
             <p>Our goal is to provide professional coverage of high school sports in northern San Diego County.</p>
-            <p>North County Varsity provides schedules, scores and original reporting in one convenient place. We also highlight relevant coverage from other publications covering North County schools and athletes to connect readers with more stories about their local teams.</p>
-            <p>Starting primarily in Carlsbad, we intend to sell advertising sponsorships to underwrite freelance reporters and photographers.</p>
+            <p>North County Varsity brings together schedules, scores and original reporting in one convenient place. We also highlight relevant coverage from other publications covering North County schools, connecting readers with more stories about their schools.</p>
+            <p>Launching with a focus on Carlsbad, North County Varsity aims to build a sustainable model for local sports journalism through advertising and sponsorships that help underwrite original reporting, including coverage from freelancer writers and photographers.</p>
+            <p>Our editorial coverage remains indepedent of our advertisers and sponsors.</p>
           </section>
 
           <section aria-labelledby="founder-heading">
