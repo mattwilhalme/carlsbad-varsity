@@ -15,7 +15,7 @@ export default function RequestCoveragePage() {
         <div className="page-shell request-coverage-hero-inner">
           <p className="kicker">North County Varsity</p>
           <h1>Request Coverage</h1>
-          <p className="dek">Tell us about a game, event, athlete or local sports story our editorial team should know about.</p>
+          <p className="dek">Tell us about an athlete, coach or or local sports story our editorial team should know about.</p>
         </div>
       </header>
 

@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://mattwilhalme.github.io/carlsbad-varsity/"),
   title: { default: "North County Varsity", template: "%s | North County Varsity" },
-  description: "Varsity sports schedules, scores and coverage for North County San Diego.",
+  description: "High school sports schedules, scores and coverage for North County San Diego.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
