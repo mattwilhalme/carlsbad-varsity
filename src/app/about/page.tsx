@@ -13,8 +13,8 @@ export default function AboutPage() {
     <main>
       <header className="about-hero">
         <div className="page-shell about-hero-inner">
-          <p className="kicker">About North County Varsity</p>
-          <p className="dek">Founded in 2026, North County Varsity is an independent sports publication dedicated to covering varsity athletics across North County San Diego.</p>
+          <h1>About North County Varsity</h1>
+          <h3>Founded in 2026, North County Varsity is an independent sports publication dedicated to covering varsity athletics across North County San Diego.</h3>
         </div>
       </header>
 
