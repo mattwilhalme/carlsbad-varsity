@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { TeamPage } from "@/components/TeamPage";
 import { canonicalUrl, cities, getTeam, schoolPath, schools, teams } from "@/data/site-data";
 import type { CitySlug } from "@/domain/models";
+import { getCMSSchedule } from "@/data/cms-schedules";
 
 export function generateStaticParams() { return teams.map((team) => ({ citySlug: schools[team.schoolSlug].citySlug, schoolSlug: team.schoolSlug, sportSlug: team.sportSlug })); }
 export const dynamicParams = false;
@@ -19,5 +20,6 @@ export default async function TeamRoute({ params }: { params: Promise<{ citySlug
   const city = cities[citySlug as CitySlug];
   const team = getTeam(schoolSlug, sportSlug);
   if (!city || !team || schools[team.schoolSlug].citySlug !== city.slug) notFound();
-  return <TeamPage team={team} />;
+  const cmsSchedules = await getCMSSchedule(team);
+  return <TeamPage cmsSchedules={cmsSchedules} team={team} />;
 }

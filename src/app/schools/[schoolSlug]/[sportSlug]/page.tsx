@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TeamPage } from "@/components/TeamPage";
 import { canonicalUrl, getTeam, schoolPath, schools, teams } from "@/data/site-data";
+import { getCMSSchedule } from "@/data/cms-schedules";
 
 export function generateStaticParams() { return teams.map((team) => ({ schoolSlug: team.schoolSlug, sportSlug: team.sportSlug })); }
 export const dynamicParams = false;
@@ -17,5 +18,6 @@ export default async function Page({ params }: { params: Promise<{ schoolSlug: s
   const { schoolSlug, sportSlug } = await params;
   const team = getTeam(schoolSlug, sportSlug);
   if (!team) notFound();
-  return <TeamPage team={team} />;
+  const cmsSchedules = await getCMSSchedule(team);
+  return <TeamPage cmsSchedules={cmsSchedules} team={team} />;
 }

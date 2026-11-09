@@ -27,7 +27,7 @@ export interface Team {
   sportSlug: SportSlug;
   sportName: string;
   level: "Varsity";
-  season: "2025" | "2025–26";
+  season: string;
 }
 
 export type GameSite = "Home" | "Away" | "Neutral";
@@ -73,6 +73,7 @@ export interface Game {
   dataStatus: "placeholder" | "verified";
   deletedAt?: string;
   updatedAt?: string;
+  cmsManaged?: boolean;
 }
 
 export interface Story {

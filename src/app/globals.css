@@ -94,6 +94,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .sport-nav a[aria-current="page"] { border-color: var(--team-primary); color: var(--team-primary); }
 .editorial-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 36px; width: min(900px, calc(100% - 40px)); padding-block: 34px 72px; }
 .section-heading { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+.season-heading select { min-width: 130px; margin: 6px 0 12px; padding: 7px 34px 7px 10px; border: 1px solid var(--line); border-radius: 0; background: white; color: inherit; font: 800 .82rem/1.2 inherit; }
 .status-label, .placeholder-badge { display: inline-block; padding: 6px 8px; background: #eee; color: #444; font-size: .66rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
 .empty-state { padding: 46px; background: var(--wash); border: 1px solid var(--line); }
 .empty-state.compact { padding: 28px; }

@@ -13,10 +13,11 @@ function gameOutcome(game: Game) {
 
 function gameAriaLabel(game: Game, schoolName: string) {
   const matchup = `${schoolName} ${game.homeAway === "Away" ? "at" : game.homeAway === "Home" ? "versus" : "against"} ${game.opponent}`;
+  const action = game.cmsManaged ? "" : " Open game details.";
   if (game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined) {
-    return `${matchup}, final score ${game.teamScore} to ${game.opponentScore}. Open game details.`;
+    return `${matchup}, final score ${game.teamScore} to ${game.opponentScore}.${action}`;
   }
-  return `${matchup}, ${game.status}, ${game.time || "time to be determined"}. Open game details.`;
+  return `${matchup}, ${game.status}, ${game.time || "time to be determined"}.${action}`;
 }
 
 export function ScheduleList({ schedule, school, showSport = false }: { schedule: Game[]; school: School; showSport?: boolean }) {
@@ -38,14 +39,15 @@ export function ScheduleList({ schedule, school, showSport = false }: { schedule
         <div role="rowgroup">{schedule.map((game) => {
           const team = teams.find((item) => item.id === game.teamId);
           const opponentName = game.opponentShortName || game.opponent;
-          return (
-            <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>
+          const contents = <>
               <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
               <div className="game-opponent" role="cell"><strong title={game.opponent}>{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{opponentName}</strong>{showSport && team && <span>{team.sportName}</span>}</div>
               <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
-              <span className="row-chevron" aria-hidden="true">›</span>
-            </Link>
-          );
+              <span className="row-chevron" aria-hidden="true">{game.cmsManaged ? "" : "›"}</span>
+            </>;
+          return game.cmsManaged
+            ? <div className="schedule-row" role="row" key={game.id} aria-label={gameAriaLabel(game, school.shortName)}>{contents}</div>
+            : <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>{contents}</Link>;
         })}</div>
       </div>
       {sources.length > 0 && <p className="source-note">Schedule and results source{sources.length > 1 ? "s" : ""}: {sources.map((source, index) => <span key={source.url}>{index > 0 && " · "}<a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></span>)}.</p>}
