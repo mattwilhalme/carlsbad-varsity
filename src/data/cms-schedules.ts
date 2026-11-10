@@ -5,6 +5,7 @@ interface CMSGame {
   date: string;
   time?: string;
   opponent: string;
+  eventTitle?: string;
   homeAway: GameSite;
   location?: string;
   status: GameStatus;

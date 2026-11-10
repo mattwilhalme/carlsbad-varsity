@@ -56,6 +56,7 @@ export interface Game {
   date: string;
   time?: string;
   opponent: string;
+  eventTitle?: string;
   opponentShortName?: string;
   opponentLogo?: string;
   homeAway: GameSite;

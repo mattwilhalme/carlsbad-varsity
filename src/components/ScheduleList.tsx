@@ -8,7 +8,7 @@ function gameOutcome(game: Game) {
   }
   if (game.status === "postponed") return <><strong>Postponed</strong><span>New date TBD</span></>;
   if (game.status === "canceled") return <><strong>Canceled</strong><span>Not being played</span></>;
-  return <><strong>{game.time || "TBD"}</strong><span>Scheduled</span></>;
+  return <><strong>{game.time || "TBD"}</strong>{!game.cmsManaged && <span>Scheduled</span>}</>;
 }
 
 function gameAriaLabel(game: Game, schoolName: string) {
@@ -41,7 +41,7 @@ export function ScheduleList({ schedule, school, showSport = false }: { schedule
           const opponentName = game.opponentShortName || game.opponent;
           const contents = <>
               <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
-              <div className="game-opponent" role="cell"><strong title={game.opponent}>{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{opponentName}</strong>{showSport && team && <span>{team.sportName}</span>}</div>
+              <div className="game-opponent" role="cell">{game.eventTitle && <span className="event-title">{game.eventTitle}</span>}<strong title={game.opponent}>{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{opponentName}</strong>{showSport && team && <span>{team.sportName}</span>}</div>
               <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
               <span className="row-chevron" aria-hidden="true">{game.cmsManaged ? "" : "›"}</span>
             </>;
