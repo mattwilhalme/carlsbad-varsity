@@ -88,19 +88,22 @@ export interface Story {
   contentStatus: "placeholder" | "published";
 }
 
+import type { PublicArticleBlock } from "@/data/article-contract";
+
 export interface EditorialStory {
+  id?: string;
   slug: string;
   sport: string;
   headline: string;
   dek: string;
   byline: string;
   publishedAt: string;
-  image: { src: string; alt: string; credit: string };
+  image: { src: string; alt: string; credit: string; caption?: string; width?: number; height?: number };
   relatedLinks: { label: string; href: string }[];
-  body: string[];
-  boxScore: {
+  body: string[] | PublicArticleBlock[];
+  boxScore?: {
     periods: string[];
     teams: { name: string; scores: number[]; total: number }[];
   };
-  standings: { team: string; league: string; overall: string }[];
+  standings?: { team: string; league: string; overall: string }[];
 }

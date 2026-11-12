@@ -10,7 +10,8 @@
     "test": "node --test tests/*.test.mjs",
     "verify:static": "node scripts/verify-static-game-routes.mjs",
     "typecheck": "tsc --noEmit",
-    "check:cms": "node scripts/check-cms-health.mjs"
+    "check:cms": "node scripts/check-cms-health.mjs",
+    "sync:articles": "node scripts/sync-cms-articles.mjs"
   },
   "dependencies": {
     "next": "16.4.3",

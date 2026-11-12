@@ -281,6 +281,10 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .article-body { max-width: 720px; }
 .article-copy { margin-top: 52px; }
 .article-copy > p { margin: 0 0 1.45em; font: 1.15rem/1.78 Georgia, "Times New Roman", serif; }
+.article-copy > h2, .article-copy > h3, .article-copy > h4 { margin: 1.6em 0 .6em; font-family: Georgia, "Times New Roman", serif; line-height: 1.1; }
+.article-copy > blockquote { margin: 1.6em 0; padding-left: 22px; border-left: 4px solid var(--brand-blue); font: italic 1.2rem/1.65 Georgia, serif; }
+.article-copy > ul, .article-copy > ol { margin: 0 0 1.45em; padding-left: 1.5em; font: 1.1rem/1.7 Georgia, serif; }
+.article-copy code { padding: .1em .25em; background: var(--wash); font-size: .9em; }
 .article-copy > p:first-child::first-letter { float: left; margin: .04em .08em 0 0; font: 900 4.2rem/.78 Georgia, serif; }
 .article-box-score { padding: 22px; background: #f6f3ef; border: 1px solid var(--line); border-radius: 14px; }
 .article-box-score h2, .article-related h2, .league-standings h2 { margin: 0 0 20px; font: 900 2rem/1 Georgia, serif; }

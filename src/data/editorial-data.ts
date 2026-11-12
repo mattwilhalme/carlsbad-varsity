@@ -1,4 +1,6 @@
 import type { EditorialStory } from "@/domain/models";
+import type { PublicArticlesSnapshotV1 } from "@/data/article-contract";
+import publicArticleSnapshot from "@/data/generated/articles.v1.json";
 
 const editorialImage = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/editorial/north-county-field.jpg`;
 
@@ -59,7 +61,35 @@ export const editorialStories: EditorialStory[] = [
   },
 ];
 
-export const leadStory = editorialStories[0];
-export const secondaryStories = editorialStories.slice(1);
-export function getEditorialStory(slug: string) { return editorialStories.find((story) => story.slug === slug); }
+const cmsStories: EditorialStory[] = (publicArticleSnapshot as PublicArticlesSnapshotV1).articles.map((article) => ({
+  id: `cms:${article.id}`,
+  slug: article.slug,
+  sport: article.relationships.sports.map((sport) => sport.name).join(", ") || "North County Varsity",
+  headline: article.headline,
+  dek: article.summary,
+  byline: article.authors.map((author) => author.name).join(" and ") || "North County Varsity staff",
+  publishedAt: article.publishedAt,
+  image: article.leadImage
+    ? {
+        src: article.leadImage.url,
+        alt: article.leadImage.alt,
+        credit: article.leadImage.credit || article.leadImage.caption || "",
+        caption: article.leadImage.caption,
+        width: article.leadImage.width,
+        height: article.leadImage.height,
+      }
+    : { src: editorialImage, alt: "A North County athletics field.", credit: "" },
+  relatedLinks: article.relationships.schools.map((school) => ({
+    label: `More ${school.name} coverage`,
+    href: `/carlsbad/${school.slug}/`,
+  })),
+  body: article.body,
+}));
+
+const legacySlugs = new Set(editorialStories.map((story) => story.slug));
+export const publishedStories = [...editorialStories, ...cmsStories.filter((story) => !legacySlugs.has(story.slug))]
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+export const leadStory = publishedStories[0];
+export const secondaryStories = publishedStories.slice(1);
+export function getEditorialStory(slug: string) { return publishedStories.find((story) => story.slug === slug); }
 export function articlePath(story: EditorialStory) { return `/articles/${story.slug}/`; }
