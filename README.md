@@ -39,6 +39,10 @@ Stop the frontend with Ctrl-C. In the North County Press repository, stop Payloa
 
 Only public origins belong in this frontend. Payload secrets, database URLs, storage credentials, and CMS user credentials remain server-side and differ between development and production.
 
+## Draft previews
+
+With both development servers running, use **Preview** from a Payload article. Payload opens the static-compatible `/preview/` frontend route, which sends a short-lived, slug-bound bearer token to the CMS preview endpoint and renders the draft through the same article presentation component as published stories. Preview content is never written to the generated public bundle. Treat preview URLs as private while they remain valid.
+
 ## GitHub Pages
 
 Every push to `main` builds and deploys the static export to GitHub Pages. The workflow sets the `/carlsbad-varsity` base path used by the project site URL.

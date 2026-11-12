@@ -35,3 +35,10 @@ test("article rendering never injects CMS HTML", async () => {
   const renderer = await readFile(new URL("../src/components/ArticleBody.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(renderer, /dangerouslySetInnerHTML/);
 });
+
+test("published and preview routes share one article presentation", async () => {
+  const published = await readFile(new URL("../src/app/articles/[slug]/page.tsx", import.meta.url), "utf8");
+  const preview = await readFile(new URL("../src/app/preview/PreviewClient.tsx", import.meta.url), "utf8");
+  assert.match(published, /ArticlePresentation/);
+  assert.match(preview, /ArticlePresentation/);
+});

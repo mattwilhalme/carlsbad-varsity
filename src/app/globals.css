@@ -271,6 +271,10 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .rail-game b { font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* Demo article */
+.preview-banner { display: flex; justify-content: center; gap: 10px 24px; padding: 12px 20px; color: white; background: #8b2525; font-size: .75rem; letter-spacing: .03em; }
+.preview-banner strong { text-transform: uppercase; }
+.preview-state { min-height: 60vh; padding: 100px 20px; text-align: center; }
+.preview-state h1 { font: 900 clamp(2.5rem, 6vw, 5rem)/1 Georgia, serif; }
 .article-header { max-width: 940px; padding-block: clamp(52px, 8vw, 94px) 42px; }
 .article-header h1 { max-width: 780px; margin: 0 0 24px; font: 900 clamp(2.25rem, 3.6vw, 3.4rem)/.98 Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
 .article-dek { max-width: 800px; margin: 0; color: var(--muted); font: clamp(1.2rem, 2vw, 1.55rem)/1.5 Georgia, serif; }
