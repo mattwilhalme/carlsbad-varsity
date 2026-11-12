@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 export const CONTRACT_VERSION = "north-county-varsity.articles.v1";
+export const HOMEPAGE_CONTRACT_VERSION = "north-county-varsity.homepage.v1";
 
 export function validateSnapshot(value) {
   if (!value || value.version !== CONTRACT_VERSION || !Array.isArray(value.articles)) throw new Error("Unsupported CMS article contract");
@@ -19,17 +20,44 @@ export function validateSnapshot(value) {
   return value;
 }
 
+export function validateHomepageSnapshot(value, articleSnapshot) {
+  if (!value || value.version !== HOMEPAGE_CONTRACT_VERSION || !(value.homepage === null || typeof value.homepage === "object")) {
+    throw new Error("Unsupported CMS homepage contract");
+  }
+  if (value.homepage === null) return value;
+
+  const publishedIds = new Set(articleSnapshot.articles.map((article) => article.id));
+  const homepageIds = new Set();
+  for (const story of value.homepage.stories || []) {
+    if (!story || !publishedIds.has(story.articleId) || typeof story.slug !== "string") throw new Error("Invalid public homepage story");
+    if (homepageIds.has(story.articleId)) throw new Error(`Duplicate homepage article: ${story.slug}`);
+    homepageIds.add(story.articleId);
+    const readDownIds = new Set();
+    for (const readDown of story.readDowns || []) {
+      if (!publishedIds.has(readDown.id) || readDown.id === story.articleId || readDownIds.has(readDown.id)) {
+        throw new Error(`Invalid homepage read-down: ${readDown.slug}`);
+      }
+      readDownIds.add(readDown.id);
+    }
+  }
+  return value;
+}
+
 export async function syncArticles({ cmsOrigin = process.env.CMS_PUBLIC_URL || "http://localhost:3000" } = {}) {
-  const endpoint = new URL("/api/public-content/v1/articles", cmsOrigin);
-  const response = await fetch(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15_000) });
-  if (!response.ok) throw new Error(`CMS returned ${response.status}`);
-  const snapshot = validateSnapshot(await response.json());
-  const output = resolve("src/data/generated/articles.v1.json");
+  const articleEndpoint = new URL("/api/public-content/v1/articles", cmsOrigin);
+  const homepageEndpoint = new URL("/api/public-content/v1/homepage", cmsOrigin);
+  const [articleResponse, homepageResponse] = await Promise.all([articleEndpoint, homepageEndpoint].map((endpoint) =>
+    fetch(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15_000) })));
+  if (!articleResponse.ok || !homepageResponse.ok) throw new Error(`CMS returned articles=${articleResponse.status}, homepage=${homepageResponse.status}`);
+  const articles = validateSnapshot(await articleResponse.json());
+  const homepage = validateHomepageSnapshot(await homepageResponse.json(), articles);
+  const snapshot = { articles, homepage };
+  const output = resolve("src/data/generated/public-content.v1.json");
   const temporary = `${output}.tmp`;
   await mkdir(dirname(output), { recursive: true });
   await writeFile(temporary, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
   await rename(temporary, output);
-  console.log(`Synced ${snapshot.articles.length} published article(s) from ${endpoint}`);
+  console.log(`Synced ${articles.articles.length} published article(s) and ${homepage.homepage ? 1 : 0} homepage from ${cmsOrigin}`);
   return snapshot;
 }
 

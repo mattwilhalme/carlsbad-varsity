@@ -24,7 +24,7 @@ npm run sync:articles
 npm run dev
 ```
 
-The sync replaces only `src/data/generated/articles.v1.json`, validates unique stable IDs and slugs, and never sends credentials. Existing hand-authored stories remain in place; CMS records with a colliding legacy slug are ignored rather than overwriting them. Re-running the command applies updates without creating duplicates. Drafts and private CMS fields are excluded by the server contract.
+The sync validates both public contracts and atomically replaces `src/data/generated/public-content.v1.json`; it never sends credentials. A published Homepage configuration controls CMS story order, roles, display overrides, thumbnails, and read-downs. Existing hand-authored stories remain after configured CMS entries, and the chronological fallback remains active when no Homepage configuration is published. Re-running the command applies updates without creating duplicates. Drafts and private CMS fields are excluded by the server contracts.
 
 Stop the frontend with Ctrl-C. In the North County Press repository, stop Payload and PostgreSQL with `docker compose down`; ordinary shutdown preserves its named database volume and local media.
 

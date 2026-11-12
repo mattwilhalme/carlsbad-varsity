@@ -36,8 +36,36 @@ export interface PublicArticleV1 {
   };
 }
 
+export type PublicMediaV1 = PublicArticleV1["leadImage"];
+
 export interface PublicArticlesSnapshotV1 {
   version: "north-county-varsity.articles.v1";
   generatedAt: string;
   articles: PublicArticleV1[];
+}
+
+export interface PublicHomepageSnapshotV1 {
+  version: "north-county-varsity.homepage.v1";
+  generatedAt: string;
+  homepage: null | {
+    id: string;
+    title: string;
+    publication: { id: string; slug: string; name: string } | null;
+    updatedAt: string;
+    stories: {
+      articleId: string;
+      slug: string;
+      role: "lead" | "featured" | "standard";
+      headline: string;
+      summary: string;
+      kicker: string;
+      thumbnail: PublicMediaV1;
+      readDowns: { id: string; slug: string; headline: string }[];
+    }[];
+  };
+}
+
+export interface PublicContentBundleV1 {
+  articles: PublicArticlesSnapshotV1;
+  homepage: PublicHomepageSnapshotV1;
 }

@@ -248,6 +248,8 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .lead-story-image img { aspect-ratio: 1.42 / 1; }
 .secondary-story-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; padding-top: 34px; }
 .secondary-story { min-width: 0; }
+.secondary-story[data-role="featured"] { grid-column: 1 / -1; }
+.secondary-story[data-role="featured"] .secondary-story-image img { aspect-ratio: 2.2 / 1; }
 .secondary-story-image { margin-bottom: 18px; }
 .secondary-story-image img { aspect-ratio: 1.65 / 1; }
 .secondary-story h2 { margin: 0 0 12px; font: 900 clamp(1.55rem, 2.2vw, 2.15rem)/1.05 Georgia, "Times New Roman", serif; letter-spacing: -.035em; }

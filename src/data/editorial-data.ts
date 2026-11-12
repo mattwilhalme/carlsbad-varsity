@@ -1,6 +1,6 @@
 import type { EditorialStory } from "@/domain/models";
-import type { PublicArticlesSnapshotV1 } from "@/data/article-contract";
-import publicArticleSnapshot from "@/data/generated/articles.v1.json";
+import type { PublicContentBundleV1 } from "@/data/article-contract";
+import publicContent from "@/data/generated/public-content.v1.json";
 
 const editorialImage = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/editorial/north-county-field.jpg`;
 
@@ -61,7 +61,8 @@ export const editorialStories: EditorialStory[] = [
   },
 ];
 
-const cmsStories: EditorialStory[] = (publicArticleSnapshot as PublicArticlesSnapshotV1).articles.map((article) => ({
+const publicContentSnapshot = publicContent as PublicContentBundleV1;
+const cmsStories: EditorialStory[] = publicContentSnapshot.articles.articles.map((article) => ({
   id: `cms:${article.id}`,
   slug: article.slug,
   sport: article.relationships.sports.map((sport) => sport.name).join(", ") || "North County Varsity",
@@ -89,7 +90,35 @@ const cmsStories: EditorialStory[] = (publicArticleSnapshot as PublicArticlesSna
 const legacySlugs = new Set(editorialStories.map((story) => story.slug));
 export const publishedStories = [...editorialStories, ...cmsStories.filter((story) => !legacySlugs.has(story.slug))]
   .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-export const leadStory = publishedStories[0];
-export const secondaryStories = publishedStories.slice(1);
+
+const cmsById = new Map(cmsStories.map((story) => [story.id?.replace(/^cms:/, ""), story]));
+const configuredStories = publicContentSnapshot.homepage.homepage?.stories.flatMap((entry): EditorialStory[] => {
+  const story = cmsById.get(entry.articleId);
+  if (!story) return [];
+  return [{
+    ...story,
+    headline: entry.headline,
+    dek: entry.summary,
+    homepageRole: entry.role,
+    kicker: entry.kicker || undefined,
+    image: entry.thumbnail
+      ? {
+          src: entry.thumbnail.url,
+          alt: entry.thumbnail.alt,
+          credit: entry.thumbnail.credit || entry.thumbnail.caption || "",
+          caption: entry.thumbnail.caption,
+          width: entry.thumbnail.width,
+          height: entry.thumbnail.height,
+        }
+      : story.image,
+    readDowns: entry.readDowns.map((item) => ({ label: item.headline, href: `/articles/${item.slug}/` })),
+  }];
+}) ?? [];
+const configuredSlugs = new Set(configuredStories.map((story) => story.slug));
+export const homepageStories = configuredStories.length
+  ? [...configuredStories, ...editorialStories.filter((story) => !configuredSlugs.has(story.slug))]
+  : publishedStories;
+export const leadStory = homepageStories.find((story) => story.homepageRole === "lead") ?? homepageStories[0];
+export const secondaryStories = homepageStories.filter((story) => story.slug !== leadStory.slug);
 export function getEditorialStory(slug: string) { return publishedStories.find((story) => story.slug === slug); }
 export function articlePath(story: EditorialStory) { return `/articles/${story.slug}/`; }

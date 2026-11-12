@@ -101,6 +101,9 @@ export interface EditorialStory {
   image: { src: string; alt: string; credit: string; caption?: string; width?: number; height?: number };
   relatedLinks: { label: string; href: string }[];
   body: string[] | PublicArticleBlock[];
+  homepageRole?: "lead" | "featured" | "standard";
+  kicker?: string;
+  readDowns?: { label: string; href: string }[];
   boxScore?: {
     periods: string[];
     teams: { name: string; scores: number[]; total: number }[];
