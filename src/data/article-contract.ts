@@ -14,6 +14,7 @@ export interface PublicArticleV1 {
   id: string;
   slug: string;
   headline: string;
+  subheadline: string;
   summary: string;
   authors: { id: string; name: string; slug: string; title?: string }[];
   body: PublicArticleBlock[];

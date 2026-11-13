@@ -95,6 +95,7 @@ export interface EditorialStory {
   slug: string;
   sport: string;
   headline: string;
+  subheadline?: string;
   dek: string;
   byline: string;
   publishedAt: string;

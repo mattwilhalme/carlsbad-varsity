@@ -9,6 +9,7 @@ export function publicArticleToStory(article: PublicArticleV1): EditorialStory {
     slug: article.slug,
     sport: article.relationships.sports.map((sport) => sport.name).join(", ") || "North County Varsity",
     headline: article.headline,
+    subheadline: article.subheadline || undefined,
     dek: article.summary,
     byline: article.authors.map((author) => author.name).join(" and ") || "North County Varsity staff",
     publishedAt: article.publishedAt || article.updatedAt,

@@ -36,6 +36,12 @@ test("article rendering never injects CMS HTML", async () => {
   assert.doesNotMatch(renderer, /dangerouslySetInnerHTML/);
 });
 
+test("article presentation uses the optional subheadline instead of the listing summary", async () => {
+  const presentation = await readFile(new URL("../src/components/ArticlePresentation.tsx", import.meta.url), "utf8");
+  assert.match(presentation, /story\.subheadline/);
+  assert.doesNotMatch(presentation, /className="article-dek">\{story\.dek\}/);
+});
+
 test("published and preview routes share one article presentation", async () => {
   const published = await readFile(new URL("../src/app/articles/[slug]/page.tsx", import.meta.url), "utf8");
   const preview = await readFile(new URL("../src/app/preview/PreviewClient.tsx", import.meta.url), "utf8");
