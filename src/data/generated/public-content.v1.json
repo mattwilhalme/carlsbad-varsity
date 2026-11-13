@@ -1,97 +1,22 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-12T22:14:12.870Z",
-    "articles": [
-      {
-        "id": "61",
-        "slug": "phase-2-local-publishing-test",
-        "headline": "Phase 2 local publishing test",
-        "summary": "A published test story proving that versioned Payload content reaches the local static frontend safely.",
-        "authors": [
-          {
-            "id": "19",
-            "name": "North County Varsity Test Staff",
-            "slug": "north-county-varsity-test-staff",
-            "title": "Staff writer"
-          }
-        ],
-        "body": [
-          {
-            "type": "heading",
-            "level": 2,
-            "children": [
-              {
-                "type": "text",
-                "text": "A versioned local publishing path",
-                "formats": []
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "type": "text",
-                "text": "This published Payload article verifies the ",
-                "formats": []
-              },
-              {
-                "type": "text",
-                "text": "North County Varsity",
-                "formats": [
-                  "bold"
-                ]
-              },
-              {
-                "type": "text",
-                "text": " Phase 2 synchronization and safe Lexical rendering workflow.",
-                "formats": []
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "type": "text",
-                "text": "Only published, allowlisted fields reach the static frontend snapshot.",
-                "formats": []
-              }
-            ]
-          }
-        ],
-        "leadImage": null,
-        "publishedAt": "2026-11-12T17:19:05.157Z",
-        "updatedAt": "2026-11-12T17:19:05.177Z",
-        "relationships": {
-          "publication": {
-            "id": "1",
-            "slug": "north-county-varsity",
-            "name": "North County Varsity"
-          },
-          "schools": [
-            {
-              "id": "1",
-              "slug": "carlsbad",
-              "name": "Carlsbad"
-            }
-          ],
-          "sports": [
-            {
-              "id": "1",
-              "slug": "boys-basketball",
-              "name": "Boys’ Basketball"
-            }
-          ],
-          "teams": []
-        }
-      }
-    ]
+    "generatedAt": "2026-11-13T21:58:06.425Z",
+    "articles": []
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-12T22:14:12.852Z",
-    "homepage": null
+    "generatedAt": "2026-11-13T21:58:06.461Z",
+    "homepage": {
+      "id": "1",
+      "title": "North County Varsity Homepage",
+      "publication": {
+        "id": "1",
+        "slug": "north-county-varsity",
+        "name": "North County Varsity"
+      },
+      "updatedAt": "2026-11-13T04:01:48.611Z",
+      "stories": []
+    }
   }
 }

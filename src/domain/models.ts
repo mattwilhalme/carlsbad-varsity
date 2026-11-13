@@ -77,17 +77,6 @@ export interface Game {
   cmsManaged?: boolean;
 }
 
-export interface Story {
-  id: string;
-  teamIds: string[];
-  headline: string;
-  summary: string;
-  source: string;
-  publishedAt?: string;
-  articleUrl?: string;
-  contentStatus: "placeholder" | "published";
-}
-
 import type { PublicArticleBlock } from "@/data/article-contract";
 
 export interface EditorialStory {

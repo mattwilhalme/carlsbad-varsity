@@ -14,13 +14,13 @@ export default function Home() {
     <div className="page-shell homepage-layout">
       <section className="homepage-news" aria-labelledby="top-stories-heading">
         <h1 id="top-stories-heading" className="visually-hidden">North County Varsity stories</h1>
-        <article className="lead-story">
+        {leadStory ? <><article className="lead-story">
           <div className="lead-story-copy">{leadStory.kicker ? <p className="story-label">{leadStory.kicker}</p> : null}<h2><Link href={articlePath(leadStory)}>{leadStory.headline}</Link></h2><p className="story-dek">{leadStory.dek}</p>{leadStory.readDowns?.length ? <div className="read-down">{leadStory.readDowns.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}</div> : null}</div>
           <Link className="lead-story-image" href={articlePath(leadStory)} aria-label={`Read ${leadStory.headline}`}><StoryImage src={leadStory.image.src} alt={leadStory.image.alt} width={leadStory.image.width} height={leadStory.image.height} priority sizes="(max-width: 800px) 100vw, 54vw" /></Link>
         </article>
         <div className="secondary-story-grid">{secondaryStories.map((story) => <article className="secondary-story" data-role={story.homepageRole} key={story.slug}>
           <Link className="secondary-story-image" href={articlePath(story)}><StoryImage src={story.image.src} alt={story.image.alt} width={story.image.width} height={story.image.height} sizes="(max-width: 800px) 100vw, 32vw" /></Link><p className="story-label">{story.kicker || story.sport}</p><h2><Link href={articlePath(story)}>{story.headline}</Link></h2><p className="story-dek">{story.dek}</p>{story.readDowns?.length ? <div className="read-down">{story.readDowns.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}</div> : null}
-        </article>)}</div>
+        </article>)}</div></> : <div className="homepage-empty"><h2>No stories published yet</h2><p>North County Varsity coverage will appear here when it is published.</p></div>}
       </section>
       <aside className="homepage-rail" aria-label="Games and results">
         <section id="upcoming-games" className="rail-section" aria-labelledby="calendar-heading"><p id="calendar-heading" className="rail-kicker">On the Calendar</p><HomeGameRail games={upcomingGames} /></section>

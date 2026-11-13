@@ -1,4 +1,4 @@
-import type { City, CitySlug, Game, School, SchoolSlug, SportSlug, Story, Team } from "@/domain/models";
+import type { City, CitySlug, Game, School, SchoolSlug, SportSlug, Team } from "@/domain/models";
 
 export const cities: Record<CitySlug, City> = {
   carlsbad: {
@@ -145,17 +145,6 @@ export const games: Game[] = [
     ["sc-gbb-2025-028", "2026-02-12", "5:30 PM", "Away", "Carlsbad", 26, 53],
     ["sc-gbb-2025-029", "2026-02-17", "7:00 PM", "Home", "Del Norte", 61, 44],
   ]),
-];
-
-export const stories: Story[] = [
-  {
-    id: "sample-season-preview",
-    teamIds: teams.map((item) => item.id),
-    headline: "Season coverage will appear here",
-    summary: "This sample card demonstrates how verified North County Varsity reporting will be presented once publishing begins.",
-    source: "North County Varsity",
-    contentStatus: "placeholder",
-  },
 ];
 
 export function getTeam(schoolSlug: string, sportSlug: string) {

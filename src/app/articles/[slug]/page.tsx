@@ -3,7 +3,13 @@ import { notFound } from "next/navigation";
 import { ArticlePresentation } from "@/components/ArticlePresentation";
 import { getEditorialStory, publishedStories } from "@/data/editorial-data";
 
-export function generateStaticParams() { return publishedStories.map((story) => ({ slug: story.slug })); }
+const emptyExportSlug = "__no-published-articles__";
+
+export function generateStaticParams() {
+  return publishedStories.length
+    ? publishedStories.map((story) => ({ slug: story.slug }))
+    : [{ slug: emptyExportSlug }];
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
