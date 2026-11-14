@@ -6,6 +6,7 @@ on:
     - cron: "7,37 * * * *"
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -20,11 +21,11 @@ jobs:
       CMS_PUBLIC_URL: https://north-county-press.onrender.com
     steps:
       - name: Check out main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -49,4 +50,11 @@ jobs:
           git commit -m "Sync published CMS content"
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "Published snapshot committed; the push will trigger the Pages workflow." >> "$GITHUB_STEP_SUMMARY"
+          echo "Published snapshot committed." >> "$GITHUB_STEP_SUMMARY"
+      - name: Dispatch Pages deployment
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run deploy-pages.yml --ref main
+          echo "Dispatched the Pages workflow for the new snapshot commit." >> "$GITHUB_STEP_SUMMARY"
