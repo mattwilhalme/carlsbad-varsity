@@ -128,6 +128,12 @@ test("article timestamps preserve published and updated values", async () => {
   assert.match(timestamps, /Updated \{updated\}/);
 });
 
+test("article copy uses the wider, larger reading measure", async () => {
+  const styles = await readFile(new URL("../src/app/globals.css", import.meta.url), "utf8");
+  assert.match(styles, /grid-template-columns: minmax\(0, 820px\)/);
+  assert.match(styles, /article-copy > p[^}]+1\.3rem\/1\.75/s);
+});
+
 test("published and preview routes share one article presentation", async () => {
   const published = await readFile(new URL("../src/app/articles/[slug]/page.tsx", import.meta.url), "utf8");
   const preview = await readFile(new URL("../src/app/preview/PreviewClient.tsx", import.meta.url), "utf8");
