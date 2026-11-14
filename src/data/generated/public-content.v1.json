@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-14T17:14:04.398Z",
+    "generatedAt": "2026-11-14T22:46:36.012Z",
     "articles": [
       {
         "id": "30",
@@ -117,7 +117,35 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-14T17:14:04.417Z",
-    "homepage": null
+    "generatedAt": "2026-11-14T22:46:36.088Z",
+    "homepage": {
+      "id": "1",
+      "title": "North County Varsity",
+      "publication": {
+        "id": "1",
+        "slug": "north-county-varsity",
+        "name": "North County Varsity"
+      },
+      "updatedAt": "2026-11-14T22:44:50.559Z",
+      "stories": [
+        {
+          "articleId": "30",
+          "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
+          "role": "lead",
+          "headline": "Allow us to introduce North County Varsity",
+          "summary": "North County Varsity, a high school sports news website covering the northern San Diego County area, introduces itself.",
+          "kicker": "Editor's Note",
+          "thumbnail": {
+            "id": "2",
+            "url": "https://pub-1f15661110b645be993ef70f2b579966.r2.dev/media/Cold%20Energy%201.JPG",
+            "alt": "Cold Energy",
+            "credit": "Courtesy of Holly LeClair",
+            "width": 3000,
+            "height": 2400
+          },
+          "readDowns": []
+        }
+      ]
+    }
   }
 }
