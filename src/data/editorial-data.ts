@@ -32,11 +32,9 @@ const configuredStories = publicContentSnapshot.homepage.homepage?.stories.flatM
   }];
 }) ?? [];
 
-// A published Homepage is authoritative even when it intentionally contains no stories.
-// Before a Homepage has been published, the newest published articles remain the fallback.
-export const homepageStories = publicContentSnapshot.homepage.homepage === null
-  ? publishedStories
-  : configuredStories;
+// Publication and Homepage placement are independent. A published article remains
+// available at its permanent URL but appears here only through Homepage placement.
+export const homepageStories = configuredStories;
 export const leadStory = homepageStories.find((story) => story.homepageRole === "lead") ?? homepageStories[0];
 export const secondaryStories = leadStory
   ? homepageStories.filter((story) => story.slug !== leadStory.slug)

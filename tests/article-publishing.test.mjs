@@ -55,6 +55,12 @@ test("accepts an intentionally empty published homepage", () => {
   assert.equal(validateHomepageSnapshot(homepageResponse(), articlesResponse()).homepage.stories.length, 0);
 });
 
+test("published articles do not appear on the Homepage without placement", async () => {
+  const editorialData = await readFile(new URL("../src/data/editorial-data.ts", import.meta.url), "utf8");
+  assert.match(editorialData, /export const homepageStories = configuredStories/);
+  assert.doesNotMatch(editorialData, /\? publishedStories\s*:\s*configuredStories/);
+});
+
 test("unchanged published content does not rewrite the snapshot", async () => {
   const directory = await mkdtemp(join(tmpdir(), "ncv-sync-"));
   const outputPath = join(directory, "snapshot.json");
