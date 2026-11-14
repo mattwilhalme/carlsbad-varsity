@@ -88,7 +88,8 @@ export interface EditorialStory {
   dek: string;
   byline: string;
   publishedAt: string;
-  image: { src: string; alt: string; credit: string; caption?: string; width?: number; height?: number };
+  updatedAt?: string;
+  image?: { src: string; alt: string; credit: string; caption?: string; width?: number; height?: number };
   relatedLinks: { label: string; href: string }[];
   body: string[] | PublicArticleBlock[];
   homepageRole?: "lead" | "featured" | "standard";

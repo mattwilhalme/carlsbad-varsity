@@ -110,6 +110,24 @@ test("article presentation uses the optional subheadline instead of the listing 
   assert.doesNotMatch(presentation, /className="article-dek">\{story\.dek\}/);
 });
 
+test("articles without CMS media do not receive a placeholder image", async () => {
+  const mapper = await readFile(new URL("../src/data/public-article-mapper.ts", import.meta.url), "utf8");
+  const presentation = await readFile(new URL("../src/components/ArticlePresentation.tsx", import.meta.url), "utf8");
+  assert.doesNotMatch(mapper, /north-county-field/);
+  assert.match(mapper, /: undefined/);
+  assert.match(presentation, /story\.image \? <figure/);
+});
+
+test("article timestamps preserve published and updated values", async () => {
+  const mapper = await readFile(new URL("../src/data/public-article-mapper.ts", import.meta.url), "utf8");
+  const timestamps = await readFile(new URL("../src/components/ArticleTimestamps.tsx", import.meta.url), "utf8");
+  assert.match(mapper, /updatedAt: article\.updatedAt/);
+  assert.match(timestamps, /SIX_HOURS/);
+  assert.match(timestamps, /now\.getHours\(\) < 23/);
+  assert.match(timestamps, /Published \{published\}/);
+  assert.match(timestamps, /Updated \{updated\}/);
+});
+
 test("published and preview routes share one article presentation", async () => {
   const published = await readFile(new URL("../src/app/articles/[slug]/page.tsx", import.meta.url), "utf8");
   const preview = await readFile(new URL("../src/app/preview/PreviewClient.tsx", import.meta.url), "utf8");
