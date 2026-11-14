@@ -1,12 +1,123 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-14T16:22:39.210Z",
-    "articles": []
+    "generatedAt": "2026-11-14T17:14:04.398Z",
+    "articles": [
+      {
+        "id": "30",
+        "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
+        "headline": "North County Varsity: Allow us to introduce ourselves",
+        "subheadline": "We cover high school sports in the northern San Diego County area",
+        "summary": "North County Varsity, a high school sports news website covering the northern San Diego County area, introduces itself.",
+        "authors": [
+          {
+            "id": "1",
+            "name": "Matt Wilhalme",
+            "slug": "matt-wilhalme",
+            "title": "Founder"
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "North County Varsity is a sports journalism project based out of Carlsbad, California. ",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "Our goal is provide professional coverage of local high school athletes and their achievements in the North County area of San Diego County. ",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "We want to tell great stories, share incredible moments and serve as a resource for our community. ",
+                "formats": []
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "We plan to turn sponsorship and advertising revenue into a freelancer budget to pay reporters and photographers.",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "\n",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "Please feel free to reach out to ",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": "editor@northcountyvarsity.com",
+                "formats": []
+              },
+              {
+                "type": "text",
+                "text": " if you have any questions, comments or concerns. ",
+                "formats": []
+              }
+            ]
+          }
+        ],
+        "leadImage": null,
+        "publishedAt": "2026-11-14T17:12:59.576Z",
+        "updatedAt": "2026-11-14T17:12:59.579Z",
+        "relationships": {
+          "publication": {
+            "id": "1",
+            "slug": "north-county-varsity",
+            "name": "North County Varsity"
+          },
+          "schools": [],
+          "sports": [],
+          "teams": []
+        }
+      }
+    ]
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-14T16:22:39.308Z",
+    "generatedAt": "2026-11-14T17:14:04.417Z",
     "homepage": null
   }
 }
