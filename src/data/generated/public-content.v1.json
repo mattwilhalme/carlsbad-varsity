@@ -1,22 +1,12 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-13T21:58:06.425Z",
+    "generatedAt": "2026-11-14T16:22:39.210Z",
     "articles": []
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-13T21:58:06.461Z",
-    "homepage": {
-      "id": "1",
-      "title": "North County Varsity Homepage",
-      "publication": {
-        "id": "1",
-        "slug": "north-county-varsity",
-        "name": "North County Varsity"
-      },
-      "updatedAt": "2026-11-13T04:01:48.611Z",
-      "stories": []
-    }
+    "generatedAt": "2026-11-14T16:22:39.308Z",
+    "homepage": null
   }
 }
