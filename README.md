@@ -47,7 +47,7 @@ With both development servers running, use **Preview** from a Payload article. P
 
 Every push to `main` builds and deploys the static export to GitHub Pages. The workflow sets the `/carlsbad-varsity` base path used by the project site URL.
 
-Published CMS content is synchronized by the dedicated **Sync published CMS content** workflow at 7 and 37 minutes past each hour. Run it immediately from GitHub **Actions → Sync published CMS content → Run workflow**. It validates the public article and Homepage contracts, allows a bounded 75 seconds for the free Render service to wake, preserves the last good snapshot on any fetch or validation failure, and creates a commit only when published content changes. After a changed snapshot is pushed, the sync workflow explicitly dispatches the Pages deployment (GitHub does not emit a second workflow trigger for an ordinary push made with its built-in workflow token).
+Published CMS content is synchronized by the dedicated **Sync published CMS content** workflow at 7 and 37 minutes past each hour. Run it immediately from the CMS Homepage editor's **Build website** control or from GitHub **Actions → Sync published CMS content → Run workflow**. It validates the public article and Homepage contracts, retries bounded timeout failures while the free Render service wakes, preserves the last good snapshot on any fetch or validation failure, and creates a commit only when published content changes. After a changed snapshot is pushed, the sync workflow explicitly dispatches the Pages deployment (GitHub does not emit a second workflow trigger for an ordinary push made with its built-in workflow token).
 
 If a sync fails, open its Actions run and inspect **Verify published-content contracts** or **Synchronize published content**, then use **Re-run failed jobs** after the CMS is healthy. An unavailable or malformed CMS response never replaces the committed snapshot. To restore earlier content, use `git log -- src/data/generated/public-content.v1.json`, restore that file from the chosen commit with `git restore --source=<commit> -- src/data/generated/public-content.v1.json`, review it, commit, and push; the push deploys the restored snapshot.
 
@@ -55,4 +55,4 @@ The static Request Coverage page submits to the private North County Press CMS. 
 
 ## Data policy
 
-No schedules, scores, standings, or reporting are invented. Empty states remain until verified data is supplied. Sample story cards are explicitly labeled as placeholders.
+No schedules, scores, standings, or reporting are invented. Empty states remain until verified data is supplied, and public CMS content is rendered only from validated published snapshots.
