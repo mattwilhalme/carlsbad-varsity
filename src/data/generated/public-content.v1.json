@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-15T06:06:50.101Z",
+    "generatedAt": "2026-11-15T06:10:35.321Z",
     "articles": [
       {
         "id": "1",
@@ -179,7 +179,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-15T06:06:50.290Z",
+    "generatedAt": "2026-11-15T06:10:35.256Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -188,33 +188,17 @@
         "slug": "north-county-varsity",
         "name": "North County Varsity"
       },
-      "updatedAt": "2026-11-15T06:05:56.089Z",
+      "updatedAt": "2026-11-15T06:09:36.381Z",
       "stories": [
         {
           "articleId": "30",
           "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
           "role": "lead",
           "headline": "Allow us to introduce North County Varsity",
-          "summary": "North County Varsity, a high school sports news website covering the northern San Diego County area, introduces itself.",
+          "summary": "North County Varsity, a high school sports news website covering the northern San Diego County area.",
           "kicker": "Editor's Note",
           "thumbnail": null,
           "readDowns": []
-        },
-        {
-          "articleId": "1",
-          "slug": "this-is-a-test",
-          "role": "standard",
-          "headline": "This is a test.",
-          "summary": "This is my article here. Very cool.\n\nI am excited. ",
-          "kicker": "Analysis",
-          "thumbnail": null,
-          "readDowns": [
-            {
-              "id": "30",
-              "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
-              "headline": "North County Varsity: Allow us to introduce ourselves"
-            }
-          ]
         }
       ]
     }
