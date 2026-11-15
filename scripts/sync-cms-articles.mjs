@@ -70,16 +70,31 @@ export async function syncArticles({
   fetchImpl = fetch,
   outputPath = DEFAULT_OUTPUT,
   timeoutMs = 75_000,
+  attempts = 3,
 } = {}) {
   const articleEndpoint = new URL("/api/public-content/v1/articles", cmsOrigin);
   const homepageEndpoint = new URL("/api/public-content/v1/homepage", cmsOrigin);
   let articleResponse;
   let homepageResponse;
-  try {
-    [articleResponse, homepageResponse] = await Promise.all([articleEndpoint, homepageEndpoint].map((endpoint) =>
-      fetchImpl(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(timeoutMs) })));
-  } catch (error) {
-    throw new Error(`Could not fetch published CMS content from ${cmsOrigin}: ${error instanceof Error ? error.message : error}`);
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      [articleResponse, homepageResponse] = await Promise.all([articleEndpoint, homepageEndpoint].map((endpoint) =>
+        fetchImpl(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(timeoutMs) })));
+      break;
+    } catch (error) {
+      lastError = error;
+      const retryable = error instanceof Error && (error.name === "AbortError" || error.name === "TimeoutError")
+      if (attempt < attempts && retryable) {
+        console.warn(`CMS request attempt ${attempt} failed; retrying after the service wakes.`);
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, attempt * 2_000));
+      } else {
+        break;
+      }
+    }
+  }
+  if (!articleResponse || !homepageResponse) {
+    throw new Error(`Could not fetch published CMS content from ${cmsOrigin}: ${lastError instanceof Error ? lastError.message : lastError}`);
   }
   if (!articleResponse.ok || !homepageResponse.ok) {
     throw new Error(`CMS published-content request failed: articles=${articleResponse.status}, homepage=${homepageResponse.status}`);
