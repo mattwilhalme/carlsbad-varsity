@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-15T05:59:12.166Z",
+    "generatedAt": "2026-11-15T06:06:50.101Z",
     "articles": [
       {
         "id": "1",
@@ -179,7 +179,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-15T05:59:12.228Z",
+    "generatedAt": "2026-11-15T06:06:50.290Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -188,7 +188,7 @@
         "slug": "north-county-varsity",
         "name": "North County Varsity"
       },
-      "updatedAt": "2026-11-15T05:38:37.899Z",
+      "updatedAt": "2026-11-15T06:05:56.089Z",
       "stories": [
         {
           "articleId": "30",
@@ -206,9 +206,15 @@
           "role": "standard",
           "headline": "This is a test.",
           "summary": "This is my article here. Very cool.\n\nI am excited. ",
-          "kicker": "",
+          "kicker": "Analysis",
           "thumbnail": null,
-          "readDowns": []
+          "readDowns": [
+            {
+              "id": "30",
+              "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
+              "headline": "North County Varsity: Allow us to introduce ourselves"
+            }
+          ]
         }
       ]
     }
