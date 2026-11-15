@@ -110,6 +110,14 @@ test("article presentation uses the optional subheadline instead of the listing 
   assert.doesNotMatch(presentation, /className="article-dek">\{story\.dek\}/);
 });
 
+test("article presentation uses the CMS publication name without a hard-coded city", async () => {
+  const presentation = await readFile(new URL("../src/components/ArticlePresentation.tsx", import.meta.url), "utf8");
+  const mapper = await readFile(new URL("../src/data/public-article-mapper.ts", import.meta.url), "utf8");
+  assert.match(presentation, /story\.publicationName/);
+  assert.doesNotMatch(presentation, /· Carlsbad/);
+  assert.match(mapper, /relationships\.publication\?\.name/);
+});
+
 test("articles without CMS media do not receive a placeholder image", async () => {
   const mapper = await readFile(new URL("../src/data/public-article-mapper.ts", import.meta.url), "utf8");
   const presentation = await readFile(new URL("../src/components/ArticlePresentation.tsx", import.meta.url), "utf8");

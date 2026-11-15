@@ -82,6 +82,7 @@ import type { PublicArticleBlock } from "@/data/article-contract";
 export interface EditorialStory {
   id?: string;
   slug: string;
+  publicationName?: string;
   sport: string;
   headline: string;
   subheadline?: string;

@@ -5,6 +5,7 @@ export function publicArticleToStory(article: PublicArticleV1): EditorialStory {
   return {
     id: `cms:${article.id}`,
     slug: article.slug,
+    publicationName: article.relationships.publication?.name || "North County Varsity",
     sport: article.relationships.sports.map((sport) => sport.name).join(", ") || "North County Varsity",
     headline: article.headline,
     subheadline: article.subheadline || undefined,
