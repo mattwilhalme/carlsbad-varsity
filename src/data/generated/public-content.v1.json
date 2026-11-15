@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-15T06:10:35.321Z",
+    "generatedAt": "2026-11-15T07:50:38.427Z",
     "articles": [
       {
         "id": "1",
@@ -163,7 +163,7 @@
         ],
         "leadImage": null,
         "publishedAt": "2026-11-14T17:12:59.576Z",
-        "updatedAt": "2026-11-14T17:12:59.579Z",
+        "updatedAt": "2026-11-15T06:19:19.618Z",
         "relationships": {
           "publication": {
             "id": "1",
@@ -179,7 +179,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-15T06:10:35.256Z",
+    "generatedAt": "2026-11-15T07:50:38.356Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
