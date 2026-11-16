@@ -66,8 +66,8 @@ export interface PublicHomepageSnapshotV1 {
   };
 }
 
-export interface PublicScheduleDisplaySnapshotV1 {
-  version: "north-county-varsity.schedule-display.v1";
+export interface PublicScheduleDisplaySnapshotV2 {
+  version: "north-county-varsity.schedule-display.v2";
   generatedAt: string;
   display: null | {
     id: string;
@@ -95,6 +95,11 @@ export interface PublicScheduleDisplaySnapshotV1 {
         site: "home" | "away" | "neutral";
         venue: string | null;
         status: "scheduled" | "postponed" | "canceled" | "final";
+        teamScore: number | null;
+        opponentScore: number | null;
+        scoreSource: "cif" | "school" | "coach" | "maxpreps" | "staff" | null;
+        scoreSourceUrl: string | null;
+        scoreUpdatedAt: string | null;
         updatedAt: string;
       }[];
     }[];
@@ -104,5 +109,5 @@ export interface PublicScheduleDisplaySnapshotV1 {
 export interface PublicContentBundleV1 {
   articles: PublicArticlesSnapshotV1;
   homepage: PublicHomepageSnapshotV1;
-  scheduleDisplay: PublicScheduleDisplaySnapshotV1;
+  scheduleDisplay: PublicScheduleDisplaySnapshotV2;
 }

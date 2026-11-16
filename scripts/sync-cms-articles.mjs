@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 
 export const CONTRACT_VERSION = "north-county-varsity.articles.v1";
 export const HOMEPAGE_CONTRACT_VERSION = "north-county-varsity.homepage.v1";
-export const SCHEDULE_DISPLAY_CONTRACT_VERSION = "north-county-varsity.schedule-display.v1";
+export const SCHEDULE_DISPLAY_CONTRACT_VERSION = "north-county-varsity.schedule-display.v2";
 export const DEFAULT_OUTPUT = "src/data/generated/public-content.v1.json";
 
 const ARTICLE_KEYS = new Set([
@@ -16,7 +16,7 @@ const SCHEDULE_DISPLAY_KEYS = new Set(["id", "title", "publication", "updatedAt"
 const SCHEDULE_SOURCE_KEYS = new Set(["scheduleImportId", "destinations", "team", "startsOn", "endsOn", "games"]);
 const SCHEDULE_TEAM_KEYS = new Set(["id", "season", "school", "sport"]);
 const SCHEDULE_RELATION_KEYS = new Set(["id", "name", "slug"]);
-const SCHEDULE_GAME_KEYS = new Set(["id", "date", "startsAt", "timeTBD", "eventTitle", "opponent", "site", "venue", "status", "updatedAt"]);
+const SCHEDULE_GAME_KEYS = new Set(["id", "date", "startsAt", "timeTBD", "eventTitle", "opponent", "site", "venue", "status", "teamScore", "opponentScore", "scoreSource", "scoreSourceUrl", "scoreUpdatedAt", "updatedAt"]);
 
 function rejectPrivateFields(value, allowed, label) {
   for (const key of Object.keys(value)) {
@@ -88,6 +88,11 @@ export function validateScheduleDisplaySnapshot(value) {
     for (const game of source.games) {
       rejectPrivateFields(game, SCHEDULE_GAME_KEYS, "public schedule game");
       if (typeof game.id !== "string" || gameIds.has(game.id) || typeof game.date !== "string") throw new Error("Invalid or duplicate public schedule game");
+      const hasTeamScore = game.teamScore !== null;
+      const hasOpponentScore = game.opponentScore !== null;
+      if (hasTeamScore !== hasOpponentScore || (hasTeamScore && (!Number.isInteger(game.teamScore) || !Number.isInteger(game.opponentScore) || typeof game.scoreSource !== "string"))) {
+        throw new Error("Invalid public schedule score");
+      }
       gameIds.add(game.id);
     }
   }

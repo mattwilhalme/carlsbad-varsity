@@ -29,6 +29,7 @@ export function GameDetail({ game }: { game: Game }) {
   const theme = { "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties;
   const correctionSubject = encodeURIComponent(`Correction for ${school.shortName} vs. ${game.opponent} (${game.id})`);
   const scorePeriods = [...(game.periodScores ?? []), ...(game.overtimeScores ?? [])];
+  const scoreSource = game.scoreSource ? ({ cif: "CIF", school: "School", coach: "Coach", maxpreps: "MaxPreps", staff: "Staff report" } as const)[game.scoreSource] : null;
 
   return (
     <main style={theme}>
@@ -61,6 +62,7 @@ export function GameDetail({ game }: { game: Game }) {
               <div><dt>Time</dt><dd>{game.time || "TBD"}</dd></div>
               <div><dt>Venue</dt><dd>{game.location || "Not provided"}</dd></div>
               {game.venueAddress && <div><dt>Address</dt><dd>{game.venueAddress}</dd></div>}
+              {scoreSource && <div><dt>Score source</dt><dd>{game.scoreSourceUrl ? <a href={game.scoreSourceUrl} target="_blank" rel="noreferrer">{scoreSource} ↗</a> : scoreSource}</dd></div>}
             </dl>
           </section>
 
@@ -72,7 +74,7 @@ export function GameDetail({ game }: { game: Game }) {
           <MoreCoverage entries={game.relatedCoverage} />
 
           <section className="game-actions" aria-label="Game source and corrections">
-            {game.sourceUrl && <a href={game.sourceUrl} target="_blank" rel="noreferrer">Original schedule and result source ↗</a>}
+            {game.sourceUrl && <a href={game.sourceUrl} target="_blank" rel="noreferrer">Original schedule source ↗</a>}
             <a href={`mailto:editor@northcountyvarsity.com?subject=${correctionSubject}`}>Report a Correction</a>
           </section>
         </div>

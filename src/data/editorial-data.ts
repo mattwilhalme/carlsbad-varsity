@@ -3,7 +3,7 @@ import type { PublicContentBundleV1 } from "@/data/article-contract";
 import publicContent from "@/data/generated/public-content.v1.json";
 import { publicArticleToStory } from "@/data/public-article-mapper";
 
-const publicContentSnapshot = publicContent as PublicContentBundleV1;
+const publicContentSnapshot = publicContent as unknown as PublicContentBundleV1;
 const cmsStories: EditorialStory[] = publicContentSnapshot.articles.articles.map(publicArticleToStory);
 
 export const publishedStories = [...cmsStories].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));

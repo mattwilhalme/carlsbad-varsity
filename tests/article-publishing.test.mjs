@@ -64,6 +64,17 @@ test("validates an intentionally empty Schedule Display and rejects private fiel
   })), /Unexpected public Schedule Display field/);
 });
 
+test("validates complete public scores and rejects incomplete score pairs", () => {
+  const source = {
+    scheduleImportId: "2", destinations: ["homepage-results"], startsOn: null, endsOn: null,
+    team: { id: "6", season: "2026-27", school: { id: "1", name: "Carlsbad", slug: "carlsbad" }, sport: { id: "1", name: "Boys Basketball", slug: "boys-basketball" } },
+    games: [{ id: "cms-29", date: "2026-11-15", startsAt: null, timeTBD: true, eventTitle: null, opponent: "Vista", site: "home", venue: null, status: "final", teamScore: 72, opponentScore: 68, scoreSource: "cif", scoreSourceUrl: null, scoreUpdatedAt: "2026-11-16T01:00:00Z", updatedAt: "2026-11-16T01:00:00Z" }],
+  };
+  const display = { id: "1", title: "Display", publication: { id: "1", name: "NCV", slug: "ncv" }, updatedAt: "now", sources: [source] };
+  assert.equal(validateScheduleDisplaySnapshot(scheduleDisplayResponse(display)).display.sources[0].games[0].teamScore, 72);
+  assert.throws(() => validateScheduleDisplaySnapshot(scheduleDisplayResponse({ ...display, sources: [{ ...source, games: [{ ...source.games[0], opponentScore: null }] }] })), /Invalid public schedule score/);
+});
+
 test("published articles do not appear on the Homepage without placement", async () => {
   const editorialData = await readFile(new URL("../src/data/editorial-data.ts", import.meta.url), "utf8");
   assert.match(editorialData, /export const homepageStories = configuredStories/);

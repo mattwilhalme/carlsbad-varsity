@@ -1,8 +1,8 @@
-import type { PublicScheduleDisplaySnapshotV1 } from "@/data/article-contract";
+import type { PublicScheduleDisplaySnapshotV2 } from "@/data/article-contract";
 import publicContent from "@/data/generated/public-content.v1.json";
 import type { Game, SchoolSlug, SportSlug, Team } from "@/domain/models";
 
-const snapshot = (publicContent as { scheduleDisplay: PublicScheduleDisplaySnapshotV1 }).scheduleDisplay;
+const snapshot = (publicContent as unknown as { scheduleDisplay: PublicScheduleDisplaySnapshotV2 }).scheduleDisplay;
 const display = snapshot.display;
 const schoolSlugs = new Set<SchoolSlug>(["carlsbad", "sage-creek"]);
 const sportSlugs = new Set<SportSlug>(["boys-basketball", "girls-basketball"]);
@@ -33,24 +33,37 @@ export const curatedScheduleSources = (display?.sources || []).flatMap((source) 
     level: "Varsity",
     season,
   };
-  const games: Game[] = source.games.map((game) => ({
-    id: game.id,
-    teamId: team.id,
-    schoolSlug,
-    sportSlug,
-    sportName: team.sportName,
-    season,
-    date: game.date,
-    time: gameTime(game.startsAt, game.timeTBD),
-    opponent: game.opponent,
-    eventTitle: game.eventTitle || undefined,
-    homeAway: game.site === "home" ? "Home" : game.site === "away" ? "Away" : "Neutral",
-    location: game.venue || undefined,
-    status: game.status,
-    updatedAt: game.updatedAt,
-    dataStatus: "verified",
-    cmsManaged: true,
-  }));
+  const games: Game[] = source.games.map((game) => {
+    const teamScore = typeof game.teamScore === "number" ? game.teamScore : undefined;
+    const opponentScore = typeof game.opponentScore === "number" ? game.opponentScore : undefined;
+    const result = teamScore !== undefined && opponentScore !== undefined
+      ? teamScore > opponentScore ? "W" : teamScore < opponentScore ? "L" : "T"
+      : undefined;
+    return {
+      id: game.id,
+      teamId: team.id,
+      schoolSlug,
+      sportSlug,
+      sportName: team.sportName,
+      season,
+      date: game.date,
+      time: gameTime(game.startsAt, game.timeTBD),
+      opponent: game.opponent,
+      eventTitle: game.eventTitle || undefined,
+      homeAway: game.site === "home" ? "Home" : game.site === "away" ? "Away" : "Neutral",
+      location: game.venue || undefined,
+      status: game.status,
+      teamScore,
+      opponentScore,
+      result,
+      scoreSource: game.scoreSource ?? undefined,
+      scoreSourceUrl: game.scoreSourceUrl ?? undefined,
+      scoreUpdatedAt: game.scoreUpdatedAt ?? undefined,
+      updatedAt: game.updatedAt,
+      dataStatus: "verified",
+      cmsManaged: true,
+    };
+  });
   return [{ ...source, team, games }];
 });
 

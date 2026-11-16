@@ -75,6 +75,9 @@ export interface Game {
   relatedCoverage?: RelatedCoverage[];
   storyUrl?: string;
   sourceUrl?: string;
+  scoreSource?: "cif" | "school" | "coach" | "maxpreps" | "staff";
+  scoreSourceUrl?: string;
+  scoreUpdatedAt?: string;
   dataStatus: "placeholder" | "verified";
   deletedAt?: string;
   updatedAt?: string;
