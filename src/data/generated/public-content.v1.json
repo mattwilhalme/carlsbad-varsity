@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-16T05:13:16.684Z",
+    "generatedAt": "2026-11-16T18:29:11.487Z",
     "articles": [
       {
         "id": "1",
@@ -184,7 +184,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-16T05:13:16.725Z",
+    "generatedAt": "2026-11-16T18:29:11.387Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -210,7 +210,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v1",
-    "generatedAt": "2026-11-16T05:13:16.771Z",
+    "generatedAt": "2026-11-16T18:29:11.737Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -255,7 +255,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:55.369Z"
+              "updatedAt": "2026-11-16T16:04:22.180Z"
             },
             {
               "id": "cms-2",
@@ -267,7 +267,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:55.610Z"
+              "updatedAt": "2026-11-16T16:04:22.418Z"
             },
             {
               "id": "cms-3",
@@ -279,7 +279,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:55.836Z"
+              "updatedAt": "2026-11-16T16:04:22.649Z"
             },
             {
               "id": "cms-4",
@@ -291,7 +291,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:56.066Z"
+              "updatedAt": "2026-11-16T16:04:22.881Z"
             },
             {
               "id": "cms-5",
@@ -303,7 +303,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:56.297Z"
+              "updatedAt": "2026-11-16T16:04:23.115Z"
             },
             {
               "id": "cms-6",
@@ -315,7 +315,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:56.528Z"
+              "updatedAt": "2026-11-16T16:04:23.350Z"
             },
             {
               "id": "cms-7",
@@ -327,7 +327,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:56.756Z"
+              "updatedAt": "2026-11-16T16:04:23.582Z"
             },
             {
               "id": "cms-8",
@@ -339,7 +339,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:56.984Z"
+              "updatedAt": "2026-11-16T16:04:23.814Z"
             },
             {
               "id": "cms-9",
@@ -351,7 +351,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:57.410Z"
+              "updatedAt": "2026-11-16T16:04:24.046Z"
             },
             {
               "id": "cms-10",
@@ -363,7 +363,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:57.637Z"
+              "updatedAt": "2026-11-16T16:04:24.277Z"
             },
             {
               "id": "cms-11",
@@ -375,7 +375,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:57.862Z"
+              "updatedAt": "2026-11-16T16:04:24.682Z"
             },
             {
               "id": "cms-12",
@@ -387,7 +387,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:58.230Z"
+              "updatedAt": "2026-11-16T16:04:24.925Z"
             },
             {
               "id": "cms-13",
@@ -399,7 +399,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:58.456Z"
+              "updatedAt": "2026-11-16T16:04:25.157Z"
             },
             {
               "id": "cms-14",
@@ -411,7 +411,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:58.682Z"
+              "updatedAt": "2026-11-16T16:04:25.387Z"
             },
             {
               "id": "cms-15",
@@ -423,7 +423,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:58.909Z"
+              "updatedAt": "2026-11-16T16:04:25.618Z"
             },
             {
               "id": "cms-16",
@@ -435,7 +435,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:29:59.132Z"
+              "updatedAt": "2026-11-16T16:04:25.846Z"
             },
             {
               "id": "cms-17",
@@ -447,7 +447,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:00.070Z"
+              "updatedAt": "2026-11-16T16:04:26.074Z"
             },
             {
               "id": "cms-18",
@@ -459,7 +459,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:00.330Z"
+              "updatedAt": "2026-11-16T16:04:26.302Z"
             },
             {
               "id": "cms-19",
@@ -471,7 +471,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:00.555Z"
+              "updatedAt": "2026-11-16T16:04:26.533Z"
             },
             {
               "id": "cms-20",
@@ -483,7 +483,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:00.780Z"
+              "updatedAt": "2026-11-16T16:04:27.562Z"
             },
             {
               "id": "cms-21",
@@ -495,7 +495,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:01.005Z"
+              "updatedAt": "2026-11-16T16:04:27.850Z"
             },
             {
               "id": "cms-22",
@@ -507,7 +507,7 @@
               "site": "away",
               "venue": "Rancho Christian, 31300 Rancho Community Way, Temecula, California, 92592",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:01.229Z"
+              "updatedAt": "2026-11-16T16:04:28.095Z"
             },
             {
               "id": "cms-23",
@@ -519,7 +519,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:01.454Z"
+              "updatedAt": "2026-11-16T16:04:28.562Z"
             },
             {
               "id": "cms-24",
@@ -531,7 +531,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:01.680Z"
+              "updatedAt": "2026-11-16T16:04:28.826Z"
             },
             {
               "id": "cms-25",
@@ -543,7 +543,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:01.906Z"
+              "updatedAt": "2026-11-16T16:04:29.059Z"
             },
             {
               "id": "cms-26",
@@ -555,7 +555,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:02.129Z"
+              "updatedAt": "2026-11-16T16:04:29.291Z"
             },
             {
               "id": "cms-27",
@@ -567,7 +567,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:02.351Z"
+              "updatedAt": "2026-11-16T16:04:29.582Z"
             },
             {
               "id": "cms-28",
@@ -579,7 +579,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:02.575Z"
+              "updatedAt": "2026-11-16T16:04:29.867Z"
             }
           ]
         },
@@ -617,7 +617,7 @@
               "site": "away",
               "venue": "Montgomery High School, 3250 Palm Avenue, San Diego, California, 92154, USA",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:18.440Z"
+              "updatedAt": "2026-11-16T16:04:45.681Z"
             },
             {
               "id": "cms-30",
@@ -629,7 +629,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:18.671Z"
+              "updatedAt": "2026-11-16T16:04:45.909Z"
             },
             {
               "id": "cms-31",
@@ -641,7 +641,7 @@
               "site": "away",
               "venue": "Foothill High School, 19251 Dodge Ave, Santa Ana, California, 92705",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:18.900Z"
+              "updatedAt": "2026-11-16T16:04:46.140Z"
             },
             {
               "id": "cms-32",
@@ -653,7 +653,7 @@
               "site": "away",
               "venue": "High Tech High San Diego, 2861 Womble Rd, San Diego, California, 92106, United States",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:19.129Z"
+              "updatedAt": "2026-11-16T16:04:46.368Z"
             },
             {
               "id": "cms-33",
@@ -665,7 +665,7 @@
               "site": "away",
               "venue": "Marina High School Gym, 15871 Springdale St, Huntington Beach, California, 92649, United States",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:19.358Z"
+              "updatedAt": "2026-11-16T16:04:46.595Z"
             },
             {
               "id": "cms-34",
@@ -677,7 +677,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:19.588Z"
+              "updatedAt": "2026-11-16T16:04:46.823Z"
             },
             {
               "id": "cms-35",
@@ -689,7 +689,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:19.817Z"
+              "updatedAt": "2026-11-16T16:04:47.051Z"
             },
             {
               "id": "cms-36",
@@ -701,7 +701,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:20.047Z"
+              "updatedAt": "2026-11-16T16:04:47.279Z"
             },
             {
               "id": "cms-37",
@@ -713,7 +713,7 @@
               "site": "away",
               "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:20.276Z"
+              "updatedAt": "2026-11-16T16:04:47.506Z"
             },
             {
               "id": "cms-38",
@@ -725,7 +725,7 @@
               "site": "away",
               "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:20.506Z"
+              "updatedAt": "2026-11-16T16:04:47.735Z"
             },
             {
               "id": "cms-39",
@@ -737,7 +737,7 @@
               "site": "away",
               "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:20.735Z"
+              "updatedAt": "2026-11-16T16:04:47.962Z"
             },
             {
               "id": "cms-40",
@@ -749,7 +749,7 @@
               "site": "away",
               "venue": "Torrey Pines High School, Del Mar Heights Rd., San Diego, California, 92130, United States",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:20.965Z"
+              "updatedAt": "2026-11-16T16:04:48.190Z"
             },
             {
               "id": "cms-41",
@@ -761,7 +761,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:21.194Z"
+              "updatedAt": "2026-11-16T16:04:48.419Z"
             },
             {
               "id": "cms-42",
@@ -773,7 +773,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:21.423Z"
+              "updatedAt": "2026-11-16T16:04:48.645Z"
             },
             {
               "id": "cms-43",
@@ -785,7 +785,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:21.653Z"
+              "updatedAt": "2026-11-16T16:04:48.873Z"
             },
             {
               "id": "cms-44",
@@ -797,7 +797,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:21.884Z"
+              "updatedAt": "2026-11-16T16:04:49.101Z"
             },
             {
               "id": "cms-45",
@@ -809,7 +809,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:22.112Z"
+              "updatedAt": "2026-11-16T16:04:49.330Z"
             },
             {
               "id": "cms-46",
@@ -821,7 +821,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:22.342Z"
+              "updatedAt": "2026-11-16T16:04:49.658Z"
             },
             {
               "id": "cms-47",
@@ -833,7 +833,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:22.571Z"
+              "updatedAt": "2026-11-16T16:04:49.887Z"
             },
             {
               "id": "cms-48",
@@ -845,7 +845,7 @@
               "site": "away",
               "venue": "Rancho Christian, 31300 Rancho Community Way, Temecula, California, 92592",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:22.834Z"
+              "updatedAt": "2026-11-16T16:04:50.116Z"
             },
             {
               "id": "cms-49",
@@ -857,7 +857,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:23.127Z"
+              "updatedAt": "2026-11-16T16:04:50.345Z"
             },
             {
               "id": "cms-50",
@@ -869,7 +869,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:23.357Z"
+              "updatedAt": "2026-11-16T16:04:50.573Z"
             },
             {
               "id": "cms-51",
@@ -881,7 +881,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:23.586Z"
+              "updatedAt": "2026-11-16T16:04:50.801Z"
             },
             {
               "id": "cms-52",
@@ -893,7 +893,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:23.816Z"
+              "updatedAt": "2026-11-16T16:04:51.031Z"
             },
             {
               "id": "cms-53",
@@ -905,7 +905,7 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:24.044Z"
+              "updatedAt": "2026-11-16T16:04:51.259Z"
             },
             {
               "id": "cms-54",
@@ -917,7 +917,7 @@
               "site": "away",
               "venue": "Mater Dei Catholic, 1615 Mater Dei Dr, Chula Vista, California, 91913",
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:24.272Z"
+              "updatedAt": "2026-11-16T16:04:51.486Z"
             },
             {
               "id": "cms-55",
@@ -929,7 +929,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:24.500Z"
+              "updatedAt": "2026-11-16T16:04:51.711Z"
             },
             {
               "id": "cms-56",
@@ -941,7 +941,7 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
-              "updatedAt": "2026-11-16T04:30:24.727Z"
+              "updatedAt": "2026-11-16T16:04:51.938Z"
             }
           ]
         }
