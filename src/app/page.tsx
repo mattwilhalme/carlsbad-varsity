@@ -4,10 +4,13 @@ import { SchoolNav } from "@/components/SchoolNav";
 import { StoryImage } from "@/components/StoryImage";
 import { articlePath, leadStory, secondaryStories } from "@/data/editorial-data";
 import { games } from "@/data/site-data";
+import { getCuratedHomepageGames, hasPublishedScheduleDisplay } from "@/data/schedule-display-data";
 
 export default function Home() {
-  const upcomingGames = games.filter((game) => game.status === "scheduled").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
-  const recentResults = games.filter((game) => game.status === "final").sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  const curatedGames = getCuratedHomepageGames();
+  const verifiedGames = games.filter((game) => game.dataStatus === "verified");
+  const upcomingGames = hasPublishedScheduleDisplay ? curatedGames.upcoming : verifiedGames.filter((game) => game.status === "scheduled").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+  const recentResults = hasPublishedScheduleDisplay ? curatedGames.results : verifiedGames.filter((game) => game.status === "final").sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   return <main className="editorial-home">
     <SchoolNav placement="home" />
     <div className="page-shell homepage-rule"><p>Independent high school sports coverage of North County San Diego</p></div>
@@ -23,8 +26,8 @@ export default function Home() {
         </article>)}</div></> : <div className="homepage-empty"><h2>No stories published yet</h2><p>North County Varsity coverage will appear here when it is published.</p></div>}
       </section>
       <aside className="homepage-rail" aria-label="Games and results">
-        <section id="upcoming-games" className="rail-section" aria-labelledby="calendar-heading"><p id="calendar-heading" className="rail-kicker">On the Calendar</p><HomeGameRail games={upcomingGames} /></section>
-        <section id="recent-results" className="rail-section" aria-labelledby="scores-heading"><p id="scores-heading" className="rail-kicker">Final Scores</p><HomeGameRail games={recentResults} result /></section>
+        <section id="upcoming-games" className="rail-section" aria-labelledby="calendar-heading"><p id="calendar-heading" className="rail-kicker">On the Calendar</p><HomeGameRail games={upcomingGames} emptyMessage="No upcoming games selected." /></section>
+        <section id="recent-results" className="rail-section" aria-labelledby="scores-heading"><p id="scores-heading" className="rail-kicker">Final Scores</p><HomeGameRail games={recentResults} result emptyMessage="No final scores selected." /></section>
       </aside>
     </div>
   </main>;

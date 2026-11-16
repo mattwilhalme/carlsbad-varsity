@@ -64,9 +64,11 @@ export function getCuratedTeamSchedules(team: Team): Record<string, Game[]> {
 }
 
 function localDate(now = new Date()) {
-  return new Intl.DateTimeFormat("en-CA", {
+  const parts = new Intl.DateTimeFormat("en-US", {
     year: "numeric", month: "2-digit", day: "2-digit", timeZone: "America/Los_Angeles",
-  }).format(now);
+  }).formatToParts(now);
+  const value = (type: Intl.DateTimeFormatPartTypes) => parts.find((part) => part.type === type)?.value;
+  return `${value("year")}-${value("month")}-${value("day")}`;
 }
 
 export function getCuratedHomepageGames(now = new Date()) {

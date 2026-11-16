@@ -270,6 +270,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .rail-game strong em { display: inline; margin-left: 3px; font: 900 .68rem/1 Arial, sans-serif; font-style: normal; white-space: nowrap; }
 .rail-game small { margin-top: 5px; color: var(--muted); font-size: .62rem; }
 .rail-game b { font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rail-empty { margin: 0; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: .78rem; line-height: 1.4; }
 
 /* Demo article */
 .preview-banner { display: flex; justify-content: center; gap: 10px 24px; padding: 12px 20px; color: white; background: #8b2525; font-size: .75rem; letter-spacing: .03em; }
