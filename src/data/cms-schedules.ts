@@ -1,4 +1,5 @@
 import type { Game, GameSite, GameStatus, Team } from "@/domain/models";
+import { getCuratedTeamSchedules, hasPublishedScheduleDisplay } from "@/data/schedule-display-data";
 
 interface CMSGame {
   id: string;
@@ -29,6 +30,7 @@ function displaySeason(value: string) {
 }
 
 export async function getCMSSchedule(team: Team): Promise<Record<string, Game[]>> {
+  if (hasPublishedScheduleDisplay) return getCuratedTeamSchedules(team);
   const endpoint = new URL("/api/public-schedules", cmsUrl);
   endpoint.searchParams.set("school", team.schoolSlug);
   endpoint.searchParams.set("sport", team.sportSlug);

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MoreCoverage } from "@/components/MoreCoverage";
-import { cities, schoolPath, schools, teams } from "@/data/site-data";
+import { cities, schoolPath, schools } from "@/data/site-data";
+import { allScheduleTeams } from "@/data/public-schedule-data";
 import type { Game } from "@/domain/models";
 
 function TeamIdentity({ name, score, winner }: { name: string; score?: number; winner: boolean }) {
@@ -14,7 +15,7 @@ function TeamIdentity({ name, score, winner }: { name: string; score?: number; w
 }
 
 export function GameDetail({ game }: { game: Game }) {
-  const team = teams.find((item) => item.id === game.teamId);
+  const team = allScheduleTeams.find((item) => item.id === game.teamId);
   if (!team) return null;
   const school = schools[team.schoolSlug];
   const city = cities[school.citySlug];

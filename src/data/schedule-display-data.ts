@@ -54,6 +54,9 @@ export const curatedScheduleSources = (display?.sources || []).flatMap((source) 
   return [{ ...source, team, games }];
 });
 
+export const curatedScheduleTeams = curatedScheduleSources.map((source) => source.team);
+export const curatedScheduleGames = curatedScheduleSources.flatMap((source) => source.games);
+
 export function getCuratedTeamSchedules(team: Team): Record<string, Game[]> {
   return Object.fromEntries(curatedScheduleSources
     .filter((source) => source.destinations.includes("team-page") && source.team.schoolSlug === team.schoolSlug && source.team.sportSlug === team.sportSlug)

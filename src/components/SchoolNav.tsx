@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cities, games, schoolPath, schools, teams } from "@/data/site-data";
+import { cities, schoolPath, schools } from "@/data/site-data";
+import { allScheduleGames, allScheduleTeams } from "@/data/public-schedule-data";
 import type { SchoolSlug, SportSlug } from "@/domain/models";
 
 const sportLabels: Record<SportSlug, string> = {
@@ -23,8 +24,8 @@ function routeContext(pathname: string) {
   }
 
   const gameId = pathname.match(/\/games\/([^/]+)/)?.[1];
-  const game = games.find((item) => item.id === gameId);
-  const team = game ? teams.find((item) => item.id === game.teamId) : undefined;
+  const game = allScheduleGames.find((item) => item.id === gameId);
+  const team = game ? allScheduleTeams.find((item) => item.id === game.teamId) : undefined;
   return { schoolSlug: team?.schoolSlug, sportSlug: team?.sportSlug };
 }
 

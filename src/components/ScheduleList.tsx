@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { teams } from "@/data/site-data";
+import { allScheduleTeams } from "@/data/public-schedule-data";
 import type { Game, School } from "@/domain/models";
 
 function gameOutcome(game: Game) {
@@ -8,12 +8,13 @@ function gameOutcome(game: Game) {
   }
   if (game.status === "postponed") return <><strong>Postponed</strong><span>New date TBD</span></>;
   if (game.status === "canceled") return <><strong>Canceled</strong><span>Not being played</span></>;
-  return <><strong>{game.time || "TBD"}</strong>{!game.cmsManaged && <span>Scheduled</span>}</>;
+  if (game.status === "final") return <><strong>Final</strong><span>Score not reported</span></>;
+  return <><strong>{game.time || "TBD"}</strong><span>Scheduled</span></>;
 }
 
 function gameAriaLabel(game: Game, schoolName: string) {
   const matchup = `${schoolName} ${game.homeAway === "Away" ? "at" : game.homeAway === "Home" ? "versus" : "against"} ${game.opponent}`;
-  const action = game.cmsManaged ? "" : " Open game details.";
+  const action = " Open game details.";
   if (game.status === "final" && game.teamScore !== undefined && game.opponentScore !== undefined) {
     return `${matchup}, final score ${game.teamScore} to ${game.opponentScore}.${action}`;
   }
@@ -23,7 +24,7 @@ function gameAriaLabel(game: Game, schoolName: string) {
 export function ScheduleList({ schedule, school, showSport = false }: { schedule: Game[]; school: School; showSport?: boolean }) {
   const sources = schedule.reduce<Array<{ url: string; label: string }>>((items, game) => {
     if (!game.sourceUrl || items.some((item) => item.url === game.sourceUrl)) return items;
-    const team = teams.find((item) => item.id === game.teamId);
+    const team = allScheduleTeams.find((item) => item.id === game.teamId);
     items.push({ url: game.sourceUrl, label: team?.sportName ?? "Athletics schedule" });
     return items;
   }, []);
@@ -37,17 +38,15 @@ export function ScheduleList({ schedule, school, showSport = false }: { schedule
           <span role="columnheader">Date / time</span><span role="columnheader">Opponent</span><span role="columnheader">Result / time</span><span aria-hidden="true" />
         </div>
         <div role="rowgroup">{schedule.map((game) => {
-          const team = teams.find((item) => item.id === game.teamId);
+          const team = allScheduleTeams.find((item) => item.id === game.teamId);
           const opponentName = game.opponentShortName || game.opponent;
           const contents = <>
               <div className="game-date" role="cell"><time dateTime={game.date}>{new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${game.date}T00:00:00Z`))}</time><span>{game.time || "TBD"}</span></div>
               <div className="game-opponent" role="cell">{game.eventTitle && <span className="event-title">{game.eventTitle}</span>}<strong title={game.opponent}>{game.homeAway === "Away" ? "At " : game.homeAway === "Neutral" ? "Vs. " : ""}{opponentName}</strong>{showSport && team && <span>{team.sportName}</span>}</div>
               <div className="game-outcome" role="cell">{gameOutcome(game)}</div>
-              <span className="row-chevron" aria-hidden="true">{game.cmsManaged ? "" : "›"}</span>
+              <span className="row-chevron" aria-hidden="true">›</span>
             </>;
-          return game.cmsManaged
-            ? <div className="schedule-row" role="row" key={game.id} aria-label={gameAriaLabel(game, school.shortName)}>{contents}</div>
-            : <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>{contents}</Link>;
+          return <Link className="schedule-row" role="row" key={game.id} href={`/games/${game.id}/`} aria-label={gameAriaLabel(game, school.shortName)}>{contents}</Link>;
         })}</div>
       </div>
       {sources.length > 0 && <p className="source-note">Schedule and results source{sources.length > 1 ? "s" : ""}: {sources.map((source, index) => <span key={source.url}>{index > 0 && " · "}<a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></span>)}.</p>}

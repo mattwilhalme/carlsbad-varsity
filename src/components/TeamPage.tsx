@@ -2,11 +2,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { cities, games, schoolPath, schools } from "@/data/site-data";
 import { SeasonSchedule } from "@/components/SeasonSchedule";
 import type { Game, Team } from "@/domain/models";
+import { hasPublishedScheduleDisplay } from "@/data/schedule-display-data";
 
 export function TeamPage({ cmsSchedules, team }: { cmsSchedules: Record<string, Game[]>; team: Team }) {
   const school = schools[team.schoolSlug];
   const city = cities[school.citySlug];
-  const teamGames = games.filter((game) => game.teamId === team.id);
+  const teamGames = games.filter((game) => game.teamId === team.id && (!hasPublishedScheduleDisplay || game.dataStatus === "verified"));
   const schedules = {
     ...cmsSchedules,
     [team.season]: [...teamGames, ...(cmsSchedules[team.season] || [])],

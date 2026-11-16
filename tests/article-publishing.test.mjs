@@ -167,3 +167,12 @@ test("Schedule Display mapping preserves verified stable IDs and curated destina
   assert.match(mapper, /destinations\.includes\("homepage-results"\)/);
   assert.doesNotMatch(mapper, /dataStatus: "placeholder"/);
 });
+
+test("curated CMS games receive permanent static routes", async () => {
+  const route = await readFile(new URL("../src/app/games/[gameId]/page.tsx", import.meta.url), "utf8");
+  const list = await readFile(new URL("../src/components/ScheduleList.tsx", import.meta.url), "utf8");
+  assert.match(route, /allScheduleGames\.map/);
+  assert.match(route, /allScheduleGames\.find/);
+  assert.doesNotMatch(list, /game\.cmsManaged\s*\?/);
+  assert.match(list, /href=\{`\/games\/\$\{game\.id\}\//);
+});

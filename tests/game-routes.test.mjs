@@ -6,7 +6,7 @@ const page = await readFile(new URL("../src/app/games/[gameId]/page.tsx", import
 const schedule = await readFile(new URL("../src/components/ScheduleList.tsx", import.meta.url), "utf8");
 
 test("game routes statically generate every permanent ID", () => {
-  assert.match(page, /games\.map\(\(game\) => \(\{ gameId: game\.id \}\)\)/);
+  assert.match(page, /allScheduleGames\.map\(\(game\) => \(\{ gameId: game\.id \}\)\)/);
   assert.match(page, /dynamicParams = false/);
 });
 
