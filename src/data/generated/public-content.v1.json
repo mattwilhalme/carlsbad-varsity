@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-16T18:29:11.487Z",
+    "generatedAt": "2026-11-16T22:20:10.545Z",
     "articles": [
       {
         "id": "1",
@@ -184,7 +184,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-16T18:29:11.387Z",
+    "generatedAt": "2026-11-16T22:20:10.448Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -209,8 +209,8 @@
     }
   },
   "scheduleDisplay": {
-    "version": "north-county-varsity.schedule-display.v1",
-    "generatedAt": "2026-11-16T18:29:11.737Z",
+    "version": "north-county-varsity.schedule-display.v2",
+    "generatedAt": "2026-11-16T22:20:10.950Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -219,7 +219,7 @@
         "name": "North County Varsity",
         "slug": "north-county-varsity"
       },
-      "updatedAt": "2026-11-16T04:57:15.380Z",
+      "updatedAt": "2026-11-16T21:38:38.880Z",
       "sources": [
         {
           "scheduleImportId": "1",
@@ -246,18 +246,6 @@
           "endsOn": null,
           "games": [
             {
-              "id": "cms-1",
-              "date": "2026-11-14",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:22.180Z"
-            },
-            {
               "id": "cms-2",
               "date": "2026-11-16",
               "startsAt": "2026-11-17T03:00:00.000Z",
@@ -267,6 +255,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:22.418Z"
             },
             {
@@ -279,55 +272,12 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:22.649Z"
-            },
-            {
-              "id": "cms-4",
-              "date": "2026-11-24",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:22.881Z"
-            },
-            {
-              "id": "cms-5",
-              "date": "2026-11-25",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:23.115Z"
-            },
-            {
-              "id": "cms-6",
-              "date": "2026-11-27",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:23.350Z"
-            },
-            {
-              "id": "cms-7",
-              "date": "2026-11-28",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:23.582Z"
             },
             {
               "id": "cms-8",
@@ -339,6 +289,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:23.814Z"
             },
             {
@@ -351,6 +306,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:24.046Z"
             },
             {
@@ -363,6 +323,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:24.277Z"
             },
             {
@@ -375,6 +340,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:24.682Z"
             },
             {
@@ -387,6 +357,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:24.925Z"
             },
             {
@@ -399,6 +374,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:25.157Z"
             },
             {
@@ -411,55 +391,12 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:25.387Z"
-            },
-            {
-              "id": "cms-15",
-              "date": "2026-12-26",
-              "startsAt": "2026-12-26T08:00:00.000Z",
-              "timeTBD": false,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:25.618Z"
-            },
-            {
-              "id": "cms-16",
-              "date": "2026-12-28",
-              "startsAt": "2026-12-28T08:00:00.000Z",
-              "timeTBD": false,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:25.846Z"
-            },
-            {
-              "id": "cms-17",
-              "date": "2026-12-29",
-              "startsAt": "2026-12-29T08:00:00.000Z",
-              "timeTBD": false,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:26.074Z"
-            },
-            {
-              "id": "cms-18",
-              "date": "2026-12-30",
-              "startsAt": "2026-12-30T08:00:00.000Z",
-              "timeTBD": false,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:26.302Z"
             },
             {
               "id": "cms-19",
@@ -471,6 +408,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:26.533Z"
             },
             {
@@ -483,6 +425,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:27.562Z"
             },
             {
@@ -495,6 +442,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:27.850Z"
             },
             {
@@ -507,6 +459,11 @@
               "site": "away",
               "venue": "Rancho Christian, 31300 Rancho Community Way, Temecula, California, 92592",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:28.095Z"
             },
             {
@@ -519,6 +476,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:28.562Z"
             },
             {
@@ -531,6 +493,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:28.826Z"
             },
             {
@@ -543,6 +510,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:29.059Z"
             },
             {
@@ -555,6 +527,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:29.291Z"
             },
             {
@@ -567,6 +544,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:29.582Z"
             },
             {
@@ -579,6 +561,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:29.867Z"
             }
           ]
@@ -617,6 +604,11 @@
               "site": "away",
               "venue": "Montgomery High School, 3250 Palm Avenue, San Diego, California, 92154, USA",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:45.681Z"
             },
             {
@@ -629,6 +621,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:45.909Z"
             },
             {
@@ -641,6 +638,11 @@
               "site": "away",
               "venue": "Foothill High School, 19251 Dodge Ave, Santa Ana, California, 92705",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:46.140Z"
             },
             {
@@ -653,6 +655,11 @@
               "site": "away",
               "venue": "High Tech High San Diego, 2861 Womble Rd, San Diego, California, 92106, United States",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:46.368Z"
             },
             {
@@ -665,6 +672,11 @@
               "site": "away",
               "venue": "Marina High School Gym, 15871 Springdale St, Huntington Beach, California, 92649, United States",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:46.595Z"
             },
             {
@@ -677,6 +689,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:46.823Z"
             },
             {
@@ -689,6 +706,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:47.051Z"
             },
             {
@@ -701,6 +723,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:47.279Z"
             },
             {
@@ -713,31 +740,12 @@
               "site": "away",
               "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:47.506Z"
-            },
-            {
-              "id": "cms-38",
-              "date": "2026-12-21",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:47.735Z"
-            },
-            {
-              "id": "cms-39",
-              "date": "2026-12-22",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:47.962Z"
             },
             {
               "id": "cms-40",
@@ -749,55 +757,12 @@
               "site": "away",
               "venue": "Torrey Pines High School, Del Mar Heights Rd., San Diego, California, 92130, United States",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:48.190Z"
-            },
-            {
-              "id": "cms-41",
-              "date": "2026-12-26",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "home",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:48.419Z"
-            },
-            {
-              "id": "cms-42",
-              "date": "2026-12-28",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "home",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:48.645Z"
-            },
-            {
-              "id": "cms-43",
-              "date": "2026-12-29",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "home",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:48.873Z"
-            },
-            {
-              "id": "cms-44",
-              "date": "2026-12-30",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "home",
-              "venue": null,
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:49.101Z"
             },
             {
               "id": "cms-45",
@@ -809,6 +774,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:49.330Z"
             },
             {
@@ -821,6 +791,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:49.658Z"
             },
             {
@@ -833,19 +808,12 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:49.887Z"
-            },
-            {
-              "id": "cms-48",
-              "date": "2027-01-16",
-              "startsAt": null,
-              "timeTBD": true,
-              "eventTitle": null,
-              "opponent": "TBA",
-              "site": "away",
-              "venue": "Rancho Christian, 31300 Rancho Community Way, Temecula, California, 92592",
-              "status": "scheduled",
-              "updatedAt": "2026-11-16T16:04:50.116Z"
             },
             {
               "id": "cms-49",
@@ -857,6 +825,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:50.345Z"
             },
             {
@@ -869,6 +842,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:50.573Z"
             },
             {
@@ -881,6 +859,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:50.801Z"
             },
             {
@@ -893,6 +876,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:51.031Z"
             },
             {
@@ -905,6 +893,11 @@
               "site": "away",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:51.259Z"
             },
             {
@@ -917,6 +910,11 @@
               "site": "away",
               "venue": "Mater Dei Catholic, 1615 Mater Dei Dr, Chula Vista, California, 91913",
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:51.486Z"
             },
             {
@@ -929,6 +927,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:51.711Z"
             },
             {
@@ -941,6 +944,11 @@
               "site": "home",
               "venue": null,
               "status": "scheduled",
+              "teamScore": null,
+              "opponentScore": null,
+              "scoreSource": null,
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": null,
               "updatedAt": "2026-11-16T16:04:51.938Z"
             }
           ]
