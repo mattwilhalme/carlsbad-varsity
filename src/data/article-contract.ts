@@ -66,7 +66,43 @@ export interface PublicHomepageSnapshotV1 {
   };
 }
 
+export interface PublicScheduleDisplaySnapshotV1 {
+  version: "north-county-varsity.schedule-display.v1";
+  generatedAt: string;
+  display: null | {
+    id: string;
+    title: string;
+    publication: { id: string; name: string; slug: string };
+    updatedAt: string;
+    sources: {
+      scheduleImportId: string;
+      destinations: ("team-page" | "homepage-upcoming" | "homepage-results")[];
+      team: {
+        id: string;
+        season: string;
+        school: { id: string; name: string; slug: string } | null;
+        sport: { id: string; name: string; slug: string } | null;
+      };
+      startsOn: string | null;
+      endsOn: string | null;
+      games: {
+        id: string;
+        date: string;
+        startsAt: string | null;
+        timeTBD: boolean;
+        eventTitle: string | null;
+        opponent: string;
+        site: "home" | "away" | "neutral";
+        venue: string | null;
+        status: "scheduled" | "postponed" | "canceled" | "final";
+        updatedAt: string;
+      }[];
+    }[];
+  };
+}
+
 export interface PublicContentBundleV1 {
   articles: PublicArticlesSnapshotV1;
   homepage: PublicHomepageSnapshotV1;
+  scheduleDisplay: PublicScheduleDisplaySnapshotV1;
 }

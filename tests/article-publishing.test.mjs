@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
 
-import { CONTRACT_VERSION, HOMEPAGE_CONTRACT_VERSION, syncArticles, validateHomepageSnapshot, validateSnapshot } from "../scripts/sync-cms-articles.mjs";
+import { CONTRACT_VERSION, HOMEPAGE_CONTRACT_VERSION, SCHEDULE_DISPLAY_CONTRACT_VERSION, syncArticles, validateHomepageSnapshot, validateScheduleDisplaySnapshot, validateSnapshot } from "../scripts/sync-cms-articles.mjs";
 
 const article = {
   id: "1", slug: "published-story", headline: "Published story", subheadline: "", summary: "Summary",
@@ -15,10 +15,12 @@ const articlesResponse = (articles = [article], generatedAt = "2026-11-14T00:00:
   ({ version: CONTRACT_VERSION, generatedAt, articles });
 const homepageResponse = (homepage = { id: "1", title: "Homepage", publication: null, updatedAt: "2026-11-14T00:00:00.000Z", stories: [] }, generatedAt = "2026-11-14T00:00:00.000Z") =>
   ({ version: HOMEPAGE_CONTRACT_VERSION, generatedAt, homepage });
+const scheduleDisplayResponse = (display = null, generatedAt = "2026-11-14T00:00:00.000Z") =>
+  ({ version: SCHEDULE_DISPLAY_CONTRACT_VERSION, generatedAt, display });
 const response = (value, status = 200) => new Response(JSON.stringify(value), { status, headers: { "Content-Type": "application/json" } });
 
 function fetchPair(articles, homepage) {
-  return async (url) => String(url).endsWith("/articles") ? response(articles) : response(homepage);
+  return async (url) => String(url).endsWith("/articles") ? response(articles) : String(url).endsWith("/homepage") ? response(homepage) : response(scheduleDisplayResponse());
 }
 
 test("accepts the versioned article snapshot", () => {
@@ -55,6 +57,13 @@ test("accepts an intentionally empty published homepage", () => {
   assert.equal(validateHomepageSnapshot(homepageResponse(), articlesResponse()).homepage.stories.length, 0);
 });
 
+test("validates an intentionally empty Schedule Display and rejects private fields", () => {
+  assert.equal(validateScheduleDisplaySnapshot(scheduleDisplayResponse()).display, null);
+  assert.throws(() => validateScheduleDisplaySnapshot(scheduleDisplayResponse({
+    id: "1", title: "Display", publication: { id: "1", name: "NCV", slug: "ncv" }, updatedAt: "now", sources: [], internalNotes: "private",
+  })), /Unexpected public Schedule Display field/);
+});
+
 test("published articles do not appear on the Homepage without placement", async () => {
   const editorialData = await readFile(new URL("../src/data/editorial-data.ts", import.meta.url), "utf8");
   assert.match(editorialData, /export const homepageStories = configuredStories/);
@@ -64,7 +73,7 @@ test("published articles do not appear on the Homepage without placement", async
 test("unchanged published content does not rewrite the snapshot", async () => {
   const directory = await mkdtemp(join(tmpdir(), "ncv-sync-"));
   const outputPath = join(directory, "snapshot.json");
-  const existing = { articles: articlesResponse(), homepage: homepageResponse() };
+  const existing = { articles: articlesResponse(), homepage: homepageResponse(), scheduleDisplay: scheduleDisplayResponse() };
   await writeFile(outputPath, `${JSON.stringify(existing, null, 2)}\n`);
   const result = await syncArticles({
     cmsOrigin: "https://cms.example",
@@ -78,7 +87,7 @@ test("unchanged published content does not rewrite the snapshot", async () => {
 test("published updates and removals atomically replace the snapshot", async () => {
   const directory = await mkdtemp(join(tmpdir(), "ncv-sync-"));
   const outputPath = join(directory, "snapshot.json");
-  await writeFile(outputPath, `${JSON.stringify({ articles: articlesResponse(), homepage: homepageResponse() })}\n`);
+  await writeFile(outputPath, `${JSON.stringify({ articles: articlesResponse(), homepage: homepageResponse(), scheduleDisplay: scheduleDisplayResponse() })}\n`);
   const updated = { ...article, headline: "Updated headline" };
   const changed = await syncArticles({ cmsOrigin: "https://cms.example", fetchImpl: fetchPair(articlesResponse([updated]), homepageResponse()), outputPath });
   assert.equal(changed.changed, true);

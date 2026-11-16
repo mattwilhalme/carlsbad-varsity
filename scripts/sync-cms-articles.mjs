@@ -4,6 +4,7 @@ import { pathToFileURL } from "node:url";
 
 export const CONTRACT_VERSION = "north-county-varsity.articles.v1";
 export const HOMEPAGE_CONTRACT_VERSION = "north-county-varsity.homepage.v1";
+export const SCHEDULE_DISPLAY_CONTRACT_VERSION = "north-county-varsity.schedule-display.v1";
 export const DEFAULT_OUTPUT = "src/data/generated/public-content.v1.json";
 
 const ARTICLE_KEYS = new Set([
@@ -11,6 +12,11 @@ const ARTICLE_KEYS = new Set([
   "leadImage", "publishedAt", "updatedAt", "relationships",
 ]);
 const HOMEPAGE_KEYS = new Set(["id", "title", "publication", "updatedAt", "stories"]);
+const SCHEDULE_DISPLAY_KEYS = new Set(["id", "title", "publication", "updatedAt", "sources"]);
+const SCHEDULE_SOURCE_KEYS = new Set(["scheduleImportId", "destinations", "team", "startsOn", "endsOn", "games"]);
+const SCHEDULE_TEAM_KEYS = new Set(["id", "season", "school", "sport"]);
+const SCHEDULE_RELATION_KEYS = new Set(["id", "name", "slug"]);
+const SCHEDULE_GAME_KEYS = new Set(["id", "date", "startsAt", "timeTBD", "eventTitle", "opponent", "site", "venue", "status", "updatedAt"]);
 
 function rejectPrivateFields(value, allowed, label) {
   for (const key of Object.keys(value)) {
@@ -58,10 +64,41 @@ export function validateHomepageSnapshot(value, articleSnapshot) {
   return value;
 }
 
+export function validateScheduleDisplaySnapshot(value) {
+  if (!value || value.version !== SCHEDULE_DISPLAY_CONTRACT_VERSION || !(value.display === null || typeof value.display === "object")) {
+    throw new Error("Unsupported CMS Schedule Display contract");
+  }
+  if (value.display === null) return value;
+  rejectPrivateFields(value.display, SCHEDULE_DISPLAY_KEYS, "public Schedule Display");
+  if (!Array.isArray(value.display.sources)) throw new Error("Invalid public Schedule Display sources");
+  const importIds = new Set();
+  const gameIds = new Set();
+  const destinations = new Set(["team-page", "homepage-upcoming", "homepage-results"]);
+  for (const source of value.display.sources) {
+    rejectPrivateFields(source, SCHEDULE_SOURCE_KEYS, "public schedule source");
+    if (typeof source.scheduleImportId !== "string" || importIds.has(source.scheduleImportId) || !Array.isArray(source.destinations) || !Array.isArray(source.games)) {
+      throw new Error("Invalid public schedule source");
+    }
+    importIds.add(source.scheduleImportId);
+    if (!source.destinations.length || source.destinations.some((item) => !destinations.has(item))) throw new Error("Invalid public schedule destination");
+    rejectPrivateFields(source.team, SCHEDULE_TEAM_KEYS, "public schedule team");
+    for (const relation of [source.team.school, source.team.sport]) {
+      if (relation !== null) rejectPrivateFields(relation, SCHEDULE_RELATION_KEYS, "public schedule relation");
+    }
+    for (const game of source.games) {
+      rejectPrivateFields(game, SCHEDULE_GAME_KEYS, "public schedule game");
+      if (typeof game.id !== "string" || gameIds.has(game.id) || typeof game.date !== "string") throw new Error("Invalid or duplicate public schedule game");
+      gameIds.add(game.id);
+    }
+  }
+  return value;
+}
+
 function comparableSnapshot(snapshot) {
   return JSON.stringify({
     articles: { ...snapshot.articles, generatedAt: undefined },
     homepage: { ...snapshot.homepage, generatedAt: undefined },
+    scheduleDisplay: { ...snapshot.scheduleDisplay, generatedAt: undefined },
   });
 }
 
@@ -74,12 +111,14 @@ export async function syncArticles({
 } = {}) {
   const articleEndpoint = new URL("/api/public-content/v1/articles", cmsOrigin);
   const homepageEndpoint = new URL("/api/public-content/v1/homepage", cmsOrigin);
+  const scheduleDisplayEndpoint = new URL("/api/public-content/v1/schedule-display", cmsOrigin);
   let articleResponse;
   let homepageResponse;
+  let scheduleDisplayResponse;
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     try {
-      [articleResponse, homepageResponse] = await Promise.all([articleEndpoint, homepageEndpoint].map((endpoint) =>
+      [articleResponse, homepageResponse, scheduleDisplayResponse] = await Promise.all([articleEndpoint, homepageEndpoint, scheduleDisplayEndpoint].map((endpoint) =>
         fetchImpl(endpoint, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(timeoutMs) })));
       break;
     } catch (error) {
@@ -93,15 +132,16 @@ export async function syncArticles({
       }
     }
   }
-  if (!articleResponse || !homepageResponse) {
+  if (!articleResponse || !homepageResponse || !scheduleDisplayResponse) {
     throw new Error(`Could not fetch published CMS content from ${cmsOrigin}: ${lastError instanceof Error ? lastError.message : lastError}`);
   }
-  if (!articleResponse.ok || !homepageResponse.ok) {
-    throw new Error(`CMS published-content request failed: articles=${articleResponse.status}, homepage=${homepageResponse.status}`);
+  if (!articleResponse.ok || !homepageResponse.ok || !scheduleDisplayResponse.ok) {
+    throw new Error(`CMS published-content request failed: articles=${articleResponse.status}, homepage=${homepageResponse.status}, scheduleDisplay=${scheduleDisplayResponse.status}`);
   }
   const articles = validateSnapshot(await articleResponse.json());
   const homepage = validateHomepageSnapshot(await homepageResponse.json(), articles);
-  const snapshot = { articles, homepage };
+  const scheduleDisplay = validateScheduleDisplaySnapshot(await scheduleDisplayResponse.json());
+  const snapshot = { articles, homepage, scheduleDisplay };
   const output = resolve(outputPath);
   try {
     const existing = JSON.parse(await readFile(output, "utf8"));
@@ -116,7 +156,7 @@ export async function syncArticles({
   await mkdir(dirname(output), { recursive: true });
   await writeFile(temporary, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
   await rename(temporary, output);
-  console.log(`Synced ${articles.articles.length} published article(s) and ${homepage.homepage ? 1 : 0} homepage from ${cmsOrigin}`);
+  console.log(`Synced ${articles.articles.length} published article(s), ${homepage.homepage ? 1 : 0} homepage, and ${scheduleDisplay.display ? 1 : 0} Schedule Display from ${cmsOrigin}`);
   return { changed: true, snapshot };
 }
 

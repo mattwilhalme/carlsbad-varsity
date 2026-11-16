@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-16T01:00:38.721Z",
+    "generatedAt": "2026-11-16T04:43:13.027Z",
     "articles": [
       {
         "id": "1",
@@ -184,7 +184,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-16T01:00:38.545Z",
+    "generatedAt": "2026-11-16T04:43:12.980Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -204,6 +204,382 @@
           "kicker": "Editor's Note",
           "thumbnail": null,
           "readDowns": []
+        }
+      ]
+    }
+  },
+  "scheduleDisplay": {
+    "version": "north-county-varsity.schedule-display.v1",
+    "generatedAt": "2026-11-16T04:43:13.005Z",
+    "display": {
+      "id": "1",
+      "title": "North County Varsity Schedule Display",
+      "publication": {
+        "id": "1",
+        "name": "North County Varsity",
+        "slug": "north-county-varsity"
+      },
+      "updatedAt": "2026-11-16T04:39:44.915Z",
+      "sources": [
+        {
+          "scheduleImportId": "2",
+          "destinations": [
+            "homepage-upcoming"
+          ],
+          "team": {
+            "id": "6",
+            "season": "2026-27",
+            "school": {
+              "id": "1",
+              "name": "Carlsbad",
+              "slug": "carlsbad"
+            },
+            "sport": {
+              "id": "1",
+              "name": "Boys’ Basketball",
+              "slug": "boys-basketball"
+            }
+          },
+          "startsOn": null,
+          "endsOn": null,
+          "games": [
+            {
+              "id": "cms-29",
+              "date": "2026-11-21",
+              "startsAt": "2026-11-22T02:30:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Helix",
+              "site": "away",
+              "venue": "Montgomery High School, 3250 Palm Avenue, San Diego, California, 92154, USA",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:18.440Z"
+            },
+            {
+              "id": "cms-30",
+              "date": "2026-11-24",
+              "startsAt": "2026-11-25T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Francis Parker",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:18.671Z"
+            },
+            {
+              "id": "cms-31",
+              "date": "2026-11-25",
+              "startsAt": "2026-11-26T00:30:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Santiago/Corona",
+              "site": "away",
+              "venue": "Foothill High School, 19251 Dodge Ave, Santa Ana, California, 92705",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:18.900Z"
+            },
+            {
+              "id": "cms-32",
+              "date": "2026-11-27",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "Army-Navy Academy",
+              "site": "away",
+              "venue": "High Tech High San Diego, 2861 Womble Rd, San Diego, California, 92106, United States",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:19.129Z"
+            },
+            {
+              "id": "cms-33",
+              "date": "2026-11-28",
+              "startsAt": "2026-11-29T00:15:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Los Alamitos",
+              "site": "away",
+              "venue": "Marina High School Gym, 15871 Springdale St, Huntington Beach, California, 92649, United States",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:19.358Z"
+            },
+            {
+              "id": "cms-34",
+              "date": "2026-12-04",
+              "startsAt": "2026-12-05T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Mission Hills",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:19.588Z"
+            },
+            {
+              "id": "cms-35",
+              "date": "2026-12-08",
+              "startsAt": "2026-12-09T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Saint Augustine",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:19.817Z"
+            },
+            {
+              "id": "cms-36",
+              "date": "2026-12-15",
+              "startsAt": "2026-12-16T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Tri City Christian",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:20.047Z"
+            },
+            {
+              "id": "cms-37",
+              "date": "2026-12-19",
+              "startsAt": "2026-12-19T21:30:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Poway",
+              "site": "away",
+              "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:20.276Z"
+            },
+            {
+              "id": "cms-38",
+              "date": "2026-12-21",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "away",
+              "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:20.506Z"
+            },
+            {
+              "id": "cms-39",
+              "date": "2026-12-22",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "away",
+              "venue": "Mira Mesa High School, 10510 Reagan Rd, San Diego, California, 92126",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:20.735Z"
+            },
+            {
+              "id": "cms-40",
+              "date": "2026-12-23",
+              "startsAt": "2026-12-23T22:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Bonita Vista",
+              "site": "away",
+              "venue": "Torrey Pines High School, Del Mar Heights Rd., San Diego, California, 92130, United States",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:20.965Z"
+            },
+            {
+              "id": "cms-41",
+              "date": "2026-12-26",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:21.194Z"
+            },
+            {
+              "id": "cms-42",
+              "date": "2026-12-28",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:21.423Z"
+            },
+            {
+              "id": "cms-43",
+              "date": "2026-12-29",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:21.653Z"
+            },
+            {
+              "id": "cms-44",
+              "date": "2026-12-30",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:21.884Z"
+            },
+            {
+              "id": "cms-45",
+              "date": "2027-01-05",
+              "startsAt": "2027-01-06T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Escondido Charter",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:22.112Z"
+            },
+            {
+              "id": "cms-46",
+              "date": "2027-01-07",
+              "startsAt": "2027-01-08T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Santa Fe Christian",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:22.342Z"
+            },
+            {
+              "id": "cms-47",
+              "date": "2027-01-15",
+              "startsAt": "2027-01-16T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "La Costa Canyon",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:22.571Z"
+            },
+            {
+              "id": "cms-48",
+              "date": "2027-01-16",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "TBA",
+              "site": "away",
+              "venue": "Rancho Christian, 31300 Rancho Community Way, Temecula, California, 92592",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:22.834Z"
+            },
+            {
+              "id": "cms-49",
+              "date": "2027-01-20",
+              "startsAt": "2027-01-21T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Torrey Pines",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:23.127Z"
+            },
+            {
+              "id": "cms-50",
+              "date": "2027-01-22",
+              "startsAt": "2027-01-23T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Sage Creek",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:23.357Z"
+            },
+            {
+              "id": "cms-51",
+              "date": "2027-01-27",
+              "startsAt": "2027-01-28T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Rancho Buena Vista",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:23.586Z"
+            },
+            {
+              "id": "cms-52",
+              "date": "2027-02-03",
+              "startsAt": "2027-02-04T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "La Costa Canyon",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:23.816Z"
+            },
+            {
+              "id": "cms-53",
+              "date": "2027-02-05",
+              "startsAt": "2027-02-06T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Torrey Pines",
+              "site": "away",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:24.044Z"
+            },
+            {
+              "id": "cms-54",
+              "date": "2027-02-06",
+              "startsAt": "2027-02-06T23:30:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Cathedral Catholic",
+              "site": "away",
+              "venue": "Mater Dei Catholic, 1615 Mater Dei Dr, Chula Vista, California, 91913",
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:24.272Z"
+            },
+            {
+              "id": "cms-55",
+              "date": "2027-02-10",
+              "startsAt": "2027-02-11T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Rancho Buena Vista",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:24.500Z"
+            },
+            {
+              "id": "cms-56",
+              "date": "2027-02-12",
+              "startsAt": "2027-02-13T03:00:00.000Z",
+              "timeTBD": false,
+              "eventTitle": null,
+              "opponent": "Sage Creek",
+              "site": "home",
+              "venue": null,
+              "status": "scheduled",
+              "updatedAt": "2026-11-16T04:30:24.727Z"
+            }
+          ]
         }
       ]
     }
