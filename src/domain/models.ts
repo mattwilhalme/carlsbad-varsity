@@ -53,6 +53,10 @@ export interface Game {
   /** Immutable editorial ID. Never derive this from fields an editor can change. */
   id: string;
   teamId: string;
+  schoolSlug?: SchoolSlug;
+  sportSlug?: SportSlug;
+  sportName?: string;
+  season?: string;
   date: string;
   time?: string;
   opponent: string;

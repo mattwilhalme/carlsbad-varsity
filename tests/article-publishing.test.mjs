@@ -157,3 +157,13 @@ test("published and preview routes share one article presentation", async () => 
   assert.match(published, /ArticlePresentation/);
   assert.match(preview, /ArticlePresentation/);
 });
+
+test("Schedule Display mapping preserves verified stable IDs and curated destinations", async () => {
+  const mapper = await readFile(new URL("../src/data/schedule-display-data.ts", import.meta.url), "utf8");
+  assert.match(mapper, /id: game\.id/);
+  assert.match(mapper, /dataStatus: "verified"/);
+  assert.match(mapper, /destinations\.includes\("team-page"\)/);
+  assert.match(mapper, /destinations\.includes\("homepage-upcoming"\)/);
+  assert.match(mapper, /destinations\.includes\("homepage-results"\)/);
+  assert.doesNotMatch(mapper, /dataStatus: "placeholder"/);
+});
