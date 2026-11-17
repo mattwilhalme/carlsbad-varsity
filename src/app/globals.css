@@ -265,8 +265,10 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .rail-game time { color: var(--muted); font-size: .68rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .rail-game > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .rail-game .rail-matchup { gap: 2px; }
-.rail-game strong { min-width: 0; font: 900 1rem/1.08 Georgia, serif; }
+.rail-game strong { align-items: baseline; display: flex; justify-content: space-between; gap: 12px; min-width: 0; font: 900 1rem/1.08 Georgia, serif; }
 .rail-game strong span { min-width: 0; text-wrap: balance; }
+.rail-game strong > b { color: inherit; font: inherit; }
+.rail-game .rail-team-winner { box-shadow: inset 0 -3px 0 rgba(38, 138, 72, .32); color: #176d35; padding-bottom: 3px; }
 .rail-game strong em { display: inline; margin-left: 3px; font: 900 .68rem/1 Arial, sans-serif; font-style: normal; white-space: nowrap; }
 .rail-game small { margin-top: 5px; color: var(--muted); font-size: .62rem; }
 .rail-game b { font-size: .72rem; font-variant-numeric: tabular-nums; white-space: nowrap; }

@@ -17,4 +17,13 @@ test("homepage game cards support CMS teams and honest empty states", () => {
   assert.doesNotMatch(rail, /\(1-0\)/);
   assert.match(rail, /return "Final"/);
   assert.match(rail, /className="rail-empty"/);
+  assert.match(rail, /rail-team-winner/);
+  assert.match(rail, /awayScore/);
+});
+
+test("game pages use plain-language outcomes and omit venue and score-source facts", async () => {
+  const detail = await readFile(new URL("../src/components/GameDetail.tsx", import.meta.url), "utf8");
+  assert.match(detail, /game\.result === "W" \? "win"/);
+  assert.doesNotMatch(detail, /<dt>Venue<\/dt>/);
+  assert.doesNotMatch(detail, /<dt>Score source<\/dt>/);
 });

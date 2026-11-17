@@ -29,7 +29,7 @@ export function GameDetail({ game }: { game: Game }) {
   const theme = { "--team-primary": school.colors.primary, "--team-gold": school.colors.gold } as React.CSSProperties;
   const correctionSubject = encodeURIComponent(`Correction for ${school.shortName} vs. ${game.opponent} (${game.id})`);
   const scorePeriods = [...(game.periodScores ?? []), ...(game.overtimeScores ?? [])];
-  const scoreSource = game.scoreSource ? ({ cif: "CIF", school: "School", coach: "Coach", maxpreps: "MaxPreps", staff: "Staff report" } as const)[game.scoreSource] : null;
+  const schoolResult = game.result === "W" ? "win" : game.result === "L" ? "loss" : game.result === "T" ? "tie" : null;
 
   return (
     <main style={theme}>
@@ -48,7 +48,7 @@ export function GameDetail({ game }: { game: Game }) {
           <TeamIdentity {...firstTeam} />
           <div className="matchup-divider"><span>{game.homeAway === "Neutral" ? "vs." : "at"}</span></div>
           <TeamIdentity {...secondTeam} />
-          <p className="game-status"><strong>{game.status === "final" ? "Final" : game.status}</strong>{game.result && ` · ${school.shortName} ${game.result}`}</p>
+          <p className="game-status"><strong>{game.status === "final" ? "Final" : game.status}</strong>{schoolResult && ` · ${school.shortName} ${schoolResult}`}</p>
         </section>
 
         <div className="game-information">
@@ -60,9 +60,6 @@ export function GameDetail({ game }: { game: Game }) {
               <div><dt>Level</dt><dd>{team.level}</dd></div>
               <div><dt>Date</dt><dd>{date}</dd></div>
               <div><dt>Time</dt><dd>{game.time || "TBD"}</dd></div>
-              <div><dt>Venue</dt><dd>{game.location || "Not provided"}</dd></div>
-              {game.venueAddress && <div><dt>Address</dt><dd>{game.venueAddress}</dd></div>}
-              {scoreSource && <div><dt>Score source</dt><dd>{game.scoreSourceUrl ? <a href={game.scoreSourceUrl} target="_blank" rel="noreferrer">{scoreSource} ↗</a> : scoreSource}</dd></div>}
             </dl>
           </section>
 
