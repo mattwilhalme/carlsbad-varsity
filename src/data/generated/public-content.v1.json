@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-21T15:21:09.038Z",
+    "generatedAt": "2026-11-21T18:44:35.203Z",
     "articles": [
       {
         "id": "1",
@@ -184,7 +184,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-21T15:21:08.875Z",
+    "generatedAt": "2026-11-21T18:44:35.140Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -210,7 +210,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-21T15:21:09.231Z",
+    "generatedAt": "2026-11-21T18:44:35.317Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -271,13 +271,13 @@
               "opponent": "Rancho Christian",
               "site": "home",
               "venue": null,
-              "status": "scheduled",
-              "teamScore": null,
-              "opponentScore": null,
-              "scoreSource": null,
+              "status": "final",
+              "teamScore": 56,
+              "opponentScore": 90,
+              "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-21T07:25:08.206Z",
-              "updatedAt": "2026-11-21T07:25:08.208Z"
+              "scoreUpdatedAt": "2026-11-21T18:43:06.059Z",
+              "updatedAt": "2026-11-21T18:43:06.065Z"
             },
             {
               "id": "cms-9",
