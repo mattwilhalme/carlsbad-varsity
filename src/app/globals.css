@@ -93,6 +93,26 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
 .sport-nav { border-bottom: 1px solid var(--line); }
 .sport-nav a[aria-current="page"] { border-color: var(--team-primary); color: var(--team-primary); }
 .editorial-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 36px; width: min(900px, calc(100% - 40px)); padding-block: 34px 72px; }
+.school-page-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(360px, .9fr); gap: clamp(30px, 4vw, 56px); padding-block: 34px 72px; }
+.school-news, .school-schedule { min-width: 0; }
+.school-news-heading { margin-bottom: 18px; }
+.school-news h2, .school-schedule h2 { margin: 5px 0 0; font: 900 clamp(1.8rem, 3vw, 2.5rem)/1 Georgia, serif; }
+.school-news-lead { padding-bottom: 24px; border-bottom: 3px solid #111; }
+.school-news-lead-image { display: block; margin-bottom: 20px; overflow: hidden; background: var(--wash); }
+.school-news-lead-image img { display: block; width: 100%; aspect-ratio: 1.7 / 1; object-fit: cover; }
+.school-news-lead h3 { margin: 6px 0 10px; font: 900 clamp(1.75rem, 3vw, 2.7rem)/1.02 Georgia, serif; letter-spacing: -.035em; }
+.school-news-lead h3 a, .school-news-row h3 a { color: inherit; text-decoration: none; }
+.school-news-lead h3 a:hover, .school-news-row h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.school-news-lead p, .school-news-row p { color: var(--muted); line-height: 1.5; }
+.school-news-stack { display: grid; }
+.school-news-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.school-news-row:not(:has(.school-news-thumb)) { grid-template-columns: 1fr; }
+.school-news-thumb { display: block; overflow: hidden; background: var(--wash); }
+.school-news-thumb img { display: block; width: 100%; height: 84px; object-fit: cover; }
+.school-news-row h3 { margin: 0 0 6px; font: 900 1.18rem/1.08 Georgia, serif; }
+.school-news-row p { display: -webkit-box; margin: 0; overflow: hidden; font-size: .82rem; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.school-schedule .schedule-header { grid-template-columns: 78px minmax(150px, 2fr) minmax(86px, .8fr) 18px; }
+.school-schedule .schedule-row { grid-template-columns: 78px minmax(150px, 2fr) minmax(86px, .8fr) 18px; padding-inline: 8px; }
 .section-heading { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
 .season-heading select { min-width: 130px; margin: 6px 0 12px; padding: 7px 34px 7px 10px; border: 1px solid var(--line); border-radius: 0; background: white; color: inherit; font: 800 .82rem/1.2 inherit; }
 .status-label, .placeholder-badge { display: inline-block; padding: 6px 8px; background: #eee; color: #444; font-size: .66rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
@@ -335,7 +355,14 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
   .home-game-opponent { grid-column: 2; grid-row: 2; font-size: .75rem; }
   .home-game-row > strong { grid-column: 3; grid-row: 1 / 3; text-align: right; white-space: nowrap; }
   .home-game-row .row-chevron { grid-column: 4; grid-row: 1 / 3; }
-  .school-grid, .editorial-grid, .story-grid { grid-template-columns: 1fr; }
+  .school-grid, .editorial-grid, .school-page-grid, .story-grid { grid-template-columns: 1fr; }
+  .school-page-grid { width: min(100% - 28px, 1320px); gap: 48px; padding-block: 28px 54px; }
+  .school-news-row { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; }
+  .school-news-thumb img { height: 72px; }
+  .school-news-lead h3,
+  .school-news-row h3,
+  .school-news-lead p,
+  .school-news-row p { overflow-wrap: anywhere; }
   .team-identity { padding-block: 26px 32px; }
   .team-logo { min-height: 110px; max-width: 420px; }
   .team-logo-direct { min-height: 80px; }
@@ -391,6 +418,19 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-gold); o
   .league-standings th, .league-standings td { padding: 8px 3px; font-size: .7rem; }
   .article-related a { padding-block: 14px; }
   .article-related strong { font-size: 1rem; line-height: 1.24; }
+}
+@media (max-width: 480px) {
+  .publication-header-inner { gap: 8px; }
+  .masthead { flex: 1 1 auto; max-width: 180px; font-size: 1.45rem; }
+  .publication-nav { flex: 0 0 auto; gap: 0; }
+  .publication-nav a:not(.coverage-nav-button) { display: none; }
+  .publication-nav .coverage-nav-button { padding: 10px 8px; font-size: .5rem; white-space: nowrap; }
+  .coverage-navigation-inner { overflow: hidden; }
+  .coverage-label { display: none; }
+  .persistent-school-nav { overflow-x: auto; padding: 3px; scrollbar-width: none; }
+  .persistent-school-nav::-webkit-scrollbar { display: none; }
+  .persistent-school-nav .school-selector { flex: 0 0 148px; }
+  .school-news-row { grid-template-columns: 82px minmax(0, 1fr); }
 }
 @media (max-width: 380px) {
   .article-box-score { margin-inline: -4px; padding-inline: 8px; }

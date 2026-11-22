@@ -1,5 +1,5 @@
 import type { PublicArticleV1 } from "@/data/article-contract";
-import type { EditorialStory } from "@/domain/models";
+import type { EditorialStory, SchoolSlug } from "@/domain/models";
 
 export function publicArticleToStory(article: PublicArticleV1): EditorialStory {
   return {
@@ -13,6 +13,7 @@ export function publicArticleToStory(article: PublicArticleV1): EditorialStory {
     byline: article.authors.map((author) => author.name).join(" and ") || "North County Varsity staff",
     publishedAt: article.publishedAt || article.updatedAt,
     updatedAt: article.updatedAt || undefined,
+    schoolSlugs: article.relationships.schools.map((school) => school.slug as SchoolSlug),
     image: article.leadImage ? {
           src: article.leadImage.url,
           alt: article.leadImage.alt,

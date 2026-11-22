@@ -97,6 +97,7 @@ export interface EditorialStory {
   byline: string;
   publishedAt: string;
   updatedAt?: string;
+  schoolSlugs?: SchoolSlug[];
   image?: { src: string; alt: string; credit: string; caption?: string; width?: number; height?: number };
   relatedLinks: { label: string; href: string }[];
   body: string[] | PublicArticleBlock[];

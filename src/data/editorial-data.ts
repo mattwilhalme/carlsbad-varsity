@@ -1,4 +1,4 @@
-import type { EditorialStory } from "@/domain/models";
+import type { EditorialStory, SchoolSlug } from "@/domain/models";
 import type { PublicContentBundleV1 } from "@/data/article-contract";
 import publicContent from "@/data/generated/public-content.v1.json";
 import { publicArticleToStory } from "@/data/public-article-mapper";
@@ -41,4 +41,7 @@ export const secondaryStories = leadStory
   : [];
 
 export function getEditorialStory(slug: string) { return publishedStories.find((story) => story.slug === slug); }
+export function getSchoolStories(schoolSlug: SchoolSlug) {
+  return publishedStories.filter((story) => !story.schoolSlugs?.length || story.schoolSlugs.includes(schoolSlug));
+}
 export function articlePath(story: EditorialStory) { return `/articles/${story.slug}/`; }
