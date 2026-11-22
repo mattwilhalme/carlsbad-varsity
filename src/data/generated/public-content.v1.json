@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-22T08:49:59.044Z",
+    "generatedAt": "2026-11-22T18:22:15.210Z",
     "articles": [
       {
         "id": "1",
@@ -184,7 +184,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-22T08:49:58.943Z",
+    "generatedAt": "2026-11-22T18:22:15.388Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -210,7 +210,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-22T08:49:59.323Z",
+    "generatedAt": "2026-11-22T18:22:15.467Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -586,13 +586,13 @@
               "opponent": "Helix",
               "site": "away",
               "venue": "Montgomery High School, 3250 Palm Avenue, San Diego, California, 92154, USA",
-              "status": "scheduled",
-              "teamScore": null,
-              "opponentScore": null,
-              "scoreSource": null,
+              "status": "final",
+              "teamScore": 60,
+              "opponentScore": 54,
+              "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-22T07:06:12.693Z",
-              "updatedAt": "2026-11-22T07:06:12.694Z"
+              "scoreUpdatedAt": "2026-11-22T18:20:57.551Z",
+              "updatedAt": "2026-11-22T18:20:57.556Z"
             },
             {
               "id": "cms-30",
