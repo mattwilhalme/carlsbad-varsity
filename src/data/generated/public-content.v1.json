@@ -1,70 +1,8 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-22T22:30:28.495Z",
+    "generatedAt": "2026-11-23T02:53:07.235Z",
     "articles": [
-      {
-        "id": "1",
-        "slug": "this-is-a-test",
-        "headline": "This is a test.",
-        "subheadline": "Calling all Cards",
-        "summary": "This is my article here. Very cool.\n\nI am excited. ",
-        "authors": [
-          {
-            "id": "1",
-            "name": "Matt Wilhalme",
-            "slug": "matt-wilhalme",
-            "title": "Founder"
-          }
-        ],
-        "body": [
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "type": "text",
-                "text": "This is my article here. Very cool.",
-                "formats": []
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "type": "text",
-                "text": "I am excited. ",
-                "formats": []
-              }
-            ]
-          }
-        ],
-        "leadImage": null,
-        "publishedAt": "2026-11-14T23:24:55.504Z",
-        "updatedAt": "2026-11-14T23:24:55.505Z",
-        "relationships": {
-          "publication": {
-            "id": "1",
-            "slug": "north-county-varsity",
-            "name": "North County Varsity"
-          },
-          "schools": [
-            {
-              "id": "2",
-              "slug": "sage-creek",
-              "name": "Sage Creek"
-            }
-          ],
-          "sports": [
-            {
-              "id": "1",
-              "slug": "boys-basketball",
-              "name": "Boys’ Basketball"
-            }
-          ],
-          "teams": []
-        }
-      },
       {
         "id": "30",
         "slug": "north-county-varsity-allow-us-to-introduce-ourselves",
@@ -184,7 +122,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-22T22:30:28.198Z",
+    "generatedAt": "2026-11-23T02:53:07.334Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -210,7 +148,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-22T22:30:28.576Z",
+    "generatedAt": "2026-11-23T02:53:07.525Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
