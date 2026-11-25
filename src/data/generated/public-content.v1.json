@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-24T10:26:39.967Z",
+    "generatedAt": "2026-11-25T04:10:33.675Z",
     "articles": [
       {
         "id": "30",
@@ -122,7 +122,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-24T10:26:40.067Z",
+    "generatedAt": "2026-11-25T04:10:33.820Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -148,7 +148,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-24T10:26:40.371Z",
+    "generatedAt": "2026-11-25T04:10:34.176Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -197,8 +197,8 @@
               "opponentScore": 65,
               "scoreSource": "school",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:26.784Z",
-              "updatedAt": "2026-11-24T10:07:26.785Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:57.293Z",
+              "updatedAt": "2026-11-24T22:36:57.296Z"
             },
             {
               "id": "cms-3",
@@ -214,8 +214,8 @@
               "opponentScore": 90,
               "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:27.037Z",
-              "updatedAt": "2026-11-24T10:07:27.038Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:57.572Z",
+              "updatedAt": "2026-11-24T22:36:57.574Z"
             },
             {
               "id": "cms-9",
@@ -231,8 +231,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:28.224Z",
-              "updatedAt": "2026-11-24T10:07:28.226Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:59.066Z",
+              "updatedAt": "2026-11-24T22:36:59.068Z"
             },
             {
               "id": "cms-10",
@@ -248,8 +248,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:28.479Z",
-              "updatedAt": "2026-11-24T10:07:28.480Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:59.312Z",
+              "updatedAt": "2026-11-24T22:36:59.315Z"
             },
             {
               "id": "cms-11",
@@ -265,8 +265,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:28.720Z",
-              "updatedAt": "2026-11-24T10:07:28.722Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:59.559Z",
+              "updatedAt": "2026-11-24T22:36:59.560Z"
             },
             {
               "id": "cms-12",
@@ -282,8 +282,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:28.959Z",
-              "updatedAt": "2026-11-24T10:07:28.962Z"
+              "scoreUpdatedAt": "2026-11-24T22:36:59.809Z",
+              "updatedAt": "2026-11-24T22:36:59.811Z"
             },
             {
               "id": "cms-13",
@@ -299,8 +299,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:29.274Z",
-              "updatedAt": "2026-11-24T10:07:29.276Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:00.051Z",
+              "updatedAt": "2026-11-24T22:37:00.052Z"
             },
             {
               "id": "cms-14",
@@ -316,8 +316,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:29.512Z",
-              "updatedAt": "2026-11-24T10:07:29.516Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:00.295Z",
+              "updatedAt": "2026-11-24T22:37:00.296Z"
             },
             {
               "id": "cms-19",
@@ -333,8 +333,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:30.677Z",
-              "updatedAt": "2026-11-24T10:07:30.678Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:01.509Z",
+              "updatedAt": "2026-11-24T22:37:01.510Z"
             },
             {
               "id": "cms-20",
@@ -350,8 +350,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:30.909Z",
-              "updatedAt": "2026-11-24T10:07:30.910Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:01.750Z",
+              "updatedAt": "2026-11-24T22:37:01.751Z"
             },
             {
               "id": "cms-21",
@@ -367,8 +367,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:31.200Z",
-              "updatedAt": "2026-11-24T10:07:31.201Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:01.991Z",
+              "updatedAt": "2026-11-24T22:37:01.992Z"
             },
             {
               "id": "cms-22",
@@ -384,8 +384,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:31.487Z",
-              "updatedAt": "2026-11-24T10:07:31.488Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:02.238Z",
+              "updatedAt": "2026-11-24T22:37:02.243Z"
             },
             {
               "id": "cms-23",
@@ -401,8 +401,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:31.720Z",
-              "updatedAt": "2026-11-24T10:07:31.721Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:02.492Z",
+              "updatedAt": "2026-11-24T22:37:02.496Z"
             },
             {
               "id": "cms-24",
@@ -418,8 +418,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:31.952Z",
-              "updatedAt": "2026-11-24T10:07:31.954Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:02.740Z",
+              "updatedAt": "2026-11-24T22:37:02.745Z"
             },
             {
               "id": "cms-25",
@@ -435,8 +435,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:32.185Z",
-              "updatedAt": "2026-11-24T10:07:32.186Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:02.992Z",
+              "updatedAt": "2026-11-24T22:37:03.000Z"
             },
             {
               "id": "cms-26",
@@ -452,8 +452,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:32.416Z",
-              "updatedAt": "2026-11-24T10:07:32.418Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:03.254Z",
+              "updatedAt": "2026-11-24T22:37:03.256Z"
             },
             {
               "id": "cms-27",
@@ -469,8 +469,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:32.649Z",
-              "updatedAt": "2026-11-24T10:07:32.650Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:03.523Z",
+              "updatedAt": "2026-11-24T22:37:03.526Z"
             },
             {
               "id": "cms-28",
@@ -486,8 +486,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:32.882Z",
-              "updatedAt": "2026-11-24T10:07:32.883Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:04.032Z",
+              "updatedAt": "2026-11-24T22:37:04.033Z"
             }
           ]
         },
@@ -529,8 +529,8 @@
               "opponentScore": 54,
               "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:48.794Z",
-              "updatedAt": "2026-11-24T10:07:48.794Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:21.529Z",
+              "updatedAt": "2026-11-24T22:37:21.536Z"
             },
             {
               "id": "cms-30",
@@ -546,8 +546,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:49.046Z",
-              "updatedAt": "2026-11-24T10:07:49.047Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:21.799Z",
+              "updatedAt": "2026-11-24T22:37:21.800Z"
             },
             {
               "id": "cms-31",
@@ -563,8 +563,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:49.280Z",
-              "updatedAt": "2026-11-24T10:07:49.281Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:22.039Z",
+              "updatedAt": "2026-11-24T22:37:22.040Z"
             },
             {
               "id": "cms-32",
@@ -580,8 +580,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:49.517Z",
-              "updatedAt": "2026-11-24T10:07:49.518Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:22.278Z",
+              "updatedAt": "2026-11-24T22:37:22.279Z"
             },
             {
               "id": "cms-33",
@@ -597,8 +597,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:49.752Z",
-              "updatedAt": "2026-11-24T10:07:49.753Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:22.518Z",
+              "updatedAt": "2026-11-24T22:37:22.520Z"
             },
             {
               "id": "cms-34",
@@ -614,8 +614,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:49.986Z",
-              "updatedAt": "2026-11-24T10:07:49.988Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:22.756Z",
+              "updatedAt": "2026-11-24T22:37:22.757Z"
             },
             {
               "id": "cms-35",
@@ -631,8 +631,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:50.221Z",
-              "updatedAt": "2026-11-24T10:07:50.223Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:22.995Z",
+              "updatedAt": "2026-11-24T22:37:22.997Z"
             },
             {
               "id": "cms-36",
@@ -648,8 +648,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:50.455Z",
-              "updatedAt": "2026-11-24T10:07:50.456Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:23.236Z",
+              "updatedAt": "2026-11-24T22:37:23.237Z"
             },
             {
               "id": "cms-37",
@@ -665,8 +665,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:50.687Z",
-              "updatedAt": "2026-11-24T10:07:50.688Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:23.476Z",
+              "updatedAt": "2026-11-24T22:37:23.477Z"
             },
             {
               "id": "cms-40",
@@ -682,8 +682,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:51.458Z",
-              "updatedAt": "2026-11-24T10:07:51.459Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:24.337Z",
+              "updatedAt": "2026-11-24T22:37:24.338Z"
             },
             {
               "id": "cms-45",
@@ -699,8 +699,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:52.623Z",
-              "updatedAt": "2026-11-24T10:07:52.624Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:25.536Z",
+              "updatedAt": "2026-11-24T22:37:25.537Z"
             },
             {
               "id": "cms-46",
@@ -716,8 +716,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:52.856Z",
-              "updatedAt": "2026-11-24T10:07:52.857Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:25.777Z",
+              "updatedAt": "2026-11-24T22:37:25.778Z"
             },
             {
               "id": "cms-47",
@@ -733,8 +733,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:53.086Z",
-              "updatedAt": "2026-11-24T10:07:53.087Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:26.017Z",
+              "updatedAt": "2026-11-24T22:37:26.018Z"
             },
             {
               "id": "cms-49",
@@ -750,8 +750,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:53.548Z",
-              "updatedAt": "2026-11-24T10:07:53.549Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:26.495Z",
+              "updatedAt": "2026-11-24T22:37:26.495Z"
             },
             {
               "id": "cms-50",
@@ -767,8 +767,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:53.780Z",
-              "updatedAt": "2026-11-24T10:07:53.782Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:26.734Z",
+              "updatedAt": "2026-11-24T22:37:26.735Z"
             },
             {
               "id": "cms-51",
@@ -784,8 +784,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:54.011Z",
-              "updatedAt": "2026-11-24T10:07:54.012Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:26.975Z",
+              "updatedAt": "2026-11-24T22:37:26.977Z"
             },
             {
               "id": "cms-52",
@@ -801,8 +801,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:54.243Z",
-              "updatedAt": "2026-11-24T10:07:54.244Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:27.219Z",
+              "updatedAt": "2026-11-24T22:37:27.221Z"
             },
             {
               "id": "cms-53",
@@ -818,8 +818,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:54.474Z",
-              "updatedAt": "2026-11-24T10:07:54.475Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:27.460Z",
+              "updatedAt": "2026-11-24T22:37:27.461Z"
             },
             {
               "id": "cms-54",
@@ -835,8 +835,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:54.706Z",
-              "updatedAt": "2026-11-24T10:07:54.708Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:27.702Z",
+              "updatedAt": "2026-11-24T22:37:27.702Z"
             },
             {
               "id": "cms-55",
@@ -852,8 +852,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:54.939Z",
-              "updatedAt": "2026-11-24T10:07:54.940Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:27.940Z",
+              "updatedAt": "2026-11-24T22:37:27.942Z"
             },
             {
               "id": "cms-56",
@@ -869,8 +869,8 @@
               "opponentScore": null,
               "scoreSource": null,
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-24T10:07:55.171Z",
-              "updatedAt": "2026-11-24T10:07:55.173Z"
+              "scoreUpdatedAt": "2026-11-24T22:37:28.181Z",
+              "updatedAt": "2026-11-24T22:37:28.181Z"
             }
           ]
         }
