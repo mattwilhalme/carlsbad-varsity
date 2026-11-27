@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-27T18:55:20.712Z",
+    "generatedAt": "2026-11-27T19:37:06.713Z",
     "articles": [
       {
         "id": "30",
@@ -122,7 +122,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-27T18:55:20.766Z",
+    "generatedAt": "2026-11-27T19:37:06.813Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -148,7 +148,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-27T18:55:20.972Z",
+    "generatedAt": "2026-11-27T19:37:07.015Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -216,6 +216,57 @@
               "scoreSourceUrl": null,
               "scoreUpdatedAt": "2026-11-27T08:48:43.328Z",
               "updatedAt": "2026-11-27T08:48:43.330Z"
+            },
+            {
+              "id": "cms-4",
+              "date": "2026-11-24",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": null,
+              "opponent": "Chula Vista Mater Dei",
+              "site": "away",
+              "venue": null,
+              "status": "final",
+              "teamScore": 74,
+              "opponentScore": 67,
+              "scoreSource": "maxpreps",
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": "2026-11-27T19:33:29.280Z",
+              "updatedAt": "2026-11-27T19:33:29.283Z"
+            },
+            {
+              "id": "cms-5",
+              "date": "2026-11-24",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": "San Diego Thanksgiving Classic",
+              "opponent": "Mira Mesa",
+              "site": "away",
+              "venue": null,
+              "status": "final",
+              "teamScore": 74,
+              "opponentScore": 67,
+              "scoreSource": "maxpreps",
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": "2026-11-27T19:35:07.153Z",
+              "updatedAt": "2026-11-27T19:35:07.155Z"
+            },
+            {
+              "id": "cms-169",
+              "date": "2026-11-25",
+              "startsAt": null,
+              "timeTBD": true,
+              "eventTitle": "San Diego Thanksgiving Classic",
+              "opponent": "San Marcos",
+              "site": "neutral",
+              "venue": null,
+              "status": "final",
+              "teamScore": 52,
+              "opponentScore": 73,
+              "scoreSource": "maxpreps",
+              "scoreSourceUrl": null,
+              "scoreUpdatedAt": "2026-11-27T19:36:13.857Z",
+              "updatedAt": "2026-11-27T19:36:13.861Z"
             },
             {
               "id": "cms-9",
@@ -541,13 +592,13 @@
               "opponent": "Francis Parker",
               "site": "away",
               "venue": null,
-              "status": "scheduled",
-              "teamScore": null,
-              "opponentScore": null,
-              "scoreSource": null,
+              "status": "final",
+              "teamScore": 61,
+              "opponentScore": 85,
+              "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-27T08:49:06.319Z",
-              "updatedAt": "2026-11-27T08:49:06.321Z"
+              "scoreUpdatedAt": "2026-11-27T19:31:23.139Z",
+              "updatedAt": "2026-11-27T19:31:23.145Z"
             },
             {
               "id": "cms-31",
@@ -555,16 +606,16 @@
               "startsAt": "2026-11-26T00:30:00.000Z",
               "timeTBD": false,
               "eventTitle": null,
-              "opponent": "Santiago/Corona",
+              "opponent": "Santiago",
               "site": "away",
               "venue": "Foothill High School, 19251 Dodge Ave, Santa Ana, California, 92705",
-              "status": "scheduled",
-              "teamScore": null,
-              "opponentScore": null,
-              "scoreSource": null,
+              "status": "final",
+              "teamScore": 57,
+              "opponentScore": 67,
+              "scoreSource": "maxpreps",
               "scoreSourceUrl": null,
-              "scoreUpdatedAt": "2026-11-27T08:49:06.569Z",
-              "updatedAt": "2026-11-27T08:49:06.570Z"
+              "scoreUpdatedAt": "2026-11-27T19:31:55.444Z",
+              "updatedAt": "2026-11-27T19:31:55.446Z"
             },
             {
               "id": "cms-32",
