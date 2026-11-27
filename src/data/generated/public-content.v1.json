@@ -1,7 +1,7 @@
 {
   "articles": {
     "version": "north-county-varsity.articles.v1",
-    "generatedAt": "2026-11-27T09:06:07.818Z",
+    "generatedAt": "2026-11-27T18:55:20.712Z",
     "articles": [
       {
         "id": "30",
@@ -122,7 +122,7 @@
   },
   "homepage": {
     "version": "north-county-varsity.homepage.v1",
-    "generatedAt": "2026-11-27T09:06:07.941Z",
+    "generatedAt": "2026-11-27T18:55:20.766Z",
     "homepage": {
       "id": "1",
       "title": "North County Varsity",
@@ -148,7 +148,7 @@
   },
   "scheduleDisplay": {
     "version": "north-county-varsity.schedule-display.v2",
-    "generatedAt": "2026-11-27T09:06:08.246Z",
+    "generatedAt": "2026-11-27T18:55:20.972Z",
     "display": {
       "id": "1",
       "title": "North County Varsity Schedule Display",
@@ -157,7 +157,7 @@
         "name": "North County Varsity",
         "slug": "north-county-varsity"
       },
-      "updatedAt": "2026-11-17T17:00:24.179Z",
+      "updatedAt": "2026-11-27T18:54:33.069Z",
       "sources": [
         {
           "scheduleImportId": "1",
