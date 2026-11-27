@@ -6,7 +6,7 @@ import type { Game } from "@/domain/models";
 function formatDate(date: string) { return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`)); }
 
 function gameStatus(game: Game, result: boolean) {
-  if (!result) return game.status === "postponed" ? "Postponed" : game.time ?? "TBA";
+  if (!result) return game.status === "postponed" ? "Postponed" : null;
   return "Final";
 }
 
@@ -23,12 +23,14 @@ export function HomeGameRail({ games, result = false, emptyMessage }: { games: G
     const awayScore = game.homeAway === "Away" ? game.teamScore : game.opponentScore;
     const homeWon = result && homeScore !== undefined && awayScore !== undefined && homeScore > awayScore;
     const awayWon = result && homeScore !== undefined && awayScore !== undefined && awayScore > homeScore;
-    const secondTeamPrefix = game.homeAway === "Neutral" ? "" : "At ";
+    const opponentPrefix = game.homeAway === "Away" ? "at " : game.homeAway === "Home" ? "vs. " : "";
     return <Link href={`/games/${game.id}/`} className="rail-game" key={game.id}>
-      <span className="rail-game-meta"><time dateTime={game.date}>{formatDate(game.date)}</time><b className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{status}</b></span>
+      <span className="rail-game-meta"><time dateTime={game.date}>{formatDate(game.date)}</time>{status && <b className={game.result ? `outcome-${game.result.toLowerCase()}` : undefined}>{status}</b>}</span>
       <span className="rail-matchup">
-        <strong className={awayWon ? "rail-team-winner" : undefined}><span>{awayTeam}</span>{result && awayScore !== undefined && <b>{awayScore}</b>}</strong>
-        <strong className={homeWon ? "rail-team-winner" : undefined}><span>{result ? homeTeam : `${secondTeamPrefix}${homeTeam}`}</span>{result && homeScore !== undefined && <b>{homeScore}</b>}</strong>
+        {result ? <>
+          <strong className={awayWon ? "rail-team-winner" : undefined}><span>{awayTeam}</span>{awayScore !== undefined && <b>{awayScore}</b>}</strong>
+          <strong className={homeWon ? "rail-team-winner" : undefined}><span>{homeTeam}</span>{homeScore !== undefined && <b>{homeScore}</b>}</strong>
+        </> : <><strong>{school.name}</strong><strong>{opponentPrefix}{game.opponent}</strong></>}
         <small>{team.sportName}</small>
       </span>
     </Link>;
